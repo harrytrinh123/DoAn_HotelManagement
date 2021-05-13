@@ -71,7 +71,7 @@ namespace hotel_management
         private void frmMain_Load(object sender, EventArgs e)
         {
             OpenFormInPanel(new frmHome());
-            //asd
+            ActivateButton(btnHome, RGBcolors.color1);
         }
 
         private void OpenFormInPanel(object Formhijo)
