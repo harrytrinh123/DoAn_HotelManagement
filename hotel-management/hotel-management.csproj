@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsKetNoi.cs" />
+    <Compile Include="clsKhachHang.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +130,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qlKhachSan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qlKhachSan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="QL_KSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmBookRoom.resx">
       <DependentUpon>frmBookRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +189,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,6 +202,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="qlKhachSan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>qlKhachSan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="qlKhachSan.dbml.layout">
+      <DependentUpon>qlKhachSan.dbml</DependentUpon>
+    </None>
+    <None Include="QL_KSDataSet.xsc">
+      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QL_KSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_KSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_KSDataSet.xss">
+      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +258,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-room-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-male-4001.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

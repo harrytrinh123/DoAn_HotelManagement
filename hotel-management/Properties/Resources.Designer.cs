@@ -123,6 +123,16 @@ namespace hotel_management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_male_4001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-male-4001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_user_male_500 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-male-500", resourceCulture);
