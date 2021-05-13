@@ -76,5 +76,10 @@ namespace hotel_management
         {
 
         }
+
+        private void btnQL_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new frmRoomManagement());
+        }
     }
 }
