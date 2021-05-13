@@ -18,19 +18,17 @@ namespace hotel_management
 
         private void label12_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult result = MessageBox.Show("Bạn hãy lưu thông tin trước khi thoát!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+        }
+
+        private void label12_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label12_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

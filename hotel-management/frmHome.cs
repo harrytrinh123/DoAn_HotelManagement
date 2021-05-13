@@ -37,5 +37,15 @@ namespace hotel_management
         {
 
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

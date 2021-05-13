@@ -48,5 +48,10 @@ namespace hotel_management
             if (txtPassword.Text == "")
                 txtPassword.Text = "Password";
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
