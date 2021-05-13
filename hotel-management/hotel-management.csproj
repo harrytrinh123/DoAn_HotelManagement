@@ -71,11 +71,23 @@
     <Compile Include="frmCustomerManagement.Designer.cs">
       <DependentUpon>frmCustomerManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDeviceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeviceManagement.designer.cs">
+      <DependentUpon>frmDeviceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHomeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomeManagement.designer.cs">
+      <DependentUpon>frmHomeManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -88,6 +100,30 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainManagement.designer.cs">
+      <DependentUpon>frmMainManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVienManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVienManagement.designer.cs">
+      <DependentUpon>frmNhanVienManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoomManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoomManagement.designer.cs">
+      <DependentUpon>frmRoomManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceManagement.designer.cs">
+      <DependentUpon>frmServiceManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,14 +139,32 @@
     <EmbeddedResource Include="frmCustomerManagement.resx">
       <DependentUpon>frmCustomerManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDeviceManagement.resx">
+      <DependentUpon>frmDeviceManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomeManagement.resx">
+      <DependentUpon>frmHomeManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainManagement.resx">
+      <DependentUpon>frmMainManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVienManagement.resx">
+      <DependentUpon>frmNhanVienManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoomManagement.resx">
+      <DependentUpon>frmRoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceManagement.resx">
+      <DependentUpon>frmServiceManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
