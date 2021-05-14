@@ -16,17 +16,12 @@ namespace hotel_management
             InitializeComponent();
         }
 
+        private void frmCustomerManagement_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label12_Click_2(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -30,23 +30,23 @@ namespace hotel_management
         private void InitializeComponent()
         {
             this.panel_sidebar = new System.Windows.Forms.Panel();
-            this.panelInfo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_workarea = new System.Windows.Forms.Panel();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnQLKhachHang = new FontAwesome.Sharp.IconButton();
             this.btnTraPhong = new FontAwesome.Sharp.IconButton();
             this.btnNhanPhong = new FontAwesome.Sharp.IconButton();
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel_workarea = new System.Windows.Forms.Panel();
             this.panel_sidebar.SuspendLayout();
             this.panelInfo.SuspendLayout();
-            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,59 +66,6 @@ namespace hotel_management
             this.panel_sidebar.Name = "panel_sidebar";
             this.panel_sidebar.Size = new System.Drawing.Size(328, 702);
             this.panel_sidebar.TabIndex = 3;
-            // 
-            // panelInfo
-            // 
-            this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelInfo.Controls.Add(this.label2);
-            this.panelInfo.Controls.Add(this.pictureBox2);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 174);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(328, 174);
-            this.panelInfo.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(82, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 29);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sadio mane";
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(328, 174);
-            this.panelLogo.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(154, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sixboy Hotel";
-            // 
-            // panel_workarea
-            // 
-            this.panel_workarea.BackColor = System.Drawing.Color.LightGray;
-            this.panel_workarea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_workarea.Location = new System.Drawing.Point(328, 0);
-            this.panel_workarea.Name = "panel_workarea";
-            this.panel_workarea.Size = new System.Drawing.Size(956, 702);
-            this.panel_workarea.TabIndex = 4;
             // 
             // btnDangXuat
             // 
@@ -246,6 +193,28 @@ namespace hotel_management
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelInfo
+            // 
+            this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInfo.Controls.Add(this.label2);
+            this.panelInfo.Controls.Add(this.pictureBox2);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 174);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(328, 174);
+            this.panelInfo.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(82, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 29);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Sadio mane";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::hotel_management.Properties.Resources.icons8_user_male_500;
@@ -255,6 +224,28 @@ namespace hotel_management
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(328, 174);
+            this.panelLogo.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mistral", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(154, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Sixboy Hotel";
             // 
             // pictureBox1
             // 
@@ -266,6 +257,15 @@ namespace hotel_management
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel_workarea
+            // 
+            this.panel_workarea.BackColor = System.Drawing.Color.LightGray;
+            this.panel_workarea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_workarea.Location = new System.Drawing.Point(328, 0);
+            this.panel_workarea.Name = "panel_workarea";
+            this.panel_workarea.Size = new System.Drawing.Size(956, 702);
+            this.panel_workarea.TabIndex = 4;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -276,15 +276,15 @@ namespace hotel_management
             this.Controls.Add(this.panel_sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
-            this.Text = " ";
+            this.Text = " Quản lý khách sạn - Nhân viên: sadio mane";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel_sidebar.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

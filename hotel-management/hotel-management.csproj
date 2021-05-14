@@ -62,17 +62,17 @@
     <Compile Include="frmCheckIn.Designer.cs">
       <DependentUpon>frmCheckIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCheckOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCheckOut.Designer.cs">
-      <DependentUpon>frmCheckOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCustomerManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCustomerManagement.Designer.cs">
       <DependentUpon>frmCustomerManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDeviceManagement.cs">
       <SubType>Form</SubType>
@@ -146,11 +146,11 @@
     <EmbeddedResource Include="frmCheckIn.resx">
       <DependentUpon>frmCheckIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCheckOut.resx">
-      <DependentUpon>frmCheckOut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerManagement.resx">
       <DependentUpon>frmCustomerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckOut.resx">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDeviceManagement.resx">
       <DependentUpon>frmDeviceManagement.cs</DependentUpon>
