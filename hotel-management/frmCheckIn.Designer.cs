@@ -1,4 +1,5 @@
-﻿
+﻿using FontAwesome.Sharp;
+
 namespace hotel_management
 {
     partial class frmCheckIn
