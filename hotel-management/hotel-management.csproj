@@ -135,11 +135,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qlKhachSan.dbml</DependentUpon>
     </Compile>
-    <Compile Include="QL_KSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmBookRoom.resx">
       <DependentUpon>frmBookRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,17 +204,6 @@
     </None>
     <None Include="qlKhachSan.dbml.layout">
       <DependentUpon>qlKhachSan.dbml</DependentUpon>
-    </None>
-    <None Include="QL_KSDataSet.xsc">
-      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QL_KSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QL_KSDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QL_KSDataSet.xss">
-      <DependentUpon>QL_KSDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\logo.png" />
   </ItemGroup>

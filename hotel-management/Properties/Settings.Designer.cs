@@ -33,5 +33,16 @@ namespace hotel_management.Properties {
                 return ((string)(this["QL_KSConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BRQK3RI\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=T" +
+            "rue")]
+        public string QLKSConnectionString {
+            get {
+                return ((string)(this["QLKSConnectionString"]));
+            }
+        }
     }
 }
