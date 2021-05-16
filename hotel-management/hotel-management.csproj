@@ -249,6 +249,10 @@
   <ItemGroup>
     <None Include="Resources\icons8-user-male-4001.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\dich-vu-la-gi1.jpg" />
+    <None Include="Resources\dich-vu-la-gi11.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"

@@ -15,5 +15,17 @@ namespace hotel_management
         {
             InitializeComponent();
         }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNhanVienManagement frm = new frmNhanVienManagement();
+            frm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,14 +12,5 @@ namespace hotel_management
         {
             dt = getDatacontex();
         }
-        public IEnumerable<Person> GetDSKH()
-        {
-            IEnumerable<Person> q;
-            q = from n in dt.Persons
-                    select n;
-
-
-            return q;
-        }
     }
 }
