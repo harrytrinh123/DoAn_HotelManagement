@@ -48,8 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsKetNoi.cs" />
-    <Compile Include="clsKhachHang.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +128,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="qlKhachSan.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>qlKhachSan.dbml</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmBookRoom.resx">
       <DependentUpon>frmBookRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,14 +190,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="qlKhachSan.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>qlKhachSan.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="qlKhachSan.dbml.layout">
-      <DependentUpon>qlKhachSan.dbml</DependentUpon>
-    </None>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
