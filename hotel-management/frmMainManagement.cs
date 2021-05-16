@@ -81,5 +81,10 @@ namespace hotel_management
         {
             OpenFormInPanel(new frmRoomManagement());
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

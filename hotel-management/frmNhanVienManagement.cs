@@ -15,5 +15,10 @@ namespace hotel_management
         {
             InitializeComponent();
         }
+
+        private void frmNhanVienManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
