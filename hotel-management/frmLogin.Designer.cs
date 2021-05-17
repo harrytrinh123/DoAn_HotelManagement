@@ -72,7 +72,7 @@ namespace hotel_management
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 28;
             this.iconPictureBox1.Location = new System.Drawing.Point(46, 75);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(29, 28);
             this.iconPictureBox1.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace hotel_management
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 28;
             this.iconPictureBox2.Location = new System.Drawing.Point(46, 142);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(29, 28);
             this.iconPictureBox2.TabIndex = 2;
@@ -132,8 +132,7 @@ namespace hotel_management
             this.txtUsername.Size = new System.Drawing.Size(196, 30);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.Text = "Username";
-            this.txtUsername.MouseLeave += new System.EventHandler(this.AddTextUSname);
-            this.txtUsername.MouseHover += new System.EventHandler(this.RemoveTextUN);
+            this.txtUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUsername_MouseClick);
             // 
             // txtPassword
             // 
@@ -142,14 +141,15 @@ namespace hotel_management
             this.txtPassword.Location = new System.Drawing.Point(83, 142);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(196, 30);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.Text = "Password";
-            this.txtPassword.MouseLeave += new System.EventHandler(this.AddTextPW);
-            this.txtPassword.MouseHover += new System.EventHandler(this.RemoveTextPW);
+            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUsername_MouseClick);
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
