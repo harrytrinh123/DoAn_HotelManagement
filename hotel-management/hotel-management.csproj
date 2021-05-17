@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAccount.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="frmBookRoom.cs">
