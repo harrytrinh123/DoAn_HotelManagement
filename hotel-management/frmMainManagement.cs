@@ -11,9 +11,12 @@ namespace hotel_management
 {
     public partial class frmMainManagement : Form
     {
-        public frmMainManagement()
+        private Account account;
+
+        public frmMainManagement(Account account)
         {
             InitializeComponent();
+            this.account = account;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
