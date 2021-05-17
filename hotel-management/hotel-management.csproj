@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsKetNoi.cs" />
-    <Compile Include="clsKhachHang.cs" />
+    <Compile Include="clsCustomer.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>

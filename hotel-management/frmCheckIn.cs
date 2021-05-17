@@ -37,5 +37,17 @@ namespace hotel_management
         {
             this.Close();
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            clsCustomer clsCus = new clsCustomer();
+            string cmnd = txtTim.Text;
+            Customer res = clsCus.checkIfExist(cmnd);
+            if(res!=null) { }
+            else
+            {
+                MessageBox.Show("Số CMND chưa đặt phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

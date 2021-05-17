@@ -32,6 +32,8 @@ namespace hotel_management
         {
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,17 +57,16 @@ namespace hotel_management
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvwDSNhanPhong = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSoNguoi = new System.Windows.Forms.TextBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
@@ -95,6 +96,30 @@ namespace hotel_management
             this.panel1.Size = new System.Drawing.Size(1200, 61);
             this.panel1.TabIndex = 9;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(85)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 44;
+            this.iconPictureBox1.Location = new System.Drawing.Point(3, 10);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(46, 44);
+            this.iconPictureBox1.TabIndex = 4;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(46, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(204, 37);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Nhận phòng";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox3);
@@ -117,9 +142,9 @@ namespace hotel_management
             this.groupBox3.Controls.Add(this.btnThemDV);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(29, 427);
+            this.groupBox3.Location = new System.Drawing.Point(29, 484);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(660, 230);
+            this.groupBox3.Size = new System.Drawing.Size(660, 173);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dịch vụ";
@@ -209,6 +234,7 @@ namespace hotel_management
             this.btnTim.TabIndex = 16;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXuatHoaDon
             // 
@@ -224,36 +250,37 @@ namespace hotel_management
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupBox1.Controls.Add(this.txtSoNguoi);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dTimeNgayNhan);
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtSoDT);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(29, 71);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(660, 348);
+            this.groupBox1.Size = new System.Drawing.Size(660, 406);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin trả phòng";
+            this.groupBox1.Text = "Thông tin nhận phòng";
             // 
             // dTimeNgayNhan
             // 
-            this.dTimeNgayNhan.Location = new System.Drawing.Point(215, 241);
+            this.dTimeNgayNhan.Location = new System.Drawing.Point(215, 292);
             this.dTimeNgayNhan.Name = "dTimeNgayNhan";
             this.dTimeNgayNhan.Size = new System.Drawing.Size(142, 35);
             this.dTimeNgayNhan.TabIndex = 3;
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(215, 50);
+            this.txtTenKH.Location = new System.Drawing.Point(215, 104);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(389, 35);
@@ -261,7 +288,7 @@ namespace hotel_management
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(215, 119);
+            this.txtDiaChi.Location = new System.Drawing.Point(215, 173);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(389, 35);
@@ -269,7 +296,7 @@ namespace hotel_management
             // 
             // txtSoDT
             // 
-            this.txtSoDT.Location = new System.Drawing.Point(215, 179);
+            this.txtSoDT.Location = new System.Drawing.Point(215, 233);
             this.txtSoDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(389, 35);
@@ -279,7 +306,7 @@ namespace hotel_management
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(128, 179);
+            this.label6.Location = new System.Drawing.Point(128, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 25);
             this.label6.TabIndex = 0;
@@ -289,7 +316,7 @@ namespace hotel_management
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(104, 125);
+            this.label5.Location = new System.Drawing.Point(104, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 25);
             this.label5.TabIndex = 0;
@@ -299,7 +326,7 @@ namespace hotel_management
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(139, 56);
+            this.label2.Location = new System.Drawing.Point(139, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 25);
             this.label2.TabIndex = 0;
@@ -309,7 +336,7 @@ namespace hotel_management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 249);
+            this.label3.Location = new System.Drawing.Point(6, 300);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 25);
             this.label3.TabIndex = 0;
@@ -335,46 +362,31 @@ namespace hotel_management
             this.lvwDSNhanPhong.TabIndex = 0;
             this.lvwDSNhanPhong.UseCompatibleStateImageBehavior = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(476, 282);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 59);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(215, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(389, 35);
+            this.textBox1.TabIndex = 4;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 305);
+            this.label4.Location = new System.Drawing.Point(47, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.Size = new System.Drawing.Size(147, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Số người:";
-            // 
-            // txtSoNguoi
-            // 
-            this.txtSoNguoi.Location = new System.Drawing.Point(215, 299);
-            this.txtSoNguoi.Name = "txtSoNguoi";
-            this.txtSoNguoi.Size = new System.Drawing.Size(142, 35);
-            this.txtSoNguoi.TabIndex = 4;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(85)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Hotel;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 44;
-            this.iconPictureBox1.Location = new System.Drawing.Point(3, 10);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(46, 44);
-            this.iconPictureBox1.TabIndex = 4;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(46, 13);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(204, 37);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Nhận phòng";
+            this.label4.Text = "CMND/CCCD:";
             // 
             // frmCheckIn
             // 
@@ -389,6 +401,7 @@ namespace hotel_management
             this.Text = "frmCheckIn";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -397,7 +410,6 @@ namespace hotel_management
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,7 +430,6 @@ namespace hotel_management
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtSoNguoi;
         private System.Windows.Forms.DateTimePicker dTimeNgayNhan;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -426,11 +437,13 @@ namespace hotel_management
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lvwDSNhanPhong;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
