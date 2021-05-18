@@ -14,17 +14,17 @@ namespace hotel_management
             dt = getDatacontex();
         }
 
-        public Account Exist(Account a)
+        public Account Exist(string username)
         {
             var account = (from x in dt.Accounts
-                           where x.username == a.username
+                           where x.username == username
                            select x).FirstOrDefault();
             return account;
         }
 
         public bool CheckAccount(Account a)
         {
-            Account account = Exist(a);
+            Account account = Exist(a.username);
             if(account == null)
             {
                 return false;
