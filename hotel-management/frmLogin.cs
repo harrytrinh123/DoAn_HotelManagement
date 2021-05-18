@@ -37,7 +37,7 @@ namespace hotel_management
         {
             account = new Account()
             {
-                username = txtUsername.Text,
+                username = txtUsername.Text.ToUpper(),
                 password = txtPassword.Text
             };
 
