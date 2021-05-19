@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsKetNoi.cs" />
-    <Compile Include="clsKhachHang.cs" />
+    <Compile Include="clsChaotic.cs" />
+    <Compile Include="clsConnect.cs" />
+    <Compile Include="clsCustomer.cs" />
+    <Compile Include="clsRoomStyle.cs" />
+    <Compile Include="clsRoom.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>

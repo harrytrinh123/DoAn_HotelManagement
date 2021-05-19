@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="qlKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-BRQK3RI\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True" SettingsObjectName="hotel_management.Properties.Settings" SettingsPropertyName="QLKSConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataQLKS" Class="qlKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-J0DJ4SH\SQLEXPRESS;Initial Catalog=DataQLKS;Integrated Security=True" SettingsObjectName="hotel_management.Properties.Settings" SettingsPropertyName="DataQLKSConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="username" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -12,12 +12,10 @@
     <Type Name="Bill">
       <Column Name="TotalPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="id_Room" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_BookRoom" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_Staff" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Association Name="BookRoom_Bill" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" />
-      <Association Name="Room_Bill" Member="Room" ThisKey="id_Room" OtherKey="id_Room" Type="Room" IsForeignKey="true" />
-      <Association Name="Staff_Bill" Member="Staff" ThisKey="id_Staff" OtherKey="id_Staff" Type="Staff" IsForeignKey="true" />
+      <Association Name="BookRoom_Bill" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Staff_Bill" Member="Staff" ThisKey="id_Staff" OtherKey="id_Staff" Type="Staff" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Bill_Equipment" Member="Bill_Equipments">
@@ -25,8 +23,8 @@
       <Column Name="id_BookRoom" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_Equipment" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Equipment_Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BookRoom_Bill_Equipment" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" />
-      <Association Name="Equipment_Bill_Equipment" Member="Equipment" ThisKey="id_Equipment" OtherKey="id_Equipment" Type="Equipment" IsForeignKey="true" />
+      <Association Name="BookRoom_Bill_Equipment" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Equipment_Bill_Equipment" Member="Equipment" ThisKey="id_Equipment" OtherKey="id_Equipment" Type="Equipment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Bill_Service" Member="Bill_Services">
@@ -34,8 +32,8 @@
       <Column Name="id_BookRoom" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_Service" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Service_Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BookRoom_Bill_Service" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" />
-      <Association Name="Service_Bill_Service" Member="Service" ThisKey="id_Service" OtherKey="id_Service" Type="Service" IsForeignKey="true" />
+      <Association Name="BookRoom_Bill_Service" Member="BookRoom" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="BookRoom" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Service_Bill_Service" Member="Service" ThisKey="id_Service" OtherKey="id_Service" Type="Service" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.BookRoom" Member="BookRooms">
@@ -45,11 +43,13 @@
       <Column Name="dateBooking" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Checkin_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Checkout_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="id_Room" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="id_Customer" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Association Name="BookRoom_Bill" Member="Bills" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="Bill" />
+      <Association Name="BookRoom_Bill" Member="Bill" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="Bill" Cardinality="One" />
       <Association Name="BookRoom_Bill_Equipment" Member="Bill_Equipments" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="Bill_Equipment" />
       <Association Name="BookRoom_Bill_Service" Member="Bill_Services" ThisKey="id_BookRoom" OtherKey="id_BookRoom" Type="Bill_Service" />
-      <Association Name="Customer_BookRoom" Member="Customer" ThisKey="id_Customer" OtherKey="id_Customer" Type="Customer" IsForeignKey="true" />
+      <Association Name="Customer_BookRoom" Member="Customer" ThisKey="id_Customer" OtherKey="id_Customer" Type="Customer" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Room_BookRoom" Member="Room" ThisKey="id_Room" OtherKey="id_Room" Type="Room" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
@@ -81,7 +81,7 @@
       <Column Name="address" Type="System.String" DbType="NVarChar(60) NOT NULL" CanBeNull="false" />
       <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="avartar_img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Account_Manager" Member="Account" ThisKey="id_Manager" OtherKey="username" Type="Account" IsForeignKey="true" />
+      <Association Name="Account_Manager" Member="Account" ThisKey="id_Manager" OtherKey="username" Type="Account" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Room" Member="Rooms">
@@ -89,9 +89,11 @@
       <Column Name="id_Room" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="RoomNumber" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="Grade" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="id_RoomStyle" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Room_Bill" Member="Bills" ThisKey="id_Room" OtherKey="id_Room" Type="Bill" />
-      <Association Name="RoomStyle_Room" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" />
+      <Association Name="Room_BookRoom" Member="BookRooms" ThisKey="id_Room" OtherKey="id_Room" Type="BookRoom" />
+      <Association Name="RoomStyle_Room" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.RoomStyle" Member="RoomStyles">
@@ -109,8 +111,8 @@
       <Column Name="id_RoomStyle" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_Equipment" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Equipment_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Equipment_RoomStyle_Equipment" Member="Equipment" ThisKey="id_Equipment" OtherKey="id_Equipment" Type="Equipment" IsForeignKey="true" />
-      <Association Name="RoomStyle_RoomStyle_Equipment" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" />
+      <Association Name="Equipment_RoomStyle_Equipment" Member="Equipment" ThisKey="id_Equipment" OtherKey="id_Equipment" Type="Equipment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="RoomStyle_RoomStyle_Equipment" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.RoomStyle_Service" Member="RoomStyle_Services">
@@ -118,8 +120,8 @@
       <Column Name="id_RoomStyle" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_Service" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Service_Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="RoomStyle_RoomStyle_Service" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" />
-      <Association Name="Service_RoomStyle_Service" Member="Service" ThisKey="id_Service" OtherKey="id_Service" Type="Service" IsForeignKey="true" />
+      <Association Name="RoomStyle_RoomStyle_Service" Member="RoomStyle" ThisKey="id_RoomStyle" OtherKey="id_RoomStyle" Type="RoomStyle" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Service_RoomStyle_Service" Member="Service" ThisKey="id_Service" OtherKey="id_Service" Type="Service" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Service" Member="Services">
@@ -130,7 +132,7 @@
       <Column Name="id_SeviceStyle" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="Service_Bill_Service" Member="Bill_Services" ThisKey="id_Service" OtherKey="id_Service" Type="Bill_Service" />
       <Association Name="Service_RoomStyle_Service" Member="RoomStyle_Services" ThisKey="id_Service" OtherKey="id_Service" Type="RoomStyle_Service" />
-      <Association Name="ServiceStyle_Service" Member="ServiceStyle" ThisKey="id_SeviceStyle" OtherKey="id_SeviceStyle" Type="ServiceStyle" IsForeignKey="true" />
+      <Association Name="ServiceStyle_Service" Member="ServiceStyle" ThisKey="id_SeviceStyle" OtherKey="id_SeviceStyle" Type="ServiceStyle" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ServiceStyle" Member="ServiceStyles">
@@ -150,7 +152,7 @@
       <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="avartar_img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Staff_Bill" Member="Bills" ThisKey="id_Staff" OtherKey="id_Staff" Type="Bill" />
-      <Association Name="Account_Staff" Member="Account" ThisKey="id_Staff" OtherKey="username" Type="Account" IsForeignKey="true" />
+      <Association Name="Account_Staff" Member="Account" ThisKey="id_Staff" OtherKey="username" Type="Account" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

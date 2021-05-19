@@ -5,12 +5,14 @@ using System.Text;
 
 namespace hotel_management
 {
-    public class clsKhachHang : clsKetNoi
+    public class clsCustomer : clsKetNoi
     {
         qlKhachSanDataContext dt;
-        public clsKhachHang()
+        public clsCustomer()
         {
             dt = getDatacontex();
         }
+
+        
     }
 }

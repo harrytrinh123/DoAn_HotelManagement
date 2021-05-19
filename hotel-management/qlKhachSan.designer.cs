@@ -22,7 +22,7 @@ namespace hotel_management
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLKS")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataQLKS")]
 	public partial class qlKhachSanDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -78,7 +78,7 @@ namespace hotel_management
     #endregion
 		
 		public qlKhachSanDataContext() : 
-				base(global::hotel_management.Properties.Settings.Default.QLKSConnectionString, mappingSource)
+				base(global::hotel_management.Properties.Settings.Default.DataQLKSConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -388,15 +388,11 @@ namespace hotel_management
 		
 		private System.Nullable<double> _Discount;
 		
-		private string _id_Room;
-		
 		private string _id_BookRoom;
 		
 		private string _id_Staff;
 		
 		private EntityRef<BookRoom> _BookRoom;
-		
-		private EntityRef<Room> _Room;
 		
 		private EntityRef<Staff> _Staff;
 		
@@ -408,8 +404,6 @@ namespace hotel_management
     partial void OnTotalPriceChanged();
     partial void OnDiscountChanging(System.Nullable<double> value);
     partial void OnDiscountChanged();
-    partial void Onid_RoomChanging(string value);
-    partial void Onid_RoomChanged();
     partial void Onid_BookRoomChanging(string value);
     partial void Onid_BookRoomChanged();
     partial void Onid_StaffChanging(string value);
@@ -419,7 +413,6 @@ namespace hotel_management
 		public Bill()
 		{
 			this._BookRoom = default(EntityRef<BookRoom>);
-			this._Room = default(EntityRef<Room>);
 			this._Staff = default(EntityRef<Staff>);
 			OnCreated();
 		}
@@ -460,30 +453,6 @@ namespace hotel_management
 					this._Discount = value;
 					this.SendPropertyChanged("Discount");
 					this.OnDiscountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Room", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id_Room
-		{
-			get
-			{
-				return this._id_Room;
-			}
-			set
-			{
-				if ((this._id_Room != value))
-				{
-					if (this._Room.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_RoomChanging(value);
-					this.SendPropertyChanging();
-					this._id_Room = value;
-					this.SendPropertyChanged("id_Room");
-					this.Onid_RoomChanged();
 				}
 			}
 		}
@@ -536,7 +505,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -553,12 +522,12 @@ namespace hotel_management
 					if ((previousValue != null))
 					{
 						this._BookRoom.Entity = null;
-						previousValue.Bills.Remove(this);
+						previousValue.Bill = null;
 					}
 					this._BookRoom.Entity = value;
 					if ((value != null))
 					{
-						value.Bills.Add(this);
+						value.Bill = this;
 						this._id_BookRoom = value.id_BookRoom;
 					}
 					else
@@ -570,41 +539,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_Bill", Storage="_Room", ThisKey="id_Room", OtherKey="id_Room", IsForeignKey=true)]
-		public Room Room
-		{
-			get
-			{
-				return this._Room.Entity;
-			}
-			set
-			{
-				Room previousValue = this._Room.Entity;
-				if (((previousValue != value) 
-							|| (this._Room.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Room.Entity = null;
-						previousValue.Bills.Remove(this);
-					}
-					this._Room.Entity = value;
-					if ((value != null))
-					{
-						value.Bills.Add(this);
-						this._id_Room = value.id_Room;
-					}
-					else
-					{
-						this._id_Room = default(string);
-					}
-					this.SendPropertyChanged("Room");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Bill", Storage="_Staff", ThisKey="id_Staff", OtherKey="id_Staff", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Bill", Storage="_Staff", ThisKey="id_Staff", OtherKey="id_Staff", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Staff Staff
 		{
 			get
@@ -762,7 +697,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Equipment", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Equipment", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -796,7 +731,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_Bill_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_Bill_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Equipment Equipment
 		{
 			get
@@ -954,7 +889,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Service", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Service", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -988,7 +923,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_Bill_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_Bill_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Service Service
 		{
 			get
@@ -1059,15 +994,19 @@ namespace hotel_management
 		
 		private System.DateTime _Checkout_Date;
 		
+		private string _id_Room;
+		
 		private string _id_Customer;
 		
-		private EntitySet<Bill> _Bills;
+		private EntityRef<Bill> _Bill;
 		
 		private EntitySet<Bill_Equipment> _Bill_Equipments;
 		
 		private EntitySet<Bill_Service> _Bill_Services;
 		
 		private EntityRef<Customer> _Customer;
+		
+		private EntityRef<Room> _Room;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1083,16 +1022,19 @@ namespace hotel_management
     partial void OnCheckin_DateChanged();
     partial void OnCheckout_DateChanging(System.DateTime value);
     partial void OnCheckout_DateChanged();
+    partial void Onid_RoomChanging(string value);
+    partial void Onid_RoomChanged();
     partial void Onid_CustomerChanging(string value);
     partial void Onid_CustomerChanged();
     #endregion
 		
 		public BookRoom()
 		{
-			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
+			this._Bill = default(EntityRef<Bill>);
 			this._Bill_Equipments = new EntitySet<Bill_Equipment>(new Action<Bill_Equipment>(this.attach_Bill_Equipments), new Action<Bill_Equipment>(this.detach_Bill_Equipments));
 			this._Bill_Services = new EntitySet<Bill_Service>(new Action<Bill_Service>(this.attach_Bill_Services), new Action<Bill_Service>(this.detach_Bill_Services));
 			this._Customer = default(EntityRef<Customer>);
+			this._Room = default(EntityRef<Room>);
 			OnCreated();
 		}
 		
@@ -1196,6 +1138,30 @@ namespace hotel_management
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Room", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string id_Room
+		{
+			get
+			{
+				return this._id_Room;
+			}
+			set
+			{
+				if ((this._id_Room != value))
+				{
+					if (this._Room.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_RoomChanging(value);
+					this.SendPropertyChanging();
+					this._id_Room = value;
+					this.SendPropertyChanged("id_Room");
+					this.Onid_RoomChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Customer", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
 		public string id_Customer
 		{
@@ -1220,16 +1186,32 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_Bills", ThisKey="id_BookRoom", OtherKey="id_BookRoom")]
-		public EntitySet<Bill> Bills
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_Bill", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsUnique=true, IsForeignKey=false)]
+		public Bill Bill
 		{
 			get
 			{
-				return this._Bills;
+				return this._Bill.Entity;
 			}
 			set
 			{
-				this._Bills.Assign(value);
+				Bill previousValue = this._Bill.Entity;
+				if (((previousValue != value) 
+							|| (this._Bill.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Bill.Entity = null;
+						previousValue.BookRoom = null;
+					}
+					this._Bill.Entity = value;
+					if ((value != null))
+					{
+						value.BookRoom = this;
+					}
+					this.SendPropertyChanged("Bill");
+				}
 			}
 		}
 		
@@ -1259,7 +1241,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_BookRoom", Storage="_Customer", ThisKey="id_Customer", OtherKey="id_Customer", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_BookRoom", Storage="_Customer", ThisKey="id_Customer", OtherKey="id_Customer", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Customer Customer
 		{
 			get
@@ -1293,6 +1275,40 @@ namespace hotel_management
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_BookRoom", Storage="_Room", ThisKey="id_Room", OtherKey="id_Room", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Room Room
+		{
+			get
+			{
+				return this._Room.Entity;
+			}
+			set
+			{
+				Room previousValue = this._Room.Entity;
+				if (((previousValue != value) 
+							|| (this._Room.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Room.Entity = null;
+						previousValue.BookRooms.Remove(this);
+					}
+					this._Room.Entity = value;
+					if ((value != null))
+					{
+						value.BookRooms.Add(this);
+						this._id_Room = value.id_Room;
+					}
+					else
+					{
+						this._id_Room = default(string);
+					}
+					this.SendPropertyChanged("Room");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1311,18 +1327,6 @@ namespace hotel_management
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.BookRoom = this;
-		}
-		
-		private void detach_Bills(Bill entity)
-		{
-			this.SendPropertyChanging();
-			entity.BookRoom = null;
 		}
 		
 		private void attach_Bill_Equipments(Bill_Equipment entity)
@@ -1918,7 +1922,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Manager", Storage="_Account", ThisKey="id_Manager", OtherKey="username", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Manager", Storage="_Account", ThisKey="id_Manager", OtherKey="username", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Account Account
 		{
 			get
@@ -1985,9 +1989,13 @@ namespace hotel_management
 		
 		private string _Grade;
 		
+		private bool _Status;
+		
+		private string _Note;
+		
 		private string _id_RoomStyle;
 		
-		private EntitySet<Bill> _Bills;
+		private EntitySet<BookRoom> _BookRooms;
 		
 		private EntityRef<RoomStyle> _RoomStyle;
 		
@@ -2001,13 +2009,17 @@ namespace hotel_management
     partial void OnRoomNumberChanged();
     partial void OnGradeChanging(string value);
     partial void OnGradeChanged();
+    partial void OnStatusChanging(bool value);
+    partial void OnStatusChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
     partial void Onid_RoomStyleChanging(string value);
     partial void Onid_RoomStyleChanged();
     #endregion
 		
 		public Room()
 		{
-			this._Bills = new EntitySet<Bill>(new Action<Bill>(this.attach_Bills), new Action<Bill>(this.detach_Bills));
+			this._BookRooms = new EntitySet<BookRoom>(new Action<BookRoom>(this.attach_BookRooms), new Action<BookRoom>(this.detach_BookRooms));
 			this._RoomStyle = default(EntityRef<RoomStyle>);
 			OnCreated();
 		}
@@ -2072,6 +2084,46 @@ namespace hotel_management
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
+		public bool Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="VarChar(20)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_RoomStyle", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string id_RoomStyle
 		{
@@ -2096,20 +2148,20 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_Bill", Storage="_Bills", ThisKey="id_Room", OtherKey="id_Room")]
-		public EntitySet<Bill> Bills
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_BookRoom", Storage="_BookRooms", ThisKey="id_Room", OtherKey="id_Room")]
+		public EntitySet<BookRoom> BookRooms
 		{
 			get
 			{
-				return this._Bills;
+				return this._BookRooms;
 			}
 			set
 			{
-				this._Bills.Assign(value);
+				this._BookRooms.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_Room", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_Room", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2163,13 +2215,13 @@ namespace hotel_management
 			}
 		}
 		
-		private void attach_Bills(Bill entity)
+		private void attach_BookRooms(BookRoom entity)
 		{
 			this.SendPropertyChanging();
 			entity.Room = this;
 		}
 		
-		private void detach_Bills(Bill entity)
+		private void detach_BookRooms(BookRoom entity)
 		{
 			this.SendPropertyChanging();
 			entity.Room = null;
@@ -2473,7 +2525,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_RoomStyle_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_RoomStyle_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Equipment Equipment
 		{
 			get
@@ -2507,7 +2559,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Equipment", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Equipment", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2665,7 +2717,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Service", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Service", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2699,7 +2751,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_RoomStyle_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_RoomStyle_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Service Service
 		{
 			get
@@ -2906,7 +2958,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ServiceStyle_Service", Storage="_ServiceStyle", ThisKey="id_SeviceStyle", OtherKey="id_SeviceStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ServiceStyle_Service", Storage="_ServiceStyle", ThisKey="id_SeviceStyle", OtherKey="id_SeviceStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public ServiceStyle ServiceStyle
 		{
 			get
@@ -3307,7 +3359,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Staff", Storage="_Account", ThisKey="id_Staff", OtherKey="username", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Staff", Storage="_Account", ThisKey="id_Staff", OtherKey="username", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Account Account
 		{
 			get

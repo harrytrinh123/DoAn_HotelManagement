@@ -8,9 +8,10 @@ namespace hotel_management
     public class clsKetNoi
     {
         qlKhachSanDataContext qlKS;
+
         public qlKhachSanDataContext getDatacontex()
         {
-            string strKetNoi = @"Data Source=DESKTOP-BRQK3RI\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+            string strKetNoi = @"Data Source=DESKTOP-J0DJ4SH\SQLEXPRESS;Initial Catalog=DataQLKS;Integrated Security=True";
             qlKS = new qlKhachSanDataContext(strKetNoi);
             qlKS.Connection.Open();
             return qlKS;
