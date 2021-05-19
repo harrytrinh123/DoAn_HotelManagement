@@ -26,5 +26,31 @@ namespace hotel_management
 
         public IEnumerable<Customer> GetCustomers() => dt.Customers;
 
+        public bool DeleteCustomer(Customer cs)
+        {
+            if(checkIfExist(cs.id_Customer) != null)
+            {
+                using (System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
+                {
+                    try
+                    {
+                        dt.Transaction = myTran;
+                        dt.Customers.DeleteOnSubmit(cs);
+                        dt.SubmitChanges();
+                        dt.Transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        dt.Transaction.Rollback();
+                        throw new Exception(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
