@@ -43,16 +43,16 @@ namespace hotel_management
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dTimeNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSoDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -138,6 +138,7 @@ namespace hotel_management
             this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "Cập nhât";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -234,11 +235,21 @@ namespace hotel_management
             this.cboGioiTinh.FormattingEnabled = true;
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
-            "Nữ"});
+            "Nữ",
+            "Khác"});
             this.cboGioiTinh.Location = new System.Drawing.Point(155, 223);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(121, 33);
             this.cboGioiTinh.TabIndex = 3;
+            this.cboGioiTinh.Text = "Khác";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(155, 83);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(313, 30);
+            this.txtID.TabIndex = 0;
             // 
             // txtTenKH
             // 
@@ -281,6 +292,16 @@ namespace hotel_management
             this.label5.TabIndex = 5;
             this.label5.Text = "Địa chỉ :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ID:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -310,24 +331,6 @@ namespace hotel_management
             this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ngày sinh :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ID:";
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(155, 83);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(313, 30);
-            this.txtID.TabIndex = 0;
             // 
             // frmCustomerManagement
             // 
