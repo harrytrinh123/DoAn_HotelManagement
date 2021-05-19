@@ -263,7 +263,7 @@ namespace hotel_management
             this.panel_workarea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_workarea.Location = new System.Drawing.Point(328, 0);
             this.panel_workarea.Name = "panel_workarea";
-            this.panel_workarea.Size = new System.Drawing.Size(956, 702);
+            this.panel_workarea.Size = new System.Drawing.Size(909, 702);
             this.panel_workarea.TabIndex = 4;
             // 
             // frmMain
@@ -271,7 +271,7 @@ namespace hotel_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1284, 702);
+            this.ClientSize = new System.Drawing.Size(1237, 702);
             this.Controls.Add(this.panel_workarea);
             this.Controls.Add(this.panel_sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
