@@ -229,7 +229,7 @@ namespace hotel_management
             try
             {
                 qlCustomer.Update(CreateCustomer());
-                MessageBox.Show("Thêm thành công!");
+                MessageBox.Show("Cập nhật thành công!");
             }
             catch (Exception ex)
             {
