@@ -17,10 +17,10 @@ namespace hotel_management
             Application.SetCompatibleTextRenderingDefault(false);
 
             frmLogin login = new frmLogin();
-            if(login.ShowDialog() == DialogResult.Yes)
+            if (login.ShowDialog() == DialogResult.Yes)
             {
                 Account account = login.account;
-                if(account.username.Split('_')[0].Equals("NV"))
+                if (account.username.Split('_')[0].Equals("NV"))
                 {
                     Application.Run(new frmMain(account));
                 }

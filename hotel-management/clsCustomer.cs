@@ -22,7 +22,9 @@ namespace hotel_management
             if (mttemp != null)
                 return mttemp;
             return null;
-
         }
+
+        public IEnumerable<Customer> GetCustomers() => dt.Customers;
+
     }
 }
