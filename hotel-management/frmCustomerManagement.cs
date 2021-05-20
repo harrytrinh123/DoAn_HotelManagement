@@ -151,11 +151,11 @@ namespace hotel_management
 
         private Customer CreateCustomer()
         {
-            if(txtID.Text.Trim().Length <= 0)
+            if(!txtID.Text.Trim().CheckID())
             {
                 throw new Exception("Lỗi! ID không phù hợp!");
             }
-            if(txtTenKH.Text.Trim().Length <= 0)
+            if(!txtTenKH.Text.Trim().CheckName())
             {
                 throw new Exception("Lỗi! Tên không phù hợp!");
             }
@@ -163,11 +163,11 @@ namespace hotel_management
             {
                 throw new Exception("Lỗi! Địa chỉ không phù hợp!");
             }
-            if(txtSoDT.Text.Trim().Length <= 0)
+            if(!txtSoDT.Text.Trim().PhoneCheck())
             {
                 throw new Exception("Lỗi! Số điện thoại không phù hợp!");
             }    
-            if(dTimeNgaySinh.Value.CompareTo(DateTime.Now) >= 0)
+            if(!dTimeNgaySinh.Value.CheckDate())
             {
                 throw new Exception("Lỗi! Ngày sinh không phù hợp");
             }
