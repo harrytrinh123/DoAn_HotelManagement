@@ -49,9 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAccount.cs" />
+    <Compile Include="clsBookRoom.cs" />
+    <Compile Include="clsHonLoan.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsCustomer.cs" />
-    <Compile Include="clsStaff.cs" />
+    <Compile Include="clsRoom.cs" />
+    <Compile Include="clsService.cs" />
+    <Compile Include="clsBill_Service.cs" />
+    <Compile Include="clsStyleRoom.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +86,12 @@
     </Compile>
     <Compile Include="frmDeviceManagement.designer.cs">
       <DependentUpon>frmDeviceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -151,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDeviceManagement.resx">
       <DependentUpon>frmDeviceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
