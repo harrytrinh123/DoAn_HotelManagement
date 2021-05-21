@@ -108,6 +108,11 @@ namespace hotel_management
                     throw new Exception(ex.Message);
                 }
             }
+        public IEnumerable<Customer> getListCustomer()
+        {
+            IEnumerable<Customer> c = from i in dt.Customers
+                                      select i;
+            return c;
         }
     }
 }

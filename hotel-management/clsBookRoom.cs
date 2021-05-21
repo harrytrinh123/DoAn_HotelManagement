@@ -13,14 +13,14 @@ namespace hotel_management
             dt = getDatacontex();
         }
 
-        
+
 
         //hoang code
         public bool SuaThongTinBookRoomCuaKH(BookRoom bRoom, string maKH)
         {
             System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction();
-            try
-            {
+                try
+                {
                 dt.Transaction = myTran;
                 IQueryable<BookRoom> tam = (from n in dt.BookRooms
                                               where n.id_Customer == maKH
@@ -31,9 +31,9 @@ namespace hotel_management
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
                 return true;
-            }
+                    }
             catch (Exception ex)
-            {
+                {
                 dt.Transaction.Rollback();
                 throw new Exception("Loi khong sửa duoc " + ex.Message);
 
@@ -44,13 +44,13 @@ namespace hotel_management
         {
             var q = from n in dt.BookRooms
             where n.id_Customer.Equals(strIdCustomer)
-            select n;
+                select n;
 
             return q.FirstOrDefault();
         }
 
         public BookRoom GetThongTinBookRoom(string roomId)
-        {
+            {
             var q = from n in dt.BookRooms
                     where n.id_Room.Equals(roomId)
                     select n;
