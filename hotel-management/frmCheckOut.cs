@@ -31,7 +31,7 @@ namespace hotel_management
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
         {
-            IEnumerable<Service> dsDichVu = SER.GetAllService();
+            IEnumerable<Service> dsDichVu = SER.GetAllServices();
             listDSDichVu.DisplayMember = "Name_Service";//ten field hien ra
             listDSDichVu.ValueMember = "id_Service";// ten field ma chon ten lay ma
             listDSDichVu.DataSource = dsDichVu;

@@ -30,12 +30,12 @@ namespace hotel_management
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,16 +49,30 @@ namespace hotel_management
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1202, 50);
+            this.panel1.Size = new System.Drawing.Size(1352, 62);
             this.panel1.TabIndex = 18;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(85)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 58;
+            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(58, 62);
+            this.iconPictureBox1.TabIndex = 4;
+            this.iconPictureBox1.TabStop = false;
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(58, 0);
+            this.label11.Location = new System.Drawing.Point(65, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 50);
+            this.label11.Size = new System.Drawing.Size(154, 62);
             this.label11.TabIndex = 3;
             this.label11.Text = "Home";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -72,10 +86,10 @@ namespace hotel_management
             this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button3.Image = global::hotel_management.Properties.Resources.dich_vu_la_gi1;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(889, 74);
+            this.button3.Location = new System.Drawing.Point(1000, 92);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 365);
+            this.button3.Size = new System.Drawing.Size(244, 456);
             this.button3.TabIndex = 25;
             this.button3.Text = "Dịch Vụ";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -91,10 +105,10 @@ namespace hotel_management
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(614, 74);
+            this.button2.Location = new System.Drawing.Point(691, 92);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 365);
+            this.button2.Size = new System.Drawing.Size(244, 456);
             this.button2.TabIndex = 24;
             this.button2.Text = "Phòng";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -109,10 +123,10 @@ namespace hotel_management
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(339, 74);
+            this.button1.Location = new System.Drawing.Point(381, 92);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 365);
+            this.button1.Size = new System.Drawing.Size(244, 456);
             this.button1.TabIndex = 23;
             this.button1.Text = "Thiết Bị";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -127,41 +141,28 @@ namespace hotel_management
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatPhong.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDatPhong.Location = new System.Drawing.Point(64, 74);
+            this.btnDatPhong.Location = new System.Drawing.Point(72, 92);
             this.btnDatPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(217, 365);
+            this.btnDatPhong.Size = new System.Drawing.Size(244, 456);
             this.btnDatPhong.TabIndex = 22;
             this.btnDatPhong.Text = "Nhân Viên";
             this.btnDatPhong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDatPhong.UseVisualStyleBackColor = false;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(85)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 50;
-            this.iconPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(52, 50);
-            this.iconPictureBox1.TabIndex = 4;
-            this.iconPictureBox1.TabStop = false;
-            // 
             // frmHomeManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 465);
+            this.ClientSize = new System.Drawing.Size(1352, 581);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDatPhong);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmHomeManagement";
             this.Text = "frmHomeManagement";
             this.panel1.ResumeLayout(false);

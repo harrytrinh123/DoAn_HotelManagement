@@ -24,6 +24,13 @@ namespace hotel_management
             return s;
         }
 
+        public IEnumerable<Service> GetAllServices()
+        {
+            var q = from x in dt.Services
+                    select x;
+            return q;
+        }
+
         public Service CheckIfExist(string id)
         {
             Service temp = (from n in dt.Services
