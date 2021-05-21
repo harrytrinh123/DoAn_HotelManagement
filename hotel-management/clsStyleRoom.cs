@@ -20,5 +20,7 @@ namespace hotel_management
                     select n;
             return q.FirstOrDefault();
         }
+        //Code tran
+        
     }
 }

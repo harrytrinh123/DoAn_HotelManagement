@@ -15,5 +15,7 @@ namespace hotel_management
         {
             InitializeComponent();
         }
+        //clsStyleRoom ROOM = new 
     }
+    
 }
