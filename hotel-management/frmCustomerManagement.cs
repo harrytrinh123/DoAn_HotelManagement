@@ -16,6 +16,8 @@ namespace hotel_management
         public frmCustomerManagement()
         {
             InitializeComponent();
+
+            qlCustomer = new clsCustomer();
         }
 
         private void label12_Click_2(object sender, EventArgs e)
@@ -31,7 +33,6 @@ namespace hotel_management
 
         private void LoadListView()
         {
-            qlCustomer = new clsCustomer();
             ListViewItem item;
 
             lvwDSKhachHang.Items.Clear();
@@ -40,7 +41,14 @@ namespace hotel_management
                 item = new ListViewItem();
                 item.Text = customer.id_Customer;
                 item.SubItems.Add(customer.name);
-                item.SubItems.Add(customer.sex);
+
+                if (customer.sex.Equals("M"))
+                    item.SubItems.Add("Nam");
+                else if (customer.sex.Equals("FM"))
+                    item.SubItems.Add("Nữ");
+                else
+                    item.SubItems.Add("Khác");
+
                 item.SubItems.Add(customer.birthday.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(customer.address);
                 item.SubItems.Add(customer.phone);
@@ -75,7 +83,160 @@ namespace hotel_management
                 txtTenKH.Text = item.name;
                 txtSoDT.Text = item.phone;
                 txtDiaChi.Text = item.address;
+                txtID.Text = item.id_Customer;
+                
+                if(item.sex.Equals("M"))
+                {
+                    cboGioiTinh.SelectedItem = cboGioiTinh.Items[0];
+                }
+                else if (item.sex.Equals("FM"))
+                {
+                    cboGioiTinh.SelectedItem = cboGioiTinh.Items[1];
+                }
+                else
+                    cboGioiTinh.SelectedItem = cboGioiTinh.Items[2];
+
+                dTimeNgaySinh.Value = item.birthday;
+                btnXoa.Enabled = true;
+
+                btnThem.Text = "Thêm";
+                btnCapNhat.Enabled = true;
             }
+            else
+            {
+                btnXoa.Enabled = false;
+                btnCapNhat.Enabled = false;
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if(btnThem.Text.Equals("Thêm"))
+            {
+                btnThem.Text = "Lưu";
+                btnXoa.Enabled = false;
+
+                SetUpControls();
+                txtID.Enabled = true;
+            }
+            else
+            {
+                btnThem.Text = "Thêm";
+                txtID.Enabled = false;
+
+                AddCustomer();
+                LoadListView();
+            }
+        }
+
+        private void AddCustomer()
+        {
+            try
+            {
+                Customer customer = CreateCustomer();
+                if (qlCustomer.Insert(customer))
+                {
+                    MessageBox.Show("Thêm thành công!", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Đã có ID trong danh sách!", "Thông báo");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private Customer CreateCustomer()
+        {
+            if(!txtID.Text.Trim().CheckID())
+            {
+                throw new Exception("Lỗi! ID không phù hợp!");
+            }
+            if(!txtTenKH.Text.Trim().CheckName())
+            {
+                throw new Exception("Lỗi! Tên không phù hợp!");
+            }
+            if(txtDiaChi.Text.Trim().Length <= 0)
+            {
+                throw new Exception("Lỗi! Địa chỉ không phù hợp!");
+            }
+            if(!txtSoDT.Text.Trim().PhoneCheck())
+            {
+                throw new Exception("Lỗi! Số điện thoại không phù hợp!");
+            }    
+            if(!dTimeNgaySinh.Value.CheckDate())
+            {
+                throw new Exception("Lỗi! Ngày sinh không phù hợp");
+            }
+
+            string sex;
+
+            if (cboGioiTinh.Text.Equals("Nam"))
+                sex = "M";
+            else if (cboGioiTinh.Text.Equals("Nữ"))
+                sex = "FM";
+            else
+                sex = "";
+
+            Customer customer = new Customer()
+            {
+                id_Customer = txtID.Text.Trim(),
+                address = txtDiaChi.Text.Trim(),
+                birthday = dTimeNgaySinh.Value,
+                name = txtTenKH.Text.Trim(),
+                phone = txtSoDT.Text.Trim(),
+                sex = sex
+            };
+
+            return customer;
+        }
+
+        private void SetUpControls()
+        {
+            txtID.Text = "";
+            txtID.Enabled = false;
+            txtDiaChi.Text = "";
+            txtSoDT.Text = "";
+            txtTenKH.Text = "";
+            cboGioiTinh.SelectedIndex = 2;
+            dTimeNgaySinh.Value = DateTime.Now;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            btnXoa.Enabled = false;
+
+            if(MessageBox.Show("Bạn có xác nhận xóa?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                string idCustomer;
+
+                foreach (ListViewItem item in lvwDSKhachHang.SelectedItems)
+                {
+                    idCustomer = ((Customer)item.Tag).id_Customer;
+                    qlCustomer.Delete(qlCustomer.checkIfExist(idCustomer));
+                }
+            }
+
+            SetUpControls();
+            LoadListView();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                qlCustomer.Update(CreateCustomer());
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            LoadListView();
         }
     }
 }

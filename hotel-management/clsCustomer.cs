@@ -26,5 +26,88 @@ namespace hotel_management
 
         public IEnumerable<Customer> GetCustomers() => dt.Customers;
 
+        public bool Delete(Customer cs)
+        {
+            if(checkIfExist(cs.id_Customer) != null)
+            {
+                using (System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
+                {
+                    try
+                    {
+                        dt.Transaction = myTran;
+                        dt.Customers.DeleteOnSubmit(cs);
+                        dt.SubmitChanges();
+                        dt.Transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        dt.Transaction.Rollback();
+                        throw new Exception(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Insert(Customer cs)
+        {
+            if (checkIfExist(cs.id_Customer) == null)
+            {
+                using (System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
+                {
+                    try
+                    {
+                        dt.Transaction = myTran;
+                        dt.Customers.InsertOnSubmit(cs);
+                        dt.SubmitChanges();
+                        dt.Transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        dt.Transaction.Rollback();
+                        throw new Exception(e.Message);
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Update(Customer cs)
+        {
+            using(System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
+            {
+                try
+                {
+                    dt.Transaction = myTran;
+
+                    IQueryable<Customer> tmp = from x in dt.Customers
+                                               where x.id_Customer.Equals(cs.id_Customer)
+                                               select x;
+
+                    tmp.First().name = cs.name;
+                    tmp.First().phone = cs.phone;
+                    tmp.First().sex = cs.sex;
+                    tmp.First().birthday = cs.birthday;
+                    tmp.First().address = cs.address;
+
+                    dt.SubmitChanges();
+                    dt.Transaction.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    dt.Transaction.Rollback();
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
     }
 }

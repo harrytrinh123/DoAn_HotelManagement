@@ -60,6 +60,7 @@
     <Compile Include="clsService.cs" />
     <Compile Include="clsServiceStyle.cs" />
     <Compile Include="clsStaff.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
