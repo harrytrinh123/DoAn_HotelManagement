@@ -10,7 +10,7 @@ namespace hotel_management
         qlKhachSanDataContext qlKS;
         public qlKhachSanDataContext getDatacontex()
         {
-            string strKetNoi = @"Data Source=DESKTOP-5HV6F7T\SQLEXPRESS01;Initial Catalog=QLKS;Integrated Security=True";
+            string strKetNoi = @"Data Source=DESKTOP-1OSGKJV\SQLEXPRESS01;Initial Catalog=DataQLKS;Integrated Security=True";
             qlKS = new qlKhachSanDataContext(strKetNoi);
             qlKS.Connection.Open();
             return qlKS;
