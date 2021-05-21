@@ -208,6 +208,7 @@ namespace hotel_management
             // 
             // lvwThietBi
             // 
+            this.lvwThietBi.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvwThietBi.HideSelection = false;
             this.lvwThietBi.Location = new System.Drawing.Point(22, 29);
             this.lvwThietBi.Name = "lvwThietBi";
