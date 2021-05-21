@@ -32,20 +32,11 @@ namespace hotel_management
                 throw;
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            frmBookRoom frm = new frmBookRoom();
+            frm.Show();
         }
     }
 }

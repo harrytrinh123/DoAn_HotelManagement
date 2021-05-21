@@ -51,6 +51,7 @@
     <Compile Include="clsAccount.cs" />
     <Compile Include="clsBookRoom.cs" />
     <Compile Include="clsHonLoan.cs" />
+    <Compile Include="clsDevice.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsRoom.cs" />
