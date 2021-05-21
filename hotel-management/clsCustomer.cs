@@ -82,7 +82,7 @@ namespace hotel_management
 
         public bool Update(Customer cs)
         {
-            using(System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
+            using (System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction())
             {
                 try
                 {
@@ -108,6 +108,7 @@ namespace hotel_management
                     throw new Exception(ex.Message);
                 }
             }
+        }
         public IEnumerable<Customer> getListCustomer()
         {
             IEnumerable<Customer> c = from i in dt.Customers
