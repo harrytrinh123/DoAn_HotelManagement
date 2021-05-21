@@ -19,6 +19,15 @@ namespace hotel_management
             InitializeComponent();
         }
 
+        private void frmCheckIn_Load(object sender, EventArgs e)
+        {
+            TaoTieuDeCot(lvwDSNhanPhong);
+            clsHonLoan honLoan = new clsHonLoan();
+            var dsNP = honLoan.GetDSNhanPhong();
+            DuaDataVaoLvwDSNhanPhong(lvwDSNhanPhong, dsNP);
+            txtTim.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTim.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
 
         private void label12_Click_2(object sender, EventArgs e)
         {
@@ -145,6 +154,7 @@ namespace hotel_management
                 var ttRoom = Room.LayThongTinPhong(idRoom);
                 DuaDataRoomVaoTextBox(ttRoom);
                 _idRoom = ttRoom.id_Room;
+                _idCustomer = res.id_Customer;
             }
             else
             {
@@ -152,15 +162,7 @@ namespace hotel_management
             }
         }
 
-        private void frmCheckIn_Load(object sender, EventArgs e)
-        {
-            TaoTieuDeCot(lvwDSNhanPhong);
-            clsHonLoan honLoan = new clsHonLoan();
-            var dsNP = honLoan.GetDSNhanPhong();
-            DuaDataVaoLvwDSNhanPhong(lvwDSNhanPhong, dsNP);
-            txtTim.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtTim.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        }
+        
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
@@ -169,6 +171,12 @@ namespace hotel_management
             roomUp.Note = txtGhiChu.Text;
             Room.CapNhatTinhTrangPhong(_idRoom, roomUp);
             DuaDataRoomVaoTextBox(Room.LayThongTinPhong(_idRoom));
+
+            clsBookRoom BookRoom = new clsBookRoom();
+            BookRoom bRoomUp = BookRoom.GetThongTinBookRoom(_idRoom);
+            bRoomUp.dateBooking = dTimeNgayDat.Value;
+            bRoomUp.Checkin_Date = dTimeNgayNhan.Value;
+            BookRoom.SuaThongTinBookRoomCuaKH(bRoomUp ,_idCustomer);
         }
 
         void XuLyHoTroAutocomlet()
@@ -201,6 +209,17 @@ namespace hotel_management
         private void radTimTheoTen_CheckedChanged(object sender, EventArgs e)
         {
             XuLyHoTroAutocomlet();
+        }
+
+        private void lvwDSNhanPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvwDSNhanPhong.SelectedItems.Count > 0)
+            {
+                var dp = (dynamic)(lvwDSNhanPhong.SelectedItems[0].Tag);
+                string cmnd = dp.cmnd;
+                string idRoom = dp.idRoom;
+                ShowThongTinDatPhong(cmnd, idRoom);
+            }
         }
     }
 }

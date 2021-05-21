@@ -20,8 +20,19 @@ namespace hotel_management
             var q = from d in dt.Customers
                     join c in dt.BookRooms on d.id_Customer equals c.id_Customer
                     join s in dt.Rooms on c.id_Room equals s.id_Room
-                    where s.Status == true
+                    where s.Status == false
                     select new {cmnd = d.id_Customer, tenKH = d.name, soDT = d.phone, ngayNhan = c.Checkin_Date, ngayTra = c.Checkout_Date, soPhong = s.RoomNumber, idRoom = s.id_Room };
+            return q;
+        }
+
+        public IEnumerable<dynamic> GetDSDangThue()
+        {
+
+            var q = from d in dt.Customers
+                    join c in dt.BookRooms on d.id_Customer equals c.id_Customer
+                    join s in dt.Rooms on c.id_Room equals s.id_Room
+                    where s.Status == true
+                    select new { cmnd = d.id_Customer, tenKH = d.name, soDT = d.phone, ngayNhan = c.Checkin_Date, ngayTra = c.Checkout_Date, soPhong = s.RoomNumber, idRoom = s.id_Room, roomStatus = s.Status };
             return q;
         }
     }

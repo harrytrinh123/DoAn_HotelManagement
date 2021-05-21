@@ -48,5 +48,14 @@ namespace hotel_management
 
             return q.FirstOrDefault();
         }
+
+        public BookRoom GetThongTinBookRoom(string roomId)
+        {
+            var q = from n in dt.BookRooms
+                    where n.id_Room.Equals(roomId)
+                    select n;
+
+            return q.FirstOrDefault();
+        }
     }
 }

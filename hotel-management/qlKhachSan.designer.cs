@@ -505,7 +505,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -539,7 +539,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Bill", Storage="_Staff", ThisKey="id_Staff", OtherKey="id_Staff", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Staff_Bill", Storage="_Staff", ThisKey="id_Staff", OtherKey="id_Staff", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Staff Staff
 		{
 			get
@@ -697,7 +697,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Equipment", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Equipment", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -731,7 +731,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_Bill_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_Bill_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Equipment Equipment
 		{
 			get
@@ -889,7 +889,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Service", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BookRoom_Bill_Service", Storage="_BookRoom", ThisKey="id_BookRoom", OtherKey="id_BookRoom", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public BookRoom BookRoom
 		{
 			get
@@ -923,7 +923,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_Bill_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_Bill_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Service Service
 		{
 			get
@@ -1241,7 +1241,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_BookRoom", Storage="_Customer", ThisKey="id_Customer", OtherKey="id_Customer", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_BookRoom", Storage="_Customer", ThisKey="id_Customer", OtherKey="id_Customer", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Customer Customer
 		{
 			get
@@ -1275,7 +1275,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_BookRoom", Storage="_Room", ThisKey="id_Room", OtherKey="id_Room", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_BookRoom", Storage="_Room", ThisKey="id_Room", OtherKey="id_Room", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Room Room
 		{
 			get
@@ -1922,7 +1922,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Manager", Storage="_Account", ThisKey="id_Manager", OtherKey="username", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Manager", Storage="_Account", ThisKey="id_Manager", OtherKey="username", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Account Account
 		{
 			get
@@ -2161,7 +2161,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_Room", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_Room", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2525,7 +2525,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_RoomStyle_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Equipment_RoomStyle_Equipment", Storage="_Equipment", ThisKey="id_Equipment", OtherKey="id_Equipment", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Equipment Equipment
 		{
 			get
@@ -2559,7 +2559,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Equipment", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Equipment", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2717,7 +2717,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Service", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomStyle_RoomStyle_Service", Storage="_RoomStyle", ThisKey="id_RoomStyle", OtherKey="id_RoomStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public RoomStyle RoomStyle
 		{
 			get
@@ -2751,7 +2751,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_RoomStyle_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Service_RoomStyle_Service", Storage="_Service", ThisKey="id_Service", OtherKey="id_Service", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Service Service
 		{
 			get
@@ -2958,7 +2958,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ServiceStyle_Service", Storage="_ServiceStyle", ThisKey="id_SeviceStyle", OtherKey="id_SeviceStyle", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ServiceStyle_Service", Storage="_ServiceStyle", ThisKey="id_SeviceStyle", OtherKey="id_SeviceStyle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public ServiceStyle ServiceStyle
 		{
 			get
@@ -3359,7 +3359,7 @@ namespace hotel_management
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Staff", Storage="_Account", ThisKey="id_Staff", OtherKey="username", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Staff", Storage="_Account", ThisKey="id_Staff", OtherKey="username", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Account Account
 		{
 			get
