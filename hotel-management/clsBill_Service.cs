@@ -13,21 +13,23 @@ namespace hotel_management
             dt = getDatacontex();
         }
 
-        public bool CapNhatSoLuong(string idBookRoom, string idService, int soLuong)
+        //public bool checkExist(string idBRoom, string idService)
+        //{
+        //    var q = from n in dt.Bill_Services
+
+        //}
+
+        public bool CapNhatSoLuong(string idBRoom, string idService, int soLuong)
         {
             System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction(); 
             try
             {
                 dt.Transaction = myTran;
-                var tam = from n in dt.Services
-                          join b in dt.Bill_Services
-                          on n.id_Service equals b.id_Service
-                          join bo in dt.BookRooms
-                          on b.id_BookRoom equals bo.id_BookRoom
-                          where b.id_BookRoom.Equals(idBookRoom)
-                          where b.id_Service.Equals(idService)
-                          select b;
-                tam.FirstOrDefault().Service_Count = soLuong;
+                var tam = (from n in dt.Bill_Services            
+                          where (n.id_BookRoom.Equals(idBRoom)
+                          && n.id_Service.Equals(idService))
+                          select n).FirstOrDefault();
+                tam.Service_Count = soLuong;
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
                 return true;

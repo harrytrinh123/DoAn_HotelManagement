@@ -20,12 +20,5 @@ namespace hotel_management
             return q;
         }
 
-        public Service GetServiceByName(string name)
-        {
-            var q = from x in dt.Services
-                    where x.Name_Service.Equals(name)
-                    select x;
-            return q.FirstOrDefault();
-        }
     }
 }

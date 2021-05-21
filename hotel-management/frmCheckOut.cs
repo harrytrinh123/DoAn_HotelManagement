@@ -19,7 +19,7 @@ namespace hotel_management
         clsRoom ROOM = new clsRoom();
         clsService SER = new clsService();
         clsBookRoom BOOKR = new clsBookRoom();
-        clsBill_Service BilService = new clsBill_Service();
+        clsBill_Service BillService = new clsBill_Service();
         public double TongTien { get; set; }
         
         public frmCheckOut()
@@ -31,14 +31,18 @@ namespace hotel_management
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
         {
+            IEnumerable<Service> dsDichVu = SER.GetAllService();
+            listDSDichVu.DisplayMember = "Name_Service";//ten field hien ra
+            listDSDichVu.ValueMember = "id_Service";// ten field ma chon ten lay ma
+            listDSDichVu.DataSource = dsDichVu;
             TaoTieuDeCot(lvwDSTraPhong);
             var dsTraPhong = HL.GetDSDangThue();
             DuaDataVaoLvwDSNhanPhong(lvwDSTraPhong, dsTraPhong);
             txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            LoadServiceToCBB(cboTenDichVu);
         }
+
+
 
         void TaoTieuDeCot(ListView lvw)
         {
@@ -232,63 +236,45 @@ namespace hotel_management
             }
         }
 
-
-        private void LoadServiceToCBB(ComboBox cbo)
-        {
-            foreach(var item in SER.GetAllService())
-            {
-                cbo.Items.Add(item.Name_Service);
-            }
-        }
-
-
-        private void cboTenDichVu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selected = cboTenDichVu.GetItemText(this.cboTenDichVu.SelectedItem);
-            Service ser = SER.GetServiceByName(selected);
-            string idService = ser.id_Service;
-            var dsDV = HL.getDSDichVu(_idBRoom);
-            
-            
-            int count = 0;
-            foreach (var item in dsDV)
-            {
-                if (item.idService == ser.id_Service)
-                {
-                    count = item.count;
-                }
-            }
-            numUpDown.Value = count;
-        }
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             Room roomUp = ROOM.LayThongTinPhong(_idRoom);
             roomUp.Note = txtGhiChu.Text;
-            
+            var checkRoom = ROOM.CapNhatTinhTrangPhong(_idRoom, roomUp);
 
             BookRoom bRoomUp = BOOKR.GetThongTinBookRoom(_idRoom);
             bRoomUp.dateBooking = dTimeNgayDat.Value;
             bRoomUp.Checkin_Date = dTimeNgayNhan.Value;
-            
-            
-
-            var checkRoom = ROOM.CapNhatTinhTrangPhong(_idRoom, roomUp);
-            
             var checkBRoom = BOOKR.SuaThongTinBookRoomCuaKH(bRoomUp, _idCustomer);
+
+
             var sl = Convert.ToInt32(numUpDown.Value);
-            string idService = SER.GetServiceByName(cboTenDichVu.Text).id_Service;
-            var checkSRService = BilService.CapNhatSoLuong(_idRoom, idService, sl);
-            if(checkBRoom&&checkRoom&&checkSRService)
+            string idService = listDSDichVu.SelectedValue.ToString();
+
+            var checkBS = BillService.CapNhatSoLuong(_idBRoom, idService, sl);
+            if (checkBRoom&&checkRoom&&checkBS)
             {
-                DuaDataRoomVaoTextBox(ROOM.LayThongTinPhong(_idRoom));
-                DuaDataBookRoomVaoTextBox(bRoomUp);
                 MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void listDSDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<dynamic> dsDV = HL.getDSDichVu(_idBRoom);
+            numUpDown.Value = 0;
+            foreach (var item in dsDV)
+            {
+                if(item.idService.Equals(listDSDichVu.SelectedValue))
+                {
+                    numUpDown.Value = item.count;
+                    return;
+                }
+            }
+            numUpDown.Value = 0;
         }
     }
 }
