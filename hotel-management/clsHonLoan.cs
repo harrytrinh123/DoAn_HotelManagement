@@ -35,5 +35,17 @@ namespace hotel_management
                     select new { cmnd = d.id_Customer, tenKH = d.name, soDT = d.phone, ngayNhan = c.Checkin_Date, ngayTra = c.Checkout_Date, soPhong = s.RoomNumber, idRoom = s.id_Room, roomStatus = s.Status };
             return q;
         }
+
+        public IEnumerable<dynamic> getDSDichVu(string idBookRoom)
+        {
+
+            var q = from r in dt.BookRooms
+                    join s in dt.Bill_Services on r.id_BookRoom equals s.id_BookRoom
+                    join x in dt.Services on s.id_Service equals x.id_Service
+                    where r.id_BookRoom.Equals(idBookRoom)
+                    select new { idRoom = r.id_Room, idService = x.id_Service, serviceName =x.Name_Service, price = x.Price, count = s.Service_Count };
+            return q;
+
+        }
     }
 }

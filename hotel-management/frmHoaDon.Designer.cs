@@ -37,14 +37,15 @@ namespace hotel_management
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblDiaChi = new System.Windows.Forms.Label();
+            this.lblSoDem = new System.Windows.Forms.Label();
+            this.lblNgayDen = new System.Windows.Forms.Label();
+            this.lblSoDT = new System.Windows.Forms.Label();
+            this.lblDonGia = new System.Windows.Forms.Label();
+            this.lblCMND = new System.Windows.Forms.Label();
+            this.lblLoaiPhong = new System.Windows.Forms.Label();
+            this.lblTen = new System.Windows.Forms.Label();
+            this.lblTenPhong = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -54,16 +55,15 @@ namespace hotel_management
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvwDichVu = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblDichVu = new System.Windows.Forms.Label();
+            this.lblTienPhong = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -133,15 +133,15 @@ namespace hotel_management
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.lblDiaChi);
+            this.groupBox1.Controls.Add(this.lblSoDem);
+            this.groupBox1.Controls.Add(this.lblNgayDen);
+            this.groupBox1.Controls.Add(this.lblSoDT);
+            this.groupBox1.Controls.Add(this.lblDonGia);
+            this.groupBox1.Controls.Add(this.lblCMND);
+            this.groupBox1.Controls.Add(this.lblLoaiPhong);
+            this.groupBox1.Controls.Add(this.lblTen);
+            this.groupBox1.Controls.Add(this.lblTenPhong);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -166,77 +166,86 @@ namespace hotel_management
             this.label24.TabIndex = 9;
             this.label24.Text = "Số đêm:";
             // 
-            // label28
+            // lblDiaChi
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(205, 131);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(60, 20);
-            this.label28.TabIndex = 8;
-            this.label28.Text = "label17";
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Location = new System.Drawing.Point(205, 131);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(60, 20);
+            this.lblDiaChi.TabIndex = 8;
+            this.lblDiaChi.Text = "label17";
             // 
-            // label20
+            // lblSoDem
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(623, 131);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 20);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "label17";
+            this.lblSoDem.AutoSize = true;
+            this.lblSoDem.Location = new System.Drawing.Point(623, 165);
+            this.lblSoDem.Name = "lblSoDem";
+            this.lblSoDem.Size = new System.Drawing.Size(60, 20);
+            this.lblSoDem.TabIndex = 8;
+            this.lblSoDem.Text = "label17";
             // 
-            // label27
+            // lblNgayDen
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(205, 95);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 20);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "label17";
+            this.lblNgayDen.AutoSize = true;
+            this.lblNgayDen.Location = new System.Drawing.Point(623, 131);
+            this.lblNgayDen.Name = "lblNgayDen";
+            this.lblNgayDen.Size = new System.Drawing.Size(60, 20);
+            this.lblNgayDen.TabIndex = 8;
+            this.lblNgayDen.Text = "label17";
             // 
-            // label19
+            // lblSoDT
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(623, 95);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 20);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "label17";
+            this.lblSoDT.AutoSize = true;
+            this.lblSoDT.Location = new System.Drawing.Point(205, 95);
+            this.lblSoDT.Name = "lblSoDT";
+            this.lblSoDT.Size = new System.Drawing.Size(60, 20);
+            this.lblSoDT.TabIndex = 8;
+            this.lblSoDT.Text = "label17";
             // 
-            // label26
+            // lblDonGia
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(205, 59);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 20);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "label17";
+            this.lblDonGia.AutoSize = true;
+            this.lblDonGia.Location = new System.Drawing.Point(623, 95);
+            this.lblDonGia.Name = "lblDonGia";
+            this.lblDonGia.Size = new System.Drawing.Size(60, 20);
+            this.lblDonGia.TabIndex = 8;
+            this.lblDonGia.Text = "label17";
             // 
-            // label18
+            // lblCMND
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(623, 59);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 20);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "label17";
+            this.lblCMND.AutoSize = true;
+            this.lblCMND.Location = new System.Drawing.Point(205, 59);
+            this.lblCMND.Name = "lblCMND";
+            this.lblCMND.Size = new System.Drawing.Size(60, 20);
+            this.lblCMND.TabIndex = 8;
+            this.lblCMND.Text = "label17";
             // 
-            // label25
+            // lblLoaiPhong
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(205, 22);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(60, 20);
-            this.label25.TabIndex = 8;
-            this.label25.Text = "label17";
+            this.lblLoaiPhong.AutoSize = true;
+            this.lblLoaiPhong.Location = new System.Drawing.Point(623, 59);
+            this.lblLoaiPhong.Name = "lblLoaiPhong";
+            this.lblLoaiPhong.Size = new System.Drawing.Size(60, 20);
+            this.lblLoaiPhong.TabIndex = 8;
+            this.lblLoaiPhong.Text = "label17";
             // 
-            // label17
+            // lblTen
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(623, 22);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 20);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "label17";
+            this.lblTen.AutoSize = true;
+            this.lblTen.Location = new System.Drawing.Point(205, 22);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(35, 20);
+            this.lblTen.TabIndex = 8;
+            this.lblTen.Text = "asd";
+            // 
+            // lblTenPhong
+            // 
+            this.lblTenPhong.AutoSize = true;
+            this.lblTenPhong.Location = new System.Drawing.Point(623, 22);
+            this.lblTenPhong.Name = "lblTenPhong";
+            this.lblTenPhong.Size = new System.Drawing.Size(60, 20);
+            this.lblTenPhong.TabIndex = 8;
+            this.lblTenPhong.Text = "label17";
             // 
             // label15
             // 
@@ -312,7 +321,7 @@ namespace hotel_management
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lvwDichVu);
             this.groupBox2.Location = new System.Drawing.Point(12, 458);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(955, 286);
@@ -320,14 +329,14 @@ namespace hotel_management
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dịch vụ";
             // 
-            // listView1
+            // lvwDichVu
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(7, 26);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(942, 254);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvwDichVu.HideSelection = false;
+            this.lvwDichVu.Location = new System.Drawing.Point(7, 26);
+            this.lvwDichVu.Name = "lvwDichVu";
+            this.lvwDichVu.Size = new System.Drawing.Size(942, 254);
+            this.lvwDichVu.TabIndex = 0;
+            this.lvwDichVu.UseCompatibleStateImageBehavior = false;
             // 
             // label6
             // 
@@ -374,50 +383,41 @@ namespace hotel_management
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // lblDichVu
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(571, 762);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 23);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "label9";
+            this.lblDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblDichVu.Location = new System.Drawing.Point(619, 762);
+            this.lblDichVu.Name = "lblDichVu";
+            this.lblDichVu.Size = new System.Drawing.Size(121, 23);
+            this.lblDichVu.TabIndex = 10;
+            this.lblDichVu.Text = "0";
             // 
-            // label9
+            // lblTienPhong
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(218, 762);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 23);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "label9";
+            this.lblTienPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTienPhong.Location = new System.Drawing.Point(218, 762);
+            this.lblTienPhong.Name = "lblTienPhong";
+            this.lblTienPhong.Size = new System.Drawing.Size(121, 23);
+            this.lblTienPhong.TabIndex = 10;
+            this.lblTienPhong.Text = "label9";
             // 
-            // label11
+            // lblTongTien
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Location = new System.Drawing.Point(218, 797);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 23);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "label9";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(623, 165);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(60, 20);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "label17";
+            this.lblTongTien.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTongTien.Location = new System.Drawing.Point(218, 797);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(121, 23);
+            this.lblTongTien.TabIndex = 10;
+            this.lblTongTien.Text = "lblTongTien";
             // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 910);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblTongTien);
+            this.Controls.Add(this.lblTienPhong);
+            this.Controls.Add(this.lblDichVu);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.label8);
@@ -434,6 +434,7 @@ namespace hotel_management
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHoaDon";
+            this.Load += new System.EventHandler(this.frmHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -458,10 +459,10 @@ namespace hotel_management
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnInHoaDon;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblNgayDen;
+        private System.Windows.Forms.Label lblDonGia;
+        private System.Windows.Forms.Label lblLoaiPhong;
+        private System.Windows.Forms.Label lblTenPhong;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -470,15 +471,15 @@ namespace hotel_management
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvwDichVu;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblDichVu;
+        private System.Windows.Forms.Label lblTienPhong;
+        private System.Windows.Forms.Label lblTongTien;
+        private System.Windows.Forms.Label lblDiaChi;
+        private System.Windows.Forms.Label lblSoDT;
+        private System.Windows.Forms.Label lblCMND;
+        private System.Windows.Forms.Label lblTen;
+        private System.Windows.Forms.Label lblSoDem;
     }
 }
