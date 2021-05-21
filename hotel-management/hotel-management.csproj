@@ -57,6 +57,9 @@
     <Compile Include="clsService.cs" />
     <Compile Include="clsBill_Service.cs" />
     <Compile Include="clsStyleRoom.cs" />
+    <Compile Include="clsService.cs" />
+    <Compile Include="clsServiceStyle.cs" />
+    <Compile Include="clsStaff.cs" />
     <Compile Include="frmBookRoom.cs">
       <SubType>Form</SubType>
     </Compile>
