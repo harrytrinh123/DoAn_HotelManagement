@@ -214,6 +214,7 @@ namespace hotel_management
 
                     LoadListToView(lvwService, ListService);
                     btnXoa.Enabled = false;
+                    btnSua.Enabled = false;
                     ClearInput();
                 }
             }
@@ -228,6 +229,7 @@ namespace hotel_management
 
                 LoadListToView(lvwService, ListService);
                 btnSua.Enabled = false;
+                btnXoa.Enabled = false;
                 ClearInput();
             }
         }
@@ -326,6 +328,10 @@ namespace hotel_management
         {
             ClearInput();
             ClearInput_1();
+            btnSua.Enabled = false;
+            btnSuaLDV.Enabled = false;
+            btnXoa.Enabled = false;
+            btnXoaLDV.Enabled = false;
         }
 
         private void btnTim_Click(object sender, EventArgs e)

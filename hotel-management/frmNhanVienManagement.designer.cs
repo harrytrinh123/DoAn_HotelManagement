@@ -39,6 +39,7 @@ namespace hotel_management
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvwDSNV = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnViewList = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
@@ -64,7 +65,8 @@ namespace hotel_management
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lvwListAccount = new System.Windows.Forms.ListView();
-            this.btnViewList = new System.Windows.Forms.Button();
+            this.radID = new System.Windows.Forms.RadioButton();
+            this.radTen = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +78,7 @@ namespace hotel_management
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(30, 76);
+            this.label1.Location = new System.Drawing.Point(15, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 33);
             this.label1.TabIndex = 13;
@@ -85,9 +87,9 @@ namespace hotel_management
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(515, 76);
+            this.btnTimKiem.Location = new System.Drawing.Point(515, 55);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(105, 32);
+            this.btnTimKiem.Size = new System.Drawing.Size(124, 32);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "Tìm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -174,6 +176,17 @@ namespace hotel_management
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
+            // 
+            // btnViewList
+            // 
+            this.btnViewList.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btnViewList.Location = new System.Drawing.Point(439, 325);
+            this.btnViewList.Name = "btnViewList";
+            this.btnViewList.Size = new System.Drawing.Size(141, 35);
+            this.btnViewList.TabIndex = 6;
+            this.btnViewList.Text = "Xem danh sách";
+            this.btnViewList.UseVisualStyleBackColor = true;
+            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
             // 
             // dtpNgaySinh
             // 
@@ -324,7 +337,7 @@ namespace hotel_management
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(172, 76);
+            this.txtTimKiem.Location = new System.Drawing.Point(172, 55);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(313, 30);
             this.txtTimKiem.TabIndex = 1;
@@ -419,22 +432,37 @@ namespace hotel_management
             this.lvwListAccount.UseCompatibleStateImageBehavior = false;
             this.lvwListAccount.SelectedIndexChanged += new System.EventHandler(this.lvwListAccount_SelectedIndexChanged);
             // 
-            // btnViewList
+            // radID
             // 
-            this.btnViewList.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.btnViewList.Location = new System.Drawing.Point(439, 325);
-            this.btnViewList.Name = "btnViewList";
-            this.btnViewList.Size = new System.Drawing.Size(141, 35);
-            this.btnViewList.TabIndex = 6;
-            this.btnViewList.Text = "Xem danh sách";
-            this.btnViewList.UseVisualStyleBackColor = true;
-            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
+            this.radID.AutoSize = true;
+            this.radID.Location = new System.Drawing.Point(172, 96);
+            this.radID.Name = "radID";
+            this.radID.Size = new System.Drawing.Size(107, 21);
+            this.radID.TabIndex = 25;
+            this.radID.TabStop = true;
+            this.radID.Text = "Tìm theo mã";
+            this.radID.UseVisualStyleBackColor = true;
+            this.radID.CheckedChanged += new System.EventHandler(this.radID_CheckedChanged);
+            // 
+            // radTen
+            // 
+            this.radTen.AutoSize = true;
+            this.radTen.Location = new System.Drawing.Point(333, 96);
+            this.radTen.Name = "radTen";
+            this.radTen.Size = new System.Drawing.Size(108, 21);
+            this.radTen.TabIndex = 26;
+            this.radTen.TabStop = true;
+            this.radTen.Text = "Tìm theo tên";
+            this.radTen.UseVisualStyleBackColor = true;
+            this.radTen.CheckedChanged += new System.EventHandler(this.radTen_CheckedChanged);
             // 
             // frmNhanVienManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1660, 731);
+            this.Controls.Add(this.radTen);
+            this.Controls.Add(this.radID);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel1);
@@ -448,6 +476,7 @@ namespace hotel_management
             this.Text = "Form3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhanVienManagement_Load);
+            this.Click += new System.EventHandler(this.frmNhanVienManagement_Click);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -497,5 +526,7 @@ namespace hotel_management
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListView lvwListAccount;
         private System.Windows.Forms.Button btnViewList;
+        private System.Windows.Forms.RadioButton radID;
+        private System.Windows.Forms.RadioButton radTen;
     }
 }
