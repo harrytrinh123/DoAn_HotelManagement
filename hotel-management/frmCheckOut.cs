@@ -19,7 +19,7 @@ namespace hotel_management
         clsRoom ROOM = new clsRoom();
         clsService SER = new clsService();
         clsBookRoom BOOKR = new clsBookRoom();
-        clsBill_Service BillService = new clsBill_Service();
+        clsBill_Service BILLS = new clsBill_Service();
         public double TongTien { get; set; }
         
         public frmCheckOut()
@@ -94,6 +94,7 @@ namespace hotel_management
 
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
+
             if (Application.OpenForms.OfType<frmHoaDon>().Count() == 1)
                 Application.OpenForms.OfType<frmHoaDon>().First().Close();
 
@@ -146,6 +147,7 @@ namespace hotel_management
         {
             dTimeNgayDat.Value = bRoom.dateBooking;
             dTimeNgayNhan.Value = bRoom.Checkin_Date;
+            dTimeNgayTra.Value = bRoom.Checkout_Date;
             txtSoNguoi.Text = bRoom.peopleCount.ToString();
         }
         private void DuaDataRoomVaoTextBox(Room room)
@@ -245,13 +247,27 @@ namespace hotel_management
             BookRoom bRoomUp = BOOKR.GetThongTinBookRoom(_idRoom);
             bRoomUp.dateBooking = dTimeNgayDat.Value;
             bRoomUp.Checkin_Date = dTimeNgayNhan.Value;
+            bRoomUp.Checkout_Date = dTimeNgayTra.Value;
             var checkBRoom = BOOKR.SuaThongTinBookRoomCuaKH(bRoomUp, _idCustomer);
 
 
             var sl = Convert.ToInt32(numUpDown.Value);
             string idService = listDSDichVu.SelectedValue.ToString();
-
-            var checkBS = BillService.CapNhatSoLuong(_idBRoom, idService, sl);
+            bool checkBS = false;
+            if (BILLS.checkIfExist(idService, _idBRoom) == null)
+            {
+                Bill_Service bs = new Bill_Service();
+                bs.id_BookRoom = _idBRoom;
+                bs.id_Service = idService;
+                bs.Service_Count = (int)numUpDown.Value;
+                BILLS.insertBillService(bs);
+                checkBS = true;
+            }
+            else
+            {
+                checkBS = BILLS.CapNhatSoLuong(_idBRoom, idService, sl);
+                checkBS = true;
+            }
             if (checkBRoom&&checkRoom&&checkBS)
             {
                 MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

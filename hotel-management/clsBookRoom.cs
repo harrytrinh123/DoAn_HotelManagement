@@ -25,8 +25,9 @@ namespace hotel_management
                 IQueryable<BookRoom> tam = (from n in dt.BookRooms
                                               where n.id_Customer == maKH
                                               select n);
-                //thầy mới sửa 4 field các ban có thể sửa thêm
-                //riệng mã không sửa
+                tam.First().Checkin_Date = bRoom.Checkin_Date;
+                tam.First().Checkout_Date = bRoom.Checkout_Date;
+                tam.First().dateBooking = bRoom.dateBooking;
                 tam.First().peopleCount = bRoom.peopleCount;
                 dt.SubmitChanges();
                 dt.Transaction.Commit();
