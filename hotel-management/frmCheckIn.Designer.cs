@@ -409,6 +409,8 @@ namespace hotel_management
             // 
             // dTimeNgayNhan
             // 
+            this.dTimeNgayNhan.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayNhan.Location = new System.Drawing.Point(200, 92);
             this.dTimeNgayNhan.Name = "dTimeNgayNhan";
             this.dTimeNgayNhan.Size = new System.Drawing.Size(404, 35);
@@ -416,6 +418,8 @@ namespace hotel_management
             // 
             // dTimeNgayDat
             // 
+            this.dTimeNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayDat.Location = new System.Drawing.Point(200, 42);
             this.dTimeNgayDat.Name = "dTimeNgayDat";
             this.dTimeNgayDat.Size = new System.Drawing.Size(404, 35);

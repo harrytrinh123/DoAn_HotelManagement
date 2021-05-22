@@ -61,9 +61,9 @@ namespace hotel_management
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.listDSDichVu = new System.Windows.Forms.ListBox();
             this.numUpDown = new System.Windows.Forms.NumericUpDown();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -275,6 +275,8 @@ namespace hotel_management
             // 
             // dTimeNgayTra
             // 
+            this.dTimeNgayTra.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayTra.Location = new System.Drawing.Point(200, 131);
             this.dTimeNgayTra.Name = "dTimeNgayTra";
             this.dTimeNgayTra.Size = new System.Drawing.Size(404, 35);
@@ -292,6 +294,8 @@ namespace hotel_management
             // 
             // dTimeNgayNhan
             // 
+            this.dTimeNgayNhan.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayNhan.Location = new System.Drawing.Point(200, 88);
             this.dTimeNgayNhan.Name = "dTimeNgayNhan";
             this.dTimeNgayNhan.Size = new System.Drawing.Size(404, 35);
@@ -299,6 +303,8 @@ namespace hotel_management
             // 
             // dTimeNgayDat
             // 
+            this.dTimeNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayDat.Location = new System.Drawing.Point(200, 42);
             this.dTimeNgayDat.Name = "dTimeNgayDat";
             this.dTimeNgayDat.Size = new System.Drawing.Size(404, 35);
@@ -418,6 +424,17 @@ namespace hotel_management
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dịch vụ";
             // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(508, 65);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(120, 54);
+            this.btnCapNhat.TabIndex = 25;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
             // listDSDichVu
             // 
             this.listDSDichVu.FormattingEnabled = true;
@@ -434,17 +451,6 @@ namespace hotel_management
             this.numUpDown.Name = "numUpDown";
             this.numUpDown.Size = new System.Drawing.Size(120, 35);
             this.numUpDown.TabIndex = 2;
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(508, 65);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(120, 54);
-            this.btnCapNhat.TabIndex = 25;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXuatHoaDon
             // 
