@@ -31,7 +31,8 @@ namespace hotel_management
 
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
-            btnDoiMatkhau.Enabled = true;
+            btnDoiMatkhau.Enabled = false;
+            btnViewList.Enabled = false;
             
 
             Staff = new clsStaff();
@@ -45,6 +46,9 @@ namespace hotel_management
 
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
+
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         //Tạo listview cho danh sách account
@@ -167,6 +171,7 @@ namespace hotel_management
 
                 account = (Account)lvwListAccount.SelectedItems[0].Tag;
                 AccountToTextBox(account);
+                btnDoiMatkhau.Enabled = true;
             }
         }
 
@@ -243,8 +248,24 @@ namespace hotel_management
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
 
+            ClearInput();
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
+
+        private void ClearInput()
+        {
             txtTaiKhoan.Clear();
             txtMatKhau.Clear();
+
+            txtMaNV.Clear();
+            txtDiaChi.Clear();
+            txtSDT.Clear();
+            txtTen.Clear();
+            cboGioiTinh.SelectedIndex = -1;
+
+            btnDoiMatkhau.Enabled = false;
+            btnViewList.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -270,6 +291,8 @@ namespace hotel_management
                     LoadItemToView(lvwDSNV, ListStaff);
                     LoadItemToView(lvwListAccount, ListAccount);
                     btnXoa.Enabled = false;
+                    btnSua.Enabled = false;
+                    ClearInput();
                 }
             }
         }
@@ -283,6 +306,8 @@ namespace hotel_management
 
                 LoadItemToView(lvwDSNV, ListStaff);
                 btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                ClearInput();
             }
         }
 
@@ -301,14 +326,14 @@ namespace hotel_management
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             //Chưa thể tìm kiếm theo Tên ra Mật khẩu được
-           //Staff s = (Staff)(Staff.FindIndex(txtTimKiem.Text));
+            
 
             ListStaff = Staff.FindIndex(txtTimKiem.Text);
-            ListAccount = Account.FindIndex(txtTimKiem.Text);
+            ListAccount = Account.FindIndex(ListStaff.First().id_Staff);
 
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
-
+            btnViewList.Enabled = true;
             txtTimKiem.Clear();
         }
 
@@ -319,6 +344,37 @@ namespace hotel_management
 
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
+        }
+
+        private void radID_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radID.Checked)
+            {
+                txtTimKiem.AutoCompleteCustomSource.Clear();
+                foreach(var i in ListStaff)
+                {
+                    txtTimKiem.AutoCompleteCustomSource.Add(i.id_Staff);
+                }
+            }
+        }
+
+        private void radTen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radTen.Checked)
+            {
+                txtTimKiem.AutoCompleteCustomSource.Clear();
+                foreach (var i in ListStaff)
+                {
+                    txtTimKiem.AutoCompleteCustomSource.Add(i.name);
+                }
+            }
+        }
+
+        private void frmNhanVienManagement_Click(object sender, EventArgs e)
+        {
+            ClearInput();
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
     }
 }
