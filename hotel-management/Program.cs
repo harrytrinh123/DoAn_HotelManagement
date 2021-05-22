@@ -15,21 +15,21 @@ namespace hotel_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMain());
+            Application.Run(new frmMain());
 
-            frmLogin login = new frmLogin();
-            if (login.ShowDialog() == DialogResult.Yes)
-            {
-                Account account = login.account;
-                if (account.username.Split('_')[0].Equals("NV"))
-                {
-                    Application.Run(new frmMain(account));
-                }
-                else
-                {
-                    Application.Run(new frmMainManagement(account));
-                }
-            }
+            //frmLogin login = new frmLogin();
+            //if (login.ShowDialog() == DialogResult.Yes)
+            //{
+            //    Account account = login.account;
+            //    if (account.username.Split('_')[0].Equals("NV"))
+            //    {
+            //        Application.Run(new frmMain(account));
+            //    }
+            //    else
+            //    {
+            //        Application.Run(new frmMainManagement(account));
+            //    }
+            //}
         }
     }
 }
