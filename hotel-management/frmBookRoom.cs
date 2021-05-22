@@ -29,6 +29,7 @@ namespace hotel_management
             jBR = new clsJoinBRandRom();
             createTitle(lvwDSDatPhong);
             loadRoomListView(lvwDSDatPhong, br);
+            
         }
 
         // load dữ liệu lên list view
@@ -41,6 +42,18 @@ namespace hotel_management
                 lvwItem = createItem(i);
                 lvwDSDatPhong.Items.Add(lvwItem);
             }
+            DoiMauButton(btn101);
+            DoiMauButton(btn102);
+            DoiMauButton(btn103);
+            DoiMauButton(btn104);
+            DoiMauButton(btn105);
+            DoiMauButton(btn106);
+            DoiMauButton(btn107);
+            DoiMauButton(btn108);
+            DoiMauButton(btn109);
+            DoiMauButton(btn110);
+            DoiMauButton(btn111);
+            DoiMauButton(btn112);
         }
 
         private ListViewItem createItem(BookRoom i)
@@ -80,18 +93,6 @@ namespace hotel_management
             {
                 br = (BookRoom)lvwDSDatPhong.SelectedItems[0].Tag;
                 dataToTextBox(br);
-                DoiMauButton(btn101, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn102, btn101, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn103, btn102, btn101, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn104, btn102, btn103, btn101, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn105, btn102, btn103, btn104, btn101, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn106, btn102, btn103, btn104, btn105, btn101, btn107, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn107, btn102, btn103, btn104, btn105, btn106, btn101, btn108, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn108, btn102, btn103, btn104, btn105, btn106, btn107, btn101, btn109, btn110, btn111, btn112);
-                DoiMauButton(btn109, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn101, btn110, btn111, btn112);
-                DoiMauButton(btn110, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn101, btn111, btn112);
-                DoiMauButton(btn111, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn101, btn112);
-                DoiMauButton(btn112, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn101);
             }
         }
 
@@ -129,24 +130,16 @@ namespace hotel_management
             }
 
         }
+
         //đổi màu button
-        void DoiMauButton(Button btn1, Button btn2, Button btn3, Button btn4, Button btn5, Button btn6, Button btn7, Button btn8, 
-                          Button btn9, Button btn10, Button btn11, Button btn12)
+        void DoiMauButton(Button btn1)
         {
-            if (txtPhong.Text.Equals(btn1.Text))
+            foreach (var i in jBR.getNumberRoom())
             {
-                btn1.BackColor = Color.Red;
-                btn2.BackColor = Color.FromArgb(224, 224, 224);
-                btn3.BackColor = Color.FromArgb(224, 224, 224);
-                btn4.BackColor = Color.FromArgb(224, 224, 224);
-                btn5.BackColor = Color.FromArgb(224, 224, 224);
-                btn6.BackColor = Color.FromArgb(224, 224, 224);
-                btn7.BackColor = Color.FromArgb(224, 224, 224);
-                btn8.BackColor = Color.FromArgb(224, 224, 224);
-                btn9.BackColor = Color.FromArgb(224, 224, 224);
-                btn10.BackColor = Color.FromArgb(224, 224, 224);
-                btn11.BackColor = Color.FromArgb(224, 224, 224);
-                btn12.BackColor = Color.FromArgb(224, 224, 224);
+                if (btn1.Text.Equals(i.sophong))
+                {
+                    btn1.BackColor = Color.Red;
+                }
             }
         }
 
@@ -172,7 +165,25 @@ namespace hotel_management
             b.insertBookRoom(br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
+            RemoveElement();
         }
+
+        void RemoveElement()
+        {
+            txtBookRoom.Clear();
+            cboLoaiPhong.SelectedIndex=0;
+            txtPhong.Clear();
+            txtCountKH.Clear();
+            dTimeDatPhong.Value = DateTime.Now;
+            dTimeNgayNhan.Value = DateTime.Now;
+            dTimeNgayTra.Value = DateTime.Now;
+            txtDiaChi.Clear();
+            txtHoTen.Clear();
+            txtCMND.Clear();
+            txtSoDienThoai.Clear();
+            dTimeNgaySinh.Value = DateTime.Now;
+            cboGioiTinh.SelectedIndex=0;
+         }
 
         private BookRoom createBookRoom()
         {
@@ -190,16 +201,16 @@ namespace hotel_management
                     Checkin_Date = dTimeNgayNhan.Value,
                     Checkout_Date = dTimeNgayTra.Value,
                     id_Room = id_room,
-                    id_Customer = txtCMND.Text,                   
+                    id_Customer = txtCMND.Text,
                 };
-               
+
             }
             return br;
         }
         //tìm phòng
         private void btnTimPhong_Click(object sender, EventArgs e)
         {
-            if(txtTimPhong.Text != "")
+            if (txtTimPhong.Text != "")
             {
                 foreach (var item in jBR.getNumberRoom())
                 {
@@ -236,7 +247,7 @@ namespace hotel_management
             {
                 foreach (var j in jBR.getNumberRoom())
                 {
-                    if((txtTimPhong.Text==j.sophong)&&(item.id_Room == j.maphong))
+                    if ((txtTimPhong.Text == j.sophong) && (item.id_Room == j.maphong))
                     {
                         return j.maphong.ToString();
                     }
@@ -252,47 +263,37 @@ namespace hotel_management
         // click đổi màu button
         private void btn101_Click(object sender, EventArgs e)
         {
-            ClickDoiMauButton(btn101, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn102, btn101, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn103, btn102, btn101, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn104, btn102, btn103, btn101, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn105, btn102, btn103, btn104, btn101, btn106, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn106, btn102, btn103, btn104, btn105, btn101, btn107, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn107, btn102, btn103, btn104, btn105, btn106, btn101, btn108, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn108, btn102, btn103, btn104, btn105, btn106, btn107, btn101, btn109, btn110, btn111, btn112);
-            ClickDoiMauButton(btn109, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn101, btn110, btn111, btn112);
-            ClickDoiMauButton(btn110, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn101, btn111, btn112);
-            ClickDoiMauButton(btn111, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn101, btn112);
-            ClickDoiMauButton(btn112, btn102, btn103, btn104, btn105, btn106, btn107, btn108, btn109, btn110, btn111, btn101);
-        }
-
-        void ClickDoiMauButton(Button btn1, Button btn2, Button btn3, Button btn4, Button btn5, Button btn6, Button btn7, Button btn8,
-                          Button btn9, Button btn10, Button btn11, Button btn12)
-        {
-            if (btn1.Focused == true)
+            Button btn = (Button)sender;
+            if (btn.BackColor == Color.DarkGray)
             {
-                btn1.BackColor = Color.Yellow;
-                txtPhong.Text = btn1.Text;
-                btn2.BackColor = Color.FromArgb(224, 224, 224);
-                btn3.BackColor = Color.FromArgb(224, 224, 224);
-                btn4.BackColor = Color.FromArgb(224, 224, 224);
-                btn5.BackColor = Color.FromArgb(224, 224, 224);
-                btn6.BackColor = Color.FromArgb(224, 224, 224);
-                btn7.BackColor = Color.FromArgb(224, 224, 224);
-                btn8.BackColor = Color.FromArgb(224, 224, 224);
-                btn9.BackColor = Color.FromArgb(224, 224, 224);
-                btn10.BackColor = Color.FromArgb(224, 224, 224);
-                btn11.BackColor = Color.FromArgb(224, 224, 224);
-                btn12.BackColor = Color.FromArgb(224, 224, 224);
+                btn.BackColor = Color.Yellow;
+                txtPhong.Text = btn.Text;
+            } else if(btn.BackColor == Color.Red)
+            {
+                MessageBox.Show("Phòng đã có người đặt", "Thông báo");
             }
-        }
+        }       
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             BookRoom fix_br = createBookRoom();
+
             b.FixBookRoom(fix_br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
+            DoiMauButton(btn101);
+            DoiMauButton(btn102);
+            DoiMauButton(btn103);
+            DoiMauButton(btn104);
+            DoiMauButton(btn105);
+            DoiMauButton(btn106);
+            DoiMauButton(btn107);
+            DoiMauButton(btn108);
+            DoiMauButton(btn109);
+            DoiMauButton(btn110);
+            DoiMauButton(btn111);
+            DoiMauButton(btn112);
+            RemoveElement();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -313,8 +314,15 @@ namespace hotel_management
                     }
                     IEnumerable<BookRoom> dsBook = b.getListBookRoom();
                     loadRoomListView(lvwDSDatPhong, dsBook);
+                    RemoveElement();
                 }
             }
+        }
+
+        private void btnAllList_Click(object sender, EventArgs e)
+        {
+            IEnumerable<BookRoom> br = b.getListBookRoom();
+            loadRoomListView(lvwDSDatPhong, br);
         }
     }
 }

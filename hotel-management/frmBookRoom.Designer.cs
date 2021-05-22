@@ -42,8 +42,14 @@ namespace hotel_management
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnTimPhong = new System.Windows.Forms.Button();
             this.txtTimPhong = new System.Windows.Forms.TextBox();
+            this.btn18 = new System.Windows.Forms.Button();
+            this.btn15 = new System.Windows.Forms.Button();
             this.btn112 = new System.Windows.Forms.Button();
+            this.btn14 = new System.Windows.Forms.Button();
             this.btn111 = new System.Windows.Forms.Button();
+            this.btn17 = new System.Windows.Forms.Button();
+            this.btn16 = new System.Windows.Forms.Button();
+            this.btn13 = new System.Windows.Forms.Button();
             this.btn110 = new System.Windows.Forms.Button();
             this.btn107 = new System.Windows.Forms.Button();
             this.btn108 = new System.Windows.Forms.Button();
@@ -93,6 +99,7 @@ namespace hotel_management
             this.dTimeDatPhong = new System.Windows.Forms.DateTimePicker();
             this.dTimeNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.cboLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.btnAllList = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -159,6 +166,7 @@ namespace hotel_management
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.btnAllList);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnDatPhong);
@@ -234,8 +242,14 @@ namespace hotel_management
             // 
             this.groupBox4.Controls.Add(this.btnTimPhong);
             this.groupBox4.Controls.Add(this.txtTimPhong);
+            this.groupBox4.Controls.Add(this.btn18);
+            this.groupBox4.Controls.Add(this.btn15);
             this.groupBox4.Controls.Add(this.btn112);
+            this.groupBox4.Controls.Add(this.btn14);
             this.groupBox4.Controls.Add(this.btn111);
+            this.groupBox4.Controls.Add(this.btn17);
+            this.groupBox4.Controls.Add(this.btn16);
+            this.groupBox4.Controls.Add(this.btn13);
             this.groupBox4.Controls.Add(this.btn110);
             this.groupBox4.Controls.Add(this.btn107);
             this.groupBox4.Controls.Add(this.btn108);
@@ -251,7 +265,7 @@ namespace hotel_management
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(294, 457);
+            this.groupBox4.Size = new System.Drawing.Size(294, 593);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách phòng";
@@ -275,9 +289,31 @@ namespace hotel_management
             this.txtTimPhong.Size = new System.Drawing.Size(150, 30);
             this.txtTimPhong.TabIndex = 1;
             // 
+            // btn18
+            // 
+            this.btn18.Location = new System.Drawing.Point(192, 486);
+            this.btn18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn18.Name = "btn18";
+            this.btn18.Size = new System.Drawing.Size(64, 50);
+            this.btn18.TabIndex = 0;
+            this.btn18.Text = "118";
+            this.btn18.UseVisualStyleBackColor = true;
+            this.btn18.Click += new System.EventHandler(this.btn101_Click);
+            // 
+            // btn15
+            // 
+            this.btn15.Location = new System.Drawing.Point(192, 408);
+            this.btn15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(64, 50);
+            this.btn15.TabIndex = 0;
+            this.btn15.Text = "115";
+            this.btn15.UseVisualStyleBackColor = true;
+            this.btn15.Click += new System.EventHandler(this.btn101_Click);
+            // 
             // btn112
             // 
-            this.btn112.Location = new System.Drawing.Point(192, 370);
+            this.btn112.Location = new System.Drawing.Point(192, 324);
             this.btn112.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn112.Name = "btn112";
             this.btn112.Size = new System.Drawing.Size(64, 50);
@@ -286,9 +322,20 @@ namespace hotel_management
             this.btn112.UseVisualStyleBackColor = true;
             this.btn112.Click += new System.EventHandler(this.btn101_Click);
             // 
+            // btn14
+            // 
+            this.btn14.Location = new System.Drawing.Point(112, 408);
+            this.btn14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(64, 50);
+            this.btn14.TabIndex = 0;
+            this.btn14.Text = "114";
+            this.btn14.UseVisualStyleBackColor = true;
+            this.btn14.Click += new System.EventHandler(this.btn101_Click);
+            // 
             // btn111
             // 
-            this.btn111.Location = new System.Drawing.Point(113, 370);
+            this.btn111.Location = new System.Drawing.Point(113, 324);
             this.btn111.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn111.Name = "btn111";
             this.btn111.Size = new System.Drawing.Size(64, 50);
@@ -297,9 +344,42 @@ namespace hotel_management
             this.btn111.UseVisualStyleBackColor = true;
             this.btn111.Click += new System.EventHandler(this.btn101_Click);
             // 
+            // btn17
+            // 
+            this.btn17.Location = new System.Drawing.Point(112, 486);
+            this.btn17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn17.Name = "btn17";
+            this.btn17.Size = new System.Drawing.Size(64, 50);
+            this.btn17.TabIndex = 0;
+            this.btn17.Text = "117";
+            this.btn17.UseVisualStyleBackColor = true;
+            this.btn17.Click += new System.EventHandler(this.btn101_Click);
+            // 
+            // btn16
+            // 
+            this.btn16.Location = new System.Drawing.Point(27, 486);
+            this.btn16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn16.Name = "btn16";
+            this.btn16.Size = new System.Drawing.Size(64, 50);
+            this.btn16.TabIndex = 0;
+            this.btn16.Text = "116";
+            this.btn16.UseVisualStyleBackColor = true;
+            this.btn16.Click += new System.EventHandler(this.btn101_Click);
+            // 
+            // btn13
+            // 
+            this.btn13.Location = new System.Drawing.Point(27, 408);
+            this.btn13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(64, 50);
+            this.btn13.TabIndex = 0;
+            this.btn13.Text = "113";
+            this.btn13.UseVisualStyleBackColor = true;
+            this.btn13.Click += new System.EventHandler(this.btn101_Click);
+            // 
             // btn110
             // 
-            this.btn110.Location = new System.Drawing.Point(27, 370);
+            this.btn110.Location = new System.Drawing.Point(27, 324);
             this.btn110.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn110.Name = "btn110";
             this.btn110.Size = new System.Drawing.Size(64, 50);
@@ -310,7 +390,7 @@ namespace hotel_management
             // 
             // btn107
             // 
-            this.btn107.Location = new System.Drawing.Point(27, 280);
+            this.btn107.Location = new System.Drawing.Point(27, 246);
             this.btn107.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn107.Name = "btn107";
             this.btn107.Size = new System.Drawing.Size(64, 50);
@@ -321,7 +401,7 @@ namespace hotel_management
             // 
             // btn108
             // 
-            this.btn108.Location = new System.Drawing.Point(113, 280);
+            this.btn108.Location = new System.Drawing.Point(112, 246);
             this.btn108.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn108.Name = "btn108";
             this.btn108.Size = new System.Drawing.Size(64, 50);
@@ -332,7 +412,7 @@ namespace hotel_management
             // 
             // btn109
             // 
-            this.btn109.Location = new System.Drawing.Point(192, 280);
+            this.btn109.Location = new System.Drawing.Point(192, 246);
             this.btn109.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn109.Name = "btn109";
             this.btn109.Size = new System.Drawing.Size(64, 50);
@@ -343,7 +423,7 @@ namespace hotel_management
             // 
             // btn106
             // 
-            this.btn106.Location = new System.Drawing.Point(192, 181);
+            this.btn106.Location = new System.Drawing.Point(192, 167);
             this.btn106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn106.Name = "btn106";
             this.btn106.Size = new System.Drawing.Size(64, 50);
@@ -365,7 +445,7 @@ namespace hotel_management
             // 
             // btn104
             // 
-            this.btn104.Location = new System.Drawing.Point(27, 181);
+            this.btn104.Location = new System.Drawing.Point(27, 167);
             this.btn104.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn104.Name = "btn104";
             this.btn104.Size = new System.Drawing.Size(64, 50);
@@ -376,7 +456,7 @@ namespace hotel_management
             // 
             // btn105
             // 
-            this.btn105.Location = new System.Drawing.Point(112, 181);
+            this.btn105.Location = new System.Drawing.Point(112, 167);
             this.btn105.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn105.Name = "btn105";
             this.btn105.Size = new System.Drawing.Size(64, 50);
@@ -568,7 +648,7 @@ namespace hotel_management
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(493, 381);
+            this.groupBox1.Size = new System.Drawing.Size(510, 381);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phòng";
@@ -604,7 +684,6 @@ namespace hotel_management
             this.txtPhong.Name = "txtPhong";
             this.txtPhong.Size = new System.Drawing.Size(235, 30);
             this.txtPhong.TabIndex = 3;
-            this.txtPhong.Text = "102";
             // 
             // groupBox5
             // 
@@ -816,6 +895,17 @@ namespace hotel_management
             this.cboLoaiPhong.TabIndex = 0;
             this.cboLoaiPhong.Text = "V";
             // 
+            // btnAllList
+            // 
+            this.btnAllList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllList.Location = new System.Drawing.Point(858, 638);
+            this.btnAllList.Name = "btnAllList";
+            this.btnAllList.Size = new System.Drawing.Size(552, 41);
+            this.btnAllList.TabIndex = 8;
+            this.btnAllList.Text = "All List Book Room";
+            this.btnAllList.UseVisualStyleBackColor = true;
+            this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
+            // 
             // frmBookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -911,6 +1001,13 @@ namespace hotel_management
         private System.Windows.Forms.Button btnDatPhong;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btn18;
+        private System.Windows.Forms.Button btn15;
+        private System.Windows.Forms.Button btn14;
+        private System.Windows.Forms.Button btn17;
+        private System.Windows.Forms.Button btn16;
+        private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Button btnAllList;
     }
 }
 
