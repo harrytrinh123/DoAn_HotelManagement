@@ -20,6 +20,7 @@ namespace hotel_management
         clsCustomer c;
         clsRoom r;
         clsJoinBRandRom jBR;
+        int n = 40;
         private void frmBookRoom_Load(object sender, EventArgs e)
         {
             b = new clsBookRoom();
@@ -29,6 +30,58 @@ namespace hotel_management
             jBR = new clsJoinBRandRom();
             createTitle(lvwDSDatPhong);
             loadRoomListView(lvwDSDatPhong, br);
+            
+            TaoDayGhe(n);
+        }
+
+        void TaoDayGhe(int n)
+        {
+            Button btn;
+            for (int i = 1; i <= n; i++)
+            {
+                btn = new Button();
+                btn.Name = "lbl" + i.ToString();
+                btn.Width = 60;
+                btn.Height = 60;
+                btn.Text = (100+i).ToString();
+                btn.BackColor = Color.DarkGray;
+                foreach (var item in jBR.getNumberRoom())
+                {
+                    if (btn.Text.Equals(item.sophong))
+                    {
+                        btn.BackColor = Color.Red;
+                    } 
+                }
+                btn.Click += new EventHandler(MyClick);
+                flowLayoutPanel1.Controls.Add(btn);
+            }
+        }
+
+        private void MyClick(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;// ép kiểu;
+            if (btn.BackColor == Color.DarkGray)
+            {
+                btn.BackColor = Color.Yellow;
+                txtPhong.Text = btn.Text;
+            }
+            else if (btn.BackColor == Color.Red)
+            {
+                MessageBox.Show("Phòng đã có người đặt, Vui lòng chọn phòng khác", "Thông báo");
+            }
+            else if(btn.BackColor == Color.Yellow)
+            {
+                btn.BackColor = Color.Red;
+            }
+            else
+            {
+                btn.BackColor = Color.DarkGray;
+                txtPhong.Text = "";
+            }
+        }
+
+        private void HuyBo_Click(object sender, EventArgs e)
+        {
             
         }
 
@@ -42,18 +95,7 @@ namespace hotel_management
                 lvwItem = createItem(i);
                 lvwDSDatPhong.Items.Add(lvwItem);
             }
-            DoiMauButton(btn101);
-            DoiMauButton(btn102);
-            DoiMauButton(btn103);
-            DoiMauButton(btn104);
-            DoiMauButton(btn105);
-            DoiMauButton(btn106);
-            DoiMauButton(btn107);
-            DoiMauButton(btn108);
-            DoiMauButton(btn109);
-            DoiMauButton(btn110);
-            DoiMauButton(btn111);
-            DoiMauButton(btn112);
+            
         }
 
         private ListViewItem createItem(BookRoom i)
@@ -166,6 +208,8 @@ namespace hotel_management
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
             RemoveElement();
+            flowLayoutPanel1.Controls.Clear();
+            TaoDayGhe(n);
         }
 
         void RemoveElement()
@@ -268,12 +312,31 @@ namespace hotel_management
             {
                 btn.BackColor = Color.Yellow;
                 txtPhong.Text = btn.Text;
-            } else if(btn.BackColor == Color.Red)
+            }
+            if (btn.BackColor == Color.Yellow)
+            {
+                btn.BackColor = Color.DarkGray;
+                txtPhong.Text = "";
+            } 
+            else if(btn.BackColor == Color.Red)
             {
                 MessageBox.Show("Phòng đã có người đặt", "Thông báo");
             }
         }       
 
+        void LoadButton(Button btn)
+        {
+            foreach(var iteam in jBR.getNumberRoom())
+            {
+                if(iteam.maphong != btn.Text)
+                {
+                    if(btn.BackColor != Color.Red)
+                    {
+                        btn.BackColor = Color.FromArgb(224, 224, 224);
+                    }
+                }
+            }
+        }
         private void btnSua_Click(object sender, EventArgs e)
         {
             BookRoom fix_br = createBookRoom();
@@ -281,18 +344,6 @@ namespace hotel_management
             b.FixBookRoom(fix_br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
-            DoiMauButton(btn101);
-            DoiMauButton(btn102);
-            DoiMauButton(btn103);
-            DoiMauButton(btn104);
-            DoiMauButton(btn105);
-            DoiMauButton(btn106);
-            DoiMauButton(btn107);
-            DoiMauButton(btn108);
-            DoiMauButton(btn109);
-            DoiMauButton(btn110);
-            DoiMauButton(btn111);
-            DoiMauButton(btn112);
             RemoveElement();
         }
 
@@ -317,6 +368,9 @@ namespace hotel_management
                     RemoveElement();
                 }
             }
+
+            flowLayoutPanel1.Controls.Clear();
+            TaoDayGhe(n);
         }
 
         private void btnAllList_Click(object sender, EventArgs e)

@@ -34,32 +34,17 @@ namespace hotel_management
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnListRoom = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtTimPhong = new System.Windows.Forms.TextBox();
+            this.btnTimPhong = new System.Windows.Forms.Button();
+            this.btnAllList = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lvwDSDatPhong = new System.Windows.Forms.ListView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnTimPhong = new System.Windows.Forms.Button();
-            this.txtTimPhong = new System.Windows.Forms.TextBox();
-            this.btn18 = new System.Windows.Forms.Button();
-            this.btn15 = new System.Windows.Forms.Button();
-            this.btn112 = new System.Windows.Forms.Button();
-            this.btn14 = new System.Windows.Forms.Button();
-            this.btn111 = new System.Windows.Forms.Button();
-            this.btn17 = new System.Windows.Forms.Button();
-            this.btn16 = new System.Windows.Forms.Button();
-            this.btn13 = new System.Windows.Forms.Button();
-            this.btn110 = new System.Windows.Forms.Button();
-            this.btn107 = new System.Windows.Forms.Button();
-            this.btn108 = new System.Windows.Forms.Button();
-            this.btn109 = new System.Windows.Forms.Button();
-            this.btn106 = new System.Windows.Forms.Button();
-            this.btn103 = new System.Windows.Forms.Button();
-            this.btn104 = new System.Windows.Forms.Button();
-            this.btn105 = new System.Windows.Forms.Button();
-            this.btn102 = new System.Windows.Forms.Button();
-            this.btn101 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
@@ -99,12 +84,10 @@ namespace hotel_management
             this.dTimeDatPhong = new System.Windows.Forms.DateTimePicker();
             this.dTimeNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.cboLoaiPhong = new System.Windows.Forms.ComboBox();
-            this.btnAllList = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -166,12 +149,16 @@ namespace hotel_management
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.btnListRoom);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.txtTimPhong);
+            this.panel2.Controls.Add(this.btnTimPhong);
             this.panel2.Controls.Add(this.btnAllList);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnDatPhong);
             this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(0, 41);
@@ -180,6 +167,68 @@ namespace hotel_management
             this.panel2.Size = new System.Drawing.Size(1420, 815);
             this.panel2.TabIndex = 3;
             // 
+            // btnListRoom
+            // 
+            this.btnListRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListRoom.Location = new System.Drawing.Point(570, 636);
+            this.btnListRoom.Name = "btnListRoom";
+            this.btnListRoom.Size = new System.Drawing.Size(248, 39);
+            this.btnListRoom.TabIndex = 11;
+            this.btnListRoom.Text = "Danh Sách Phòng";
+            this.btnListRoom.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(561, 150);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(268, 471);
+            this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(587, 6);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(218, 29);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Danh Sách Phòng";
+            // 
+            // txtTimPhong
+            // 
+            this.txtTimPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimPhong.Location = new System.Drawing.Point(561, 97);
+            this.txtTimPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimPhong.Name = "txtTimPhong";
+            this.txtTimPhong.Size = new System.Drawing.Size(150, 36);
+            this.txtTimPhong.TabIndex = 1;
+            // 
+            // btnTimPhong
+            // 
+            this.btnTimPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimPhong.Location = new System.Drawing.Point(730, 99);
+            this.btnTimPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimPhong.Name = "btnTimPhong";
+            this.btnTimPhong.Size = new System.Drawing.Size(88, 34);
+            this.btnTimPhong.TabIndex = 2;
+            this.btnTimPhong.Text = "Tìm";
+            this.btnTimPhong.UseVisualStyleBackColor = true;
+            this.btnTimPhong.Click += new System.EventHandler(this.btnTimPhong_Click);
+            // 
+            // btnAllList
+            // 
+            this.btnAllList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllList.Location = new System.Drawing.Point(858, 638);
+            this.btnAllList.Name = "btnAllList";
+            this.btnAllList.Size = new System.Drawing.Size(552, 41);
+            this.btnAllList.TabIndex = 8;
+            this.btnAllList.Text = "All List Book Room";
+            this.btnAllList.UseVisualStyleBackColor = true;
+            this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +236,7 @@ namespace hotel_management
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(212, 61);
             this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xóa Phòng";
+            this.btnXoa.Text = "Xóa Đặt Phòng";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -237,256 +286,6 @@ namespace hotel_management
             this.lvwDSDatPhong.TabIndex = 0;
             this.lvwDSDatPhong.UseCompatibleStateImageBehavior = false;
             this.lvwDSDatPhong.SelectedIndexChanged += new System.EventHandler(this.lvwDSDatPhong_SelectedIndexChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnTimPhong);
-            this.groupBox4.Controls.Add(this.txtTimPhong);
-            this.groupBox4.Controls.Add(this.btn18);
-            this.groupBox4.Controls.Add(this.btn15);
-            this.groupBox4.Controls.Add(this.btn112);
-            this.groupBox4.Controls.Add(this.btn14);
-            this.groupBox4.Controls.Add(this.btn111);
-            this.groupBox4.Controls.Add(this.btn17);
-            this.groupBox4.Controls.Add(this.btn16);
-            this.groupBox4.Controls.Add(this.btn13);
-            this.groupBox4.Controls.Add(this.btn110);
-            this.groupBox4.Controls.Add(this.btn107);
-            this.groupBox4.Controls.Add(this.btn108);
-            this.groupBox4.Controls.Add(this.btn109);
-            this.groupBox4.Controls.Add(this.btn106);
-            this.groupBox4.Controls.Add(this.btn103);
-            this.groupBox4.Controls.Add(this.btn104);
-            this.groupBox4.Controls.Add(this.btn105);
-            this.groupBox4.Controls.Add(this.btn102);
-            this.groupBox4.Controls.Add(this.btn101);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(549, 29);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(294, 593);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Danh sách phòng";
-            // 
-            // btnTimPhong
-            // 
-            this.btnTimPhong.Location = new System.Drawing.Point(192, 30);
-            this.btnTimPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTimPhong.Name = "btnTimPhong";
-            this.btnTimPhong.Size = new System.Drawing.Size(64, 30);
-            this.btnTimPhong.TabIndex = 2;
-            this.btnTimPhong.Text = "Tìm";
-            this.btnTimPhong.UseVisualStyleBackColor = true;
-            this.btnTimPhong.Click += new System.EventHandler(this.btnTimPhong_Click);
-            // 
-            // txtTimPhong
-            // 
-            this.txtTimPhong.Location = new System.Drawing.Point(27, 30);
-            this.txtTimPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTimPhong.Name = "txtTimPhong";
-            this.txtTimPhong.Size = new System.Drawing.Size(150, 30);
-            this.txtTimPhong.TabIndex = 1;
-            // 
-            // btn18
-            // 
-            this.btn18.Location = new System.Drawing.Point(192, 486);
-            this.btn18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn18.Name = "btn18";
-            this.btn18.Size = new System.Drawing.Size(64, 50);
-            this.btn18.TabIndex = 0;
-            this.btn18.Text = "118";
-            this.btn18.UseVisualStyleBackColor = true;
-            this.btn18.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn15
-            // 
-            this.btn15.Location = new System.Drawing.Point(192, 408);
-            this.btn15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn15.Name = "btn15";
-            this.btn15.Size = new System.Drawing.Size(64, 50);
-            this.btn15.TabIndex = 0;
-            this.btn15.Text = "115";
-            this.btn15.UseVisualStyleBackColor = true;
-            this.btn15.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn112
-            // 
-            this.btn112.Location = new System.Drawing.Point(192, 324);
-            this.btn112.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn112.Name = "btn112";
-            this.btn112.Size = new System.Drawing.Size(64, 50);
-            this.btn112.TabIndex = 0;
-            this.btn112.Text = "112";
-            this.btn112.UseVisualStyleBackColor = true;
-            this.btn112.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn14
-            // 
-            this.btn14.Location = new System.Drawing.Point(112, 408);
-            this.btn14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn14.Name = "btn14";
-            this.btn14.Size = new System.Drawing.Size(64, 50);
-            this.btn14.TabIndex = 0;
-            this.btn14.Text = "114";
-            this.btn14.UseVisualStyleBackColor = true;
-            this.btn14.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn111
-            // 
-            this.btn111.Location = new System.Drawing.Point(113, 324);
-            this.btn111.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn111.Name = "btn111";
-            this.btn111.Size = new System.Drawing.Size(64, 50);
-            this.btn111.TabIndex = 0;
-            this.btn111.Text = "111";
-            this.btn111.UseVisualStyleBackColor = true;
-            this.btn111.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn17
-            // 
-            this.btn17.Location = new System.Drawing.Point(112, 486);
-            this.btn17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn17.Name = "btn17";
-            this.btn17.Size = new System.Drawing.Size(64, 50);
-            this.btn17.TabIndex = 0;
-            this.btn17.Text = "117";
-            this.btn17.UseVisualStyleBackColor = true;
-            this.btn17.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn16
-            // 
-            this.btn16.Location = new System.Drawing.Point(27, 486);
-            this.btn16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn16.Name = "btn16";
-            this.btn16.Size = new System.Drawing.Size(64, 50);
-            this.btn16.TabIndex = 0;
-            this.btn16.Text = "116";
-            this.btn16.UseVisualStyleBackColor = true;
-            this.btn16.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn13
-            // 
-            this.btn13.Location = new System.Drawing.Point(27, 408);
-            this.btn13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn13.Name = "btn13";
-            this.btn13.Size = new System.Drawing.Size(64, 50);
-            this.btn13.TabIndex = 0;
-            this.btn13.Text = "113";
-            this.btn13.UseVisualStyleBackColor = true;
-            this.btn13.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn110
-            // 
-            this.btn110.Location = new System.Drawing.Point(27, 324);
-            this.btn110.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn110.Name = "btn110";
-            this.btn110.Size = new System.Drawing.Size(64, 50);
-            this.btn110.TabIndex = 0;
-            this.btn110.Text = "110";
-            this.btn110.UseVisualStyleBackColor = true;
-            this.btn110.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn107
-            // 
-            this.btn107.Location = new System.Drawing.Point(27, 246);
-            this.btn107.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn107.Name = "btn107";
-            this.btn107.Size = new System.Drawing.Size(64, 50);
-            this.btn107.TabIndex = 0;
-            this.btn107.Text = "107";
-            this.btn107.UseVisualStyleBackColor = true;
-            this.btn107.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn108
-            // 
-            this.btn108.Location = new System.Drawing.Point(112, 246);
-            this.btn108.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn108.Name = "btn108";
-            this.btn108.Size = new System.Drawing.Size(64, 50);
-            this.btn108.TabIndex = 0;
-            this.btn108.Text = "108";
-            this.btn108.UseVisualStyleBackColor = true;
-            this.btn108.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn109
-            // 
-            this.btn109.Location = new System.Drawing.Point(192, 246);
-            this.btn109.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn109.Name = "btn109";
-            this.btn109.Size = new System.Drawing.Size(64, 50);
-            this.btn109.TabIndex = 0;
-            this.btn109.Text = "109";
-            this.btn109.UseVisualStyleBackColor = true;
-            this.btn109.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn106
-            // 
-            this.btn106.Location = new System.Drawing.Point(192, 167);
-            this.btn106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn106.Name = "btn106";
-            this.btn106.Size = new System.Drawing.Size(64, 50);
-            this.btn106.TabIndex = 0;
-            this.btn106.Text = "106";
-            this.btn106.UseVisualStyleBackColor = true;
-            this.btn106.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn103
-            // 
-            this.btn103.Location = new System.Drawing.Point(192, 87);
-            this.btn103.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn103.Name = "btn103";
-            this.btn103.Size = new System.Drawing.Size(64, 50);
-            this.btn103.TabIndex = 0;
-            this.btn103.Text = "103";
-            this.btn103.UseVisualStyleBackColor = true;
-            this.btn103.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn104
-            // 
-            this.btn104.Location = new System.Drawing.Point(27, 167);
-            this.btn104.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn104.Name = "btn104";
-            this.btn104.Size = new System.Drawing.Size(64, 50);
-            this.btn104.TabIndex = 0;
-            this.btn104.Text = "104";
-            this.btn104.UseVisualStyleBackColor = true;
-            this.btn104.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn105
-            // 
-            this.btn105.Location = new System.Drawing.Point(112, 167);
-            this.btn105.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn105.Name = "btn105";
-            this.btn105.Size = new System.Drawing.Size(64, 50);
-            this.btn105.TabIndex = 0;
-            this.btn105.Text = "105";
-            this.btn105.UseVisualStyleBackColor = true;
-            this.btn105.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn102
-            // 
-            this.btn102.Location = new System.Drawing.Point(112, 87);
-            this.btn102.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn102.Name = "btn102";
-            this.btn102.Size = new System.Drawing.Size(64, 50);
-            this.btn102.TabIndex = 0;
-            this.btn102.Text = "102";
-            this.btn102.UseVisualStyleBackColor = true;
-            this.btn102.Click += new System.EventHandler(this.btn101_Click);
-            // 
-            // btn101
-            // 
-            this.btn101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn101.Location = new System.Drawing.Point(27, 87);
-            this.btn101.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn101.Name = "btn101";
-            this.btn101.Size = new System.Drawing.Size(64, 50);
-            this.btn101.TabIndex = 0;
-            this.btn101.Text = "101";
-            this.btn101.UseVisualStyleBackColor = false;
-            this.btn101.Click += new System.EventHandler(this.btn101_Click);
             // 
             // groupBox2
             // 
@@ -609,6 +408,8 @@ namespace hotel_management
             // 
             // dTimeNgaySinh
             // 
+            this.dTimeNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgaySinh.Location = new System.Drawing.Point(39, 316);
             this.dTimeNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTimeNgaySinh.Name = "dTimeNgaySinh";
@@ -684,6 +485,7 @@ namespace hotel_management
             this.txtPhong.Name = "txtPhong";
             this.txtPhong.Size = new System.Drawing.Size(235, 30);
             this.txtPhong.TabIndex = 3;
+            this.txtPhong.Text = "111";
             // 
             // groupBox5
             // 
@@ -853,6 +655,8 @@ namespace hotel_management
             // 
             // dTimeNgayTra
             // 
+            this.dTimeNgayTra.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayTra.Location = new System.Drawing.Point(241, 331);
             this.dTimeNgayTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTimeNgayTra.Name = "dTimeNgayTra";
@@ -863,6 +667,8 @@ namespace hotel_management
             // dTimeDatPhong
             // 
             this.dTimeDatPhong.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTimeDatPhong.CustomFormat = "dd/MM/yyyy";
+            this.dTimeDatPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeDatPhong.Location = new System.Drawing.Point(241, 222);
             this.dTimeDatPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTimeDatPhong.Name = "dTimeDatPhong";
@@ -873,6 +679,8 @@ namespace hotel_management
             // dTimeNgayNhan
             // 
             this.dTimeNgayNhan.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTimeNgayNhan.CustomFormat = "dd/MM/yyyy";
+            this.dTimeNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTimeNgayNhan.Location = new System.Drawing.Point(241, 273);
             this.dTimeNgayNhan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTimeNgayNhan.Name = "dTimeNgayNhan";
@@ -895,17 +703,6 @@ namespace hotel_management
             this.cboLoaiPhong.TabIndex = 0;
             this.cboLoaiPhong.Text = "V";
             // 
-            // btnAllList
-            // 
-            this.btnAllList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAllList.Location = new System.Drawing.Point(858, 638);
-            this.btnAllList.Name = "btnAllList";
-            this.btnAllList.Size = new System.Drawing.Size(552, 41);
-            this.btnAllList.TabIndex = 8;
-            this.btnAllList.Text = "All List Book Room";
-            this.btnAllList.UseVisualStyleBackColor = true;
-            this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
-            // 
             // frmBookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -923,9 +720,8 @@ namespace hotel_management
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -940,15 +736,6 @@ namespace hotel_management
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnTimPhong;
-        private System.Windows.Forms.TextBox txtTimPhong;
-        private System.Windows.Forms.Button btn106;
-        private System.Windows.Forms.Button btn103;
-        private System.Windows.Forms.Button btn104;
-        private System.Windows.Forms.Button btn105;
-        private System.Windows.Forms.Button btn102;
-        private System.Windows.Forms.Button btn101;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtCMND;
@@ -975,10 +762,6 @@ namespace hotel_management
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCountKH;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btn107;
-        private System.Windows.Forms.Button btn108;
-        private System.Windows.Forms.Button btn109;
-        private System.Windows.Forms.Button btn110;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dTimeDatPhong;
         private System.Windows.Forms.Label label19;
@@ -994,20 +777,17 @@ namespace hotel_management
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button btn112;
-        private System.Windows.Forms.Button btn111;
         private System.Windows.Forms.TextBox txtBookRoom;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnDatPhong;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btn18;
-        private System.Windows.Forms.Button btn15;
-        private System.Windows.Forms.Button btn14;
-        private System.Windows.Forms.Button btn17;
-        private System.Windows.Forms.Button btn16;
-        private System.Windows.Forms.Button btn13;
         private System.Windows.Forms.Button btnAllList;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtTimPhong;
+        private System.Windows.Forms.Button btnTimPhong;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnListRoom;
     }
 }
 
