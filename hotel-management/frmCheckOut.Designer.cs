@@ -45,6 +45,8 @@ namespace hotel_management
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dTimeNgayTra = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dTimeNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.dTimeNgayDat = new System.Windows.Forms.DateTimePicker();
@@ -70,8 +72,6 @@ namespace hotel_management
             this.lvwDSTraPhong = new System.Windows.Forms.ListView();
             this.radTimTheoTen = new System.Windows.Forms.RadioButton();
             this.radTimTheoMa = new System.Windows.Forms.RadioButton();
-            this.dTimeNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -140,7 +140,7 @@ namespace hotel_management
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(697, 888);
+            this.panel2.Size = new System.Drawing.Size(697, 853);
             this.panel2.TabIndex = 18;
             // 
             // groupBox4
@@ -262,6 +262,23 @@ namespace hotel_management
             this.label9.Size = new System.Drawing.Size(170, 25);
             this.label9.TabIndex = 0;
             this.label9.Text = "Ngày đặt phòng:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(29, 139);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Ngày trả phòng:";
+            // 
+            // dTimeNgayTra
+            // 
+            this.dTimeNgayTra.Location = new System.Drawing.Point(200, 131);
+            this.dTimeNgayTra.Name = "dTimeNgayTra";
+            this.dTimeNgayTra.Size = new System.Drawing.Size(404, 35);
+            this.dTimeNgayTra.TabIndex = 3;
             // 
             // label3
             // 
@@ -390,12 +407,13 @@ namespace hotel_management
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnCapNhat);
             this.groupBox3.Controls.Add(this.listDSDichVu);
             this.groupBox3.Controls.Add(this.numUpDown);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 702);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(660, 182);
+            this.groupBox3.Size = new System.Drawing.Size(660, 146);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dịch vụ";
@@ -406,7 +424,7 @@ namespace hotel_management
             this.listDSDichVu.ItemHeight = 29;
             this.listDSDichVu.Location = new System.Drawing.Point(200, 22);
             this.listDSDichVu.Name = "listDSDichVu";
-            this.listDSDichVu.Size = new System.Drawing.Size(302, 149);
+            this.listDSDichVu.Size = new System.Drawing.Size(302, 120);
             this.listDSDichVu.TabIndex = 3;
             this.listDSDichVu.SelectedIndexChanged += new System.EventHandler(this.listDSDichVu_SelectedIndexChanged);
             // 
@@ -420,9 +438,9 @@ namespace hotel_management
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(113, 952);
+            this.btnCapNhat.Location = new System.Drawing.Point(508, 65);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(142, 44);
+            this.btnCapNhat.Size = new System.Drawing.Size(120, 54);
             this.btnCapNhat.TabIndex = 25;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
@@ -431,7 +449,7 @@ namespace hotel_management
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(433, 952);
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(520, 922);
             this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(135, 44);
@@ -514,29 +532,11 @@ namespace hotel_management
             this.radTimTheoMa.UseVisualStyleBackColor = true;
             this.radTimTheoMa.CheckedChanged += new System.EventHandler(this.radTimTheoMa_CheckedChanged);
             // 
-            // dTimeNgayTra
-            // 
-            this.dTimeNgayTra.Location = new System.Drawing.Point(200, 131);
-            this.dTimeNgayTra.Name = "dTimeNgayTra";
-            this.dTimeNgayTra.Size = new System.Drawing.Size(404, 35);
-            this.dTimeNgayTra.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 139);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ngày trả phòng:";
-            // 
             // frmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 1019);
-            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.radTimTheoTen);
             this.Controls.Add(this.radTimTheoMa);
             this.Controls.Add(this.panel2);
