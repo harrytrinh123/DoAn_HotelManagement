@@ -13,11 +13,41 @@ namespace hotel_management
             dt = getDatacontex();
         }
 
-        //public bool checkExist(string idBRoom, string idService)
-        //{
-        //    var q = from n in dt.Bill_Services
+        public Bill_Service checkIfExist(string serviceId, string idBookRoom)
+        {
+            var temp = from b in dt.Bill_Services
+                       where b.id_BookRoom.Equals(idBookRoom) && b.id_Service.Equals(serviceId)
+                       select b;
+                       
+            if (temp != null)
+                return temp.FirstOrDefault();
+            return null;
 
-        //}
+            // doi thanh  return mttemp;
+        }
+        public int insertBillService(Bill_Service bs)
+        {
+            System.Data.Common.DbTransaction myTran = dt.Connection.BeginTransaction();
+            try
+            {
+                dt.Transaction = myTran;
+                if (checkIfExist(bs.id_Service, bs.id_BookRoom) != null)// thay
+                    return 0;
+                else
+                {
+                    dt.Bill_Services.InsertOnSubmit(bs);
+                    dt.SubmitChanges();
+                    dt.Transaction.Commit();
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                dt.Transaction.Rollback();
+                throw new Exception("Loi không thêm được " + ex.Message);
+
+            }
+        }
 
         public bool CapNhatSoLuong(string idBRoom, string idService, int soLuong)
         {

@@ -62,7 +62,6 @@ namespace hotel_management
             this.listDSDichVu = new System.Windows.Forms.ListBox();
             this.numUpDown = new System.Windows.Forms.NumericUpDown();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -71,7 +70,8 @@ namespace hotel_management
             this.lvwDSTraPhong = new System.Windows.Forms.ListView();
             this.radTimTheoTen = new System.Windows.Forms.RadioButton();
             this.radTimTheoMa = new System.Windows.Forms.RadioButton();
-            this.lbltest = new System.Windows.Forms.Label();
+            this.dTimeNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,6 +155,8 @@ namespace hotel_management
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.dTimeNgayTra);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.dTimeNgayNhan);
             this.groupBox4.Controls.Add(this.dTimeNgayDat);
@@ -187,7 +189,7 @@ namespace hotel_management
             // 
             // txtSoNguoi
             // 
-            this.txtSoNguoi.Location = new System.Drawing.Point(200, 145);
+            this.txtSoNguoi.Location = new System.Drawing.Point(205, 176);
             this.txtSoNguoi.Name = "txtSoNguoi";
             this.txtSoNguoi.Size = new System.Drawing.Size(142, 35);
             this.txtSoNguoi.TabIndex = 4;
@@ -225,7 +227,7 @@ namespace hotel_management
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(91, 145);
+            this.label15.Location = new System.Drawing.Point(96, 176);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(103, 25);
             this.label15.TabIndex = 0;
@@ -265,7 +267,7 @@ namespace hotel_management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 92);
+            this.label3.Location = new System.Drawing.Point(6, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 25);
             this.label3.TabIndex = 0;
@@ -273,7 +275,7 @@ namespace hotel_management
             // 
             // dTimeNgayNhan
             // 
-            this.dTimeNgayNhan.Location = new System.Drawing.Point(200, 92);
+            this.dTimeNgayNhan.Location = new System.Drawing.Point(200, 88);
             this.dTimeNgayNhan.Name = "dTimeNgayNhan";
             this.dTimeNgayNhan.Size = new System.Drawing.Size(404, 35);
             this.dTimeNgayNhan.TabIndex = 3;
@@ -418,7 +420,7 @@ namespace hotel_management
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(87, 952);
+            this.btnCapNhat.Location = new System.Drawing.Point(113, 952);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(142, 44);
             this.btnCapNhat.TabIndex = 25;
@@ -426,21 +428,10 @@ namespace hotel_management
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // btnHuy
-            // 
-            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(481, 951);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(135, 44);
-            this.btnHuy.TabIndex = 15;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            // 
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(280, 951);
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(433, 952);
             this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(135, 44);
@@ -523,28 +514,34 @@ namespace hotel_management
             this.radTimTheoMa.UseVisualStyleBackColor = true;
             this.radTimTheoMa.CheckedChanged += new System.EventHandler(this.radTimTheoMa_CheckedChanged);
             // 
-            // lbltest
+            // dTimeNgayTra
             // 
-            this.lbltest.AutoSize = true;
-            this.lbltest.Location = new System.Drawing.Point(753, 872);
-            this.lbltest.Name = "lbltest";
-            this.lbltest.Size = new System.Drawing.Size(51, 20);
-            this.lbltest.TabIndex = 26;
-            this.lbltest.Text = "label7";
+            this.dTimeNgayTra.Location = new System.Drawing.Point(200, 131);
+            this.dTimeNgayTra.Name = "dTimeNgayTra";
+            this.dTimeNgayTra.Size = new System.Drawing.Size(404, 35);
+            this.dTimeNgayTra.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(29, 139);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Ngày trả phòng:";
             // 
             // frmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 1019);
-            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.radTimTheoTen);
             this.Controls.Add(this.radTimTheoMa);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnXuatHoaDon);
-            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
@@ -577,7 +574,6 @@ namespace hotel_management
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.ListView lvwDSTraPhong;
@@ -612,6 +608,7 @@ namespace hotel_management
         private System.Windows.Forms.RadioButton radTimTheoMa;
         public System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.ListBox listDSDichVu;
-        private System.Windows.Forms.Label lbltest;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dTimeNgayTra;
     }
 }

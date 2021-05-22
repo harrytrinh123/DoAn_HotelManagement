@@ -54,10 +54,11 @@ namespace hotel_management
             double giaPhong = (double)SRoom.Price;
             lblDonGia.Text = giaPhong.ToString();
 
+            // So dem
             clsBookRoom BROOM = new clsBookRoom();
             var BRoom = BROOM.GetThongTinBookRoom(_idRoom);
             lblNgayDen.Text = BRoom.Checkin_Date.ToString();
-            var soDem = (BRoom.Checkin_Date - BRoom.Checkout_Date).TotalDays;
+            var soDem = (BRoom.Checkout_Date - BRoom.Checkin_Date).TotalDays;
             lblSoDem.Text = soDem.ToString();
 
             double tienPhong = soDem * giaPhong;
@@ -116,6 +117,11 @@ namespace hotel_management
                 tongTien = tongTien +  (double)item.count * (double)item.price;
             }
             return tongTien;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
