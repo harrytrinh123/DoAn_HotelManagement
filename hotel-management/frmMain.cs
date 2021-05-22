@@ -14,13 +14,22 @@ namespace hotel_management
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Account account;
 
         public frmMain()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            panel_sidebar.Controls.Add(leftBorderBtn); 
+            panel_sidebar.Controls.Add(leftBorderBtn);
+        }
+        public frmMain(Account account)
+        {
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panel_sidebar.Controls.Add(leftBorderBtn);
+            this.account = account;
         }
 
         //struct
