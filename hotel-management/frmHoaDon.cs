@@ -62,13 +62,13 @@ namespace hotel_management
             lblSoDem.Text = soDem.ToString();
 
             double tienPhong = soDem * giaPhong;
-            lblTienPhong.Text = tienPhong.ToString();
+            lblTienPhong.Text = string.Format("{0:0,0 vnđ}", tienPhong);
 
             double tienDV = TinhTienDichVu();
-            lblDichVu.Text = tienDV.ToString();
+            lblDichVu.Text = string.Format("{0:0,0 vnđ}", tienDV);
 
             double tongTien = tienDV + tienPhong;
-            lblTongTien.Text = tongTien.ToString();
+            lblTongTien.Text = string.Format("{0:0,0 vnđ}", tongTien);
         }
 
         void TaoTieuDeCot(ListView lvw)
@@ -92,8 +92,8 @@ namespace hotel_management
             lvwItem = new ListViewItem((i++).ToString());
             lvwItem.SubItems.Add(dv.serviceName);
             lvwItem.SubItems.Add(dv.count.ToString());
-            lvwItem.SubItems.Add(dv.price.ToString());
-            lvwItem.SubItems.Add((dv.count * dv.price).ToString());
+            lvwItem.SubItems.Add(string.Format("{0:0,0 vnđ}", dv.price));
+            lvwItem.SubItems.Add(string.Format("{0:0,0 vnđ}", dv.count * dv.price));
             lvwItem.Tag = dv;//nhet vao de su dung muc dich khac (mu dich 1)
             return lvwItem;
         }

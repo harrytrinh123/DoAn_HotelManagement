@@ -21,19 +21,9 @@ namespace hotel_management
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dụng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            this.Hide();
+            frmLogin fm = new frmLogin();
+            fm.Show();
         }
         private void OpenFormInPanel(object Formhijo)
         {
@@ -78,6 +68,9 @@ namespace hotel_management
         private void frmMainManagement_Load(object sender, EventArgs e)
         {
             OpenFormInPanel(new frmHomeManagement());
+            var AD = new clsManager();
+            var ad = AD.CheckIfExist(account.username);
+            lblName.Text = ad.name;
         }
 
         private void btnQL_Click(object sender, EventArgs e)

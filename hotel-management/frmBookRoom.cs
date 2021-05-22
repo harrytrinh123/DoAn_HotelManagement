@@ -71,7 +71,7 @@ namespace hotel_management
             }
             else if(btn.BackColor == Color.Yellow)
             {
-                btn.BackColor = Color.Red;
+                btn.BackColor = Color.DarkGray;
             }
             else
             {

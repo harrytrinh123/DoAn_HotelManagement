@@ -55,6 +55,7 @@
     <Compile Include="clsJoinBRandRom.cs" />
     <Compile Include="clsKetNoi.cs" />
     <Compile Include="clsCustomer.cs" />
+    <Compile Include="clsManager.cs" />
     <Compile Include="clsRoom.cs" />
     <Compile Include="clsService.cs" />
     <Compile Include="clsBill_Service.cs" />

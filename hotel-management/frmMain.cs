@@ -81,6 +81,9 @@ namespace hotel_management
         {
             OpenFormInPanel(new frmHome());
             ActivateButton(btnHome, RGBcolors.color1);
+            var ST = new clsStaff();
+            var nv = ST.CheckIfExist(account.username);
+            lblName.Text = nv.name;
         }
 
         private void OpenFormInPanel(object Formhijo)

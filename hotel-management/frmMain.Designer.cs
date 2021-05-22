@@ -37,7 +37,7 @@ namespace hotel_management
             this.btnDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -196,7 +196,7 @@ namespace hotel_management
             // panelInfo
             // 
             this.panelInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelInfo.Controls.Add(this.label2);
+            this.panelInfo.Controls.Add(this.lblName);
             this.panelInfo.Controls.Add(this.pictureBox2);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 174);
@@ -204,16 +204,16 @@ namespace hotel_management
             this.panelInfo.Size = new System.Drawing.Size(328, 174);
             this.panelInfo.TabIndex = 8;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(82, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 29);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sadio mane";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(82, 129);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(142, 29);
+            this.lblName.TabIndex = 6;
+            this.lblName.Text = "Sadio mane";
             // 
             // pictureBox2
             // 
@@ -304,6 +304,6 @@ namespace hotel_management
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
     }
 }
