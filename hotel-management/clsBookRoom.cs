@@ -91,9 +91,7 @@ namespace hotel_management
             BookRoom tmp = dt.BookRooms.Where(x => x.id_BookRoom.Equals(id_BookRoom)).FirstOrDefault();
             return tmp;
         }
-        // hông hiểu
-        // chạy lại á hả
-
+      
         public int insertBookRoom(BookRoom b)
         {
             using (System.Data.Common.DbTransaction br = dt.Connection.BeginTransaction())
