@@ -67,12 +67,14 @@ namespace hotel_management
             this.lvwListAccount = new System.Windows.Forms.ListView();
             this.radID = new System.Windows.Forms.RadioButton();
             this.radTen = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -236,6 +238,8 @@ namespace hotel_management
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(352, 35);
             this.txtTen.TabIndex = 1;
+            this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
+            this.txtTen.Leave += new System.EventHandler(this.txtTen_Leave);
             // 
             // txtDiaChi
             // 
@@ -254,6 +258,7 @@ namespace hotel_management
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(352, 35);
             this.txtSDT.TabIndex = 5;
+            this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // label6
             // 
@@ -485,6 +490,10 @@ namespace hotel_management
             this.radTen.UseVisualStyleBackColor = true;
             this.radTen.CheckedChanged += new System.EventHandler(this.radTen_CheckedChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNhanVienManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -515,6 +524,7 @@ namespace hotel_management
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,5 +568,6 @@ namespace hotel_management
         private System.Windows.Forms.Button btnViewList;
         private System.Windows.Forms.RadioButton radID;
         private System.Windows.Forms.RadioButton radTen;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

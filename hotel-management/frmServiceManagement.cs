@@ -18,7 +18,6 @@ namespace hotel_management
 
         clsService Service;
         clsServiceStyle ServiceStyle;
-
         IEnumerable<dynamic> ListService;
         IEnumerable<ServiceStyle> ListName_ServiceStyle;
         IEnumerable<ServiceStyle> ListServiceStyle;
@@ -170,7 +169,10 @@ namespace hotel_management
         {
             Service service = CreateService();
 
-            Service.InsertService(service);
+            if(Service.InsertService(service) == 0)
+            {
+                MessageBox.Show("Mã dịch vụ đã tồn tại!!", "Thông báo");
+            }
 
             LoadListToView(lvwService, ListService);
             ClearInput();
@@ -243,7 +245,10 @@ namespace hotel_management
         {
             ServiceStyle ss = CreateServiceStyle();
 
-            ServiceStyle.InsertServiceStyle(ss);
+            if(ServiceStyle.InsertServiceStyle(ss) == 0)
+            {
+                MessageBox.Show("Mã loại dịch vụ đã tồn tại!!", "Thông báo");
+            }
 
             LoadListToView(lvwLDV, ListServiceStyle);
             ClearInput_1();
@@ -344,7 +349,9 @@ namespace hotel_management
             if (radLoaiDichVu.Checked)
             {
                 ListServiceStyle = ServiceStyle.FindIndex(txtTimKiem.Text);
+                ListService = Service.FindIndex(ListServiceStyle.First().NameStyle);
                 LoadListToView(lvwLDV, ListServiceStyle);
+                LoadListToView(lvwService, ListService);
             }
         }
 
@@ -359,5 +366,21 @@ namespace hotel_management
             ListServiceStyle = ServiceStyle.GetAllList();
             LoadListToView(lvwLDV, ListServiceStyle);
         }
+
+       
+
+        private void txtTenDV_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.CheckName(txtTenDV.Text))
+            {
+                errorProvider1.SetError(txtTenDV, "Bạn phải nhập chữ(không dấu)");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        
     }
 }

@@ -29,7 +29,9 @@ namespace hotel_management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLoadView = new System.Windows.Forms.Button();
             this.txtTenLDV = new System.Windows.Forms.TextBox();
             this.txtID_LDV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +48,7 @@ namespace hotel_management
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvwService = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnView = new System.Windows.Forms.Button();
             this.cboLDV = new System.Windows.Forms.ComboBox();
             this.txtTenDV = new System.Windows.Forms.TextBox();
             this.txtID_DV = new System.Windows.Forms.TextBox();
@@ -61,14 +64,14 @@ namespace hotel_management
             this.radLoaiDichVu = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lvwLDV = new System.Windows.Forms.ListView();
-            this.btnView = new System.Windows.Forms.Button();
-            this.btnLoadView = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -89,6 +92,17 @@ namespace hotel_management
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại Dịch Vụ";
             // 
+            // btnLoadView
+            // 
+            this.btnLoadView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadView.Location = new System.Drawing.Point(469, 180);
+            this.btnLoadView.Name = "btnLoadView";
+            this.btnLoadView.Size = new System.Drawing.Size(95, 34);
+            this.btnLoadView.TabIndex = 43;
+            this.btnLoadView.Text = "Tải lại";
+            this.btnLoadView.UseVisualStyleBackColor = true;
+            this.btnLoadView.Click += new System.EventHandler(this.btnLoadView_Click);
+            // 
             // txtTenLDV
             // 
             this.txtTenLDV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,6 +110,7 @@ namespace hotel_management
             this.txtTenLDV.Name = "txtTenLDV";
             this.txtTenLDV.Size = new System.Drawing.Size(313, 30);
             this.txtTenLDV.TabIndex = 6;
+            this.txtTenLDV.TextChanged += new System.EventHandler(this.txtTenDV_Leave);
             // 
             // txtID_LDV
             // 
@@ -263,6 +278,17 @@ namespace hotel_management
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Dịch Vụ";
             // 
+            // btnView
+            // 
+            this.btnView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnView.Location = new System.Drawing.Point(469, 253);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(95, 34);
+            this.btnView.TabIndex = 43;
+            this.btnView.Text = "Tải lại";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // cboLDV
             // 
             this.cboLDV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
@@ -279,6 +305,7 @@ namespace hotel_management
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(313, 30);
             this.txtTenDV.TabIndex = 1;
+            this.txtTenDV.Leave += new System.EventHandler(this.txtTenDV_Leave);
             // 
             // txtID_DV
             // 
@@ -419,27 +446,9 @@ namespace hotel_management
             this.lvwLDV.UseCompatibleStateImageBehavior = false;
             this.lvwLDV.SelectedIndexChanged += new System.EventHandler(this.lvwLDV_SelectedIndexChanged);
             // 
-            // btnView
+            // errorProvider1
             // 
-            this.btnView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(469, 253);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(95, 34);
-            this.btnView.TabIndex = 43;
-            this.btnView.Text = "Tải lại";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
-            // btnLoadView
-            // 
-            this.btnLoadView.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadView.Location = new System.Drawing.Point(469, 180);
-            this.btnLoadView.Name = "btnLoadView";
-            this.btnLoadView.Size = new System.Drawing.Size(95, 34);
-            this.btnLoadView.TabIndex = 43;
-            this.btnLoadView.Text = "Tải lại";
-            this.btnLoadView.UseVisualStyleBackColor = true;
-            this.btnLoadView.Click += new System.EventHandler(this.btnLoadView_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmServiceManagement
             // 
@@ -469,6 +478,7 @@ namespace hotel_management
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +520,6 @@ namespace hotel_management
         private System.Windows.Forms.ListView lvwLDV;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnLoadView;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

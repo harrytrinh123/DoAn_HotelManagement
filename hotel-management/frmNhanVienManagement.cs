@@ -242,8 +242,22 @@ namespace hotel_management
             Staff staff = CreateStaff();
             Account account = CreateAccount();
 
-            Account.InsertAccount(account);
-            Staff.InsertStaff(staff);
+            if(txtTaiKhoan.Text == "" && txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Tài khoản mật khẩu không được để trống", "Thông báo");
+            }
+            else
+            {
+                if (Account.InsertAccount(account) == 1)
+                {
+                    Staff.InsertStaff(staff);
+                }
+                else
+                {
+                    MessageBox.Show("Mã nhân viên đã tồn tại!!", "Thông báo");
+                }
+            }
+            
 
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
@@ -375,6 +389,35 @@ namespace hotel_management
             ClearInput();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+        }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTen_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.CheckName(txtTen.Text))
+            {
+                errorProvider1.SetError(txtTen, "Bạn phải nhập chữ(không dấu)");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.PhoneCheck(txtSDT.Text))
+            {
+                errorProvider1.SetError(txtSDT, "Bạn phải nhập sdt!!");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
         }
     }
 }
