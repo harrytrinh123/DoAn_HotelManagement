@@ -177,6 +177,10 @@ namespace hotel_management
             bRoomUp.dateBooking = dTimeNgayDat.Value;
             bRoomUp.Checkin_Date = dTimeNgayNhan.Value;
             BookRoom.SuaThongTinBookRoomCuaKH(bRoomUp ,_idCustomer);
+
+            clsHonLoan honLoan = new clsHonLoan();
+            var dsNP = honLoan.GetDSNhanPhong();
+            DuaDataVaoLvwDSNhanPhong(lvwDSNhanPhong, dsNP);
         }
 
         void XuLyHoTroAutocomlet()
