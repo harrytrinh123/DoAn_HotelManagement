@@ -53,6 +53,11 @@ namespace hotel_management
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.radMa = new System.Windows.Forms.RadioButton();
+            this.radTen = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -115,6 +120,11 @@ namespace hotel_management
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.radTen);
+            this.panel2.Controls.Add(this.radMa);
+            this.panel2.Controls.Add(this.btnTimKiem);
+            this.panel2.Controls.Add(this.txtTimKiem);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnThem);
@@ -124,7 +134,7 @@ namespace hotel_management
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1067, 590);
+            this.panel2.Size = new System.Drawing.Size(1067, 751);
             this.panel2.TabIndex = 0;
             // 
             // btnCapNhat
@@ -172,11 +182,11 @@ namespace hotel_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lvwDSKhachHang);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(566, 13);
+            this.groupBox2.Location = new System.Drawing.Point(566, 118);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(490, 509);
+            this.groupBox2.Size = new System.Drawing.Size(490, 565);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách khách hàng";
@@ -190,7 +200,7 @@ namespace hotel_management
             this.lvwDSKhachHang.Location = new System.Drawing.Point(6, 28);
             this.lvwDSKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwDSKhachHang.Name = "lvwDSKhachHang";
-            this.lvwDSKhachHang.Size = new System.Drawing.Size(479, 477);
+            this.lvwDSKhachHang.Size = new System.Drawing.Size(479, 533);
             this.lvwDSKhachHang.TabIndex = 0;
             this.lvwDSKhachHang.UseCompatibleStateImageBehavior = false;
             this.lvwDSKhachHang.SelectedIndexChanged += new System.EventHandler(this.lvwDSKhachHang_SelectedIndexChanged);
@@ -332,12 +342,67 @@ namespace hotel_management
             this.label3.TabIndex = 8;
             this.label3.Text = "Ngày sinh :";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(567, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Tìm kiếm:";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.AllowDrop = true;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(670, 21);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(281, 30);
+            this.txtTimKiem.TabIndex = 6;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(957, 19);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(94, 35);
+            this.btnTimKiem.TabIndex = 7;
+            this.btnTimKiem.Text = "Search";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // radMa
+            // 
+            this.radMa.AutoSize = true;
+            this.radMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMa.Location = new System.Drawing.Point(670, 57);
+            this.radMa.Name = "radMa";
+            this.radMa.Size = new System.Drawing.Size(111, 29);
+            this.radMa.TabIndex = 8;
+            this.radMa.TabStop = true;
+            this.radMa.Text = "Theo mã";
+            this.radMa.UseVisualStyleBackColor = true;
+            this.radMa.CheckedChanged += new System.EventHandler(this.RadCheck);
+            // 
+            // radTen
+            // 
+            this.radTen.AutoSize = true;
+            this.radTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTen.Location = new System.Drawing.Point(840, 57);
+            this.radTen.Name = "radTen";
+            this.radTen.Size = new System.Drawing.Size(111, 29);
+            this.radTen.TabIndex = 9;
+            this.radTen.TabStop = true;
+            this.radTen.Text = "Theo tên";
+            this.radTen.UseVisualStyleBackColor = true;
+            this.radTen.CheckedChanged += new System.EventHandler(this.RadCheck);
+            // 
             // frmCustomerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1067, 640);
+            this.ClientSize = new System.Drawing.Size(1067, 801);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -349,6 +414,7 @@ namespace hotel_management
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -381,5 +447,10 @@ namespace hotel_management
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radTen;
+        private System.Windows.Forms.RadioButton radMa;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label7;
     }
 }

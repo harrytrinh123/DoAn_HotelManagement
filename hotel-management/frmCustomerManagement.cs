@@ -29,6 +29,8 @@ namespace hotel_management
         {
             CreateListView();
             LoadListView();
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void LoadListView()
@@ -55,7 +57,11 @@ namespace hotel_management
                 item.Tag = customer;
 
                 lvwDSKhachHang.Items.Add(item);
+
+                // Load Autocomplete Source
             }
+            radMa.Checked = false;
+            radTen.Checked = false;
         }
 
         private void CreateListView()
@@ -121,15 +127,17 @@ namespace hotel_management
             }
             else
             {
-                btnThem.Text = "Thêm";
-                txtID.Enabled = false;
+                if(AddCustomer())
+                {
+                    btnThem.Text = "Thêm";
+                    txtID.Enabled = false;
+                }
 
-                AddCustomer();
-                LoadListView();
+                
             }
         }
 
-        private void AddCustomer()
+        private bool AddCustomer()
         {
             try
             {
@@ -137,16 +145,20 @@ namespace hotel_management
                 if (qlCustomer.Insert(customer))
                 {
                     MessageBox.Show("Thêm thành công!", "Thông báo");
+                    LoadListView();
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show("Lỗi! Đã có ID trong danh sách!", "Thông báo");
+                    return false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
         private Customer CreateCustomer()
@@ -237,6 +249,58 @@ namespace hotel_management
             }
 
             LoadListView();
+        }
+
+        private void RadCheck(object sender, EventArgs e)
+        {
+            RadioButton rad = (RadioButton)sender;
+            txtTimKiem.AutoCompleteCustomSource.Clear();
+            if(rad.Checked == true)
+            {
+                foreach (ListViewItem item in lvwDSKhachHang.Items)
+                {
+                    string s;
+                    if(rad.Name.Equals("radMa"))
+                    {
+                        s = item.Text;
+                    }
+                    else
+                    {
+                        s = item.SubItems[1].Text;
+                    }
+                    txtTimKiem.AutoCompleteCustomSource.Add(s);
+                }
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if(radMa.Checked || radTen.Checked)
+            {
+                lvwDSKhachHang.SelectedItems.Clear();
+                foreach(ListViewItem item in lvwDSKhachHang.Items)
+                {
+                    if(radTen.Checked)
+                    {
+                        if(((Customer)item.Tag).name.Equals(txtTimKiem.Text))
+                        {
+                            item.Selected = true;
+                        }
+                    }
+                    else
+                    {
+                        if (((Customer)item.Tag).id_Customer.Equals(txtTimKiem.Text))
+                        {
+                            item.Selected = true;
+                        }
+                    }
+                }
+                lvwDSKhachHang.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn cách tìm kiếm!", "Thông báo");
+            }
         }
     }
 }
