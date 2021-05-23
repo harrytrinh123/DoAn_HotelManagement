@@ -121,7 +121,7 @@ namespace hotel_management
             var s = from a in dt.Services
                     join n in dt.ServiceStyles
                     on a.id_SeviceStyle equals n.id_SeviceStyle
-                    where a.Name_Service.Equals(id)
+                    where a.Name_Service.Equals(id) || n.NameStyle.Equals(id)
                     select new { a.id_Service, a.Name_Service, a.Price, n.NameStyle, n.id_SeviceStyle };
             return s;
 

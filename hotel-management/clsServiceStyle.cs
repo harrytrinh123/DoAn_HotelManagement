@@ -122,10 +122,10 @@ namespace hotel_management
             }
         }
 
-        public IEnumerable<ServiceStyle> FindIndex(string id)
+        public IEnumerable<ServiceStyle> FindIndex(string name)
         {
             var m = (from n in dt.ServiceStyles
-                     where n.NameStyle.Equals(id)
+                     where n.NameStyle.Equals(name)
                      select n);
             return m;
         }

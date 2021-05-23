@@ -242,8 +242,22 @@ namespace hotel_management
             Staff staff = CreateStaff();
             Account account = CreateAccount();
 
-            Account.InsertAccount(account);
-            Staff.InsertStaff(staff);
+            if(txtTaiKhoan.Text == "" && txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Tài khoản mật khẩu không được để trống", "Thông báo");
+            }
+            else
+            {
+                if (Account.InsertAccount(account) == 1)
+                {
+                    Staff.InsertStaff(staff);
+                }
+                else
+                {
+                    MessageBox.Show("Mã nhân viên đã tồn tại!!", "Thông báo");
+                }
+            }
+            
 
             LoadItemToView(lvwDSNV, ListStaff);
             LoadItemToView(lvwListAccount, ListAccount);
