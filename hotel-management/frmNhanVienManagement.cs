@@ -390,5 +390,34 @@ namespace hotel_management
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
         }
+
+        private void txtTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTen_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.CheckName(txtTen.Text))
+            {
+                errorProvider1.SetError(txtTen, "Bạn phải nhập chữ(không dấu)");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.PhoneCheck(txtSDT.Text))
+            {
+                errorProvider1.SetError(txtSDT, "Bạn phải nhập sdt!!");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
     }
 }

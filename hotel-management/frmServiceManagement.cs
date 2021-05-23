@@ -18,7 +18,6 @@ namespace hotel_management
 
         clsService Service;
         clsServiceStyle ServiceStyle;
-
         IEnumerable<dynamic> ListService;
         IEnumerable<ServiceStyle> ListName_ServiceStyle;
         IEnumerable<ServiceStyle> ListServiceStyle;
@@ -367,5 +366,21 @@ namespace hotel_management
             ListServiceStyle = ServiceStyle.GetAllList();
             LoadListToView(lvwLDV, ListServiceStyle);
         }
+
+       
+
+        private void txtTenDV_Leave(object sender, EventArgs e)
+        {
+            if (!ExtensionMethods.CheckName(txtTenDV.Text))
+            {
+                errorProvider1.SetError(txtTenDV, "Bạn phải nhập chữ(không dấu)");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        
     }
 }
