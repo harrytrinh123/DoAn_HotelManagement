@@ -20,6 +20,7 @@ namespace hotel_management
         clsCustomer c;
         clsRoom r;
         clsJoinBRandRom jBR;
+        clsHonLoan honLoan;
         int n = 40;
         private void frmBookRoom_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace hotel_management
             c = new clsCustomer();
             r = new clsRoom();
             jBR = new clsJoinBRandRom();
+            honLoan = new clsHonLoan();
             createTitle(lvwDSDatPhong);
             loadRoomListView(lvwDSDatPhong, br);
             
@@ -173,25 +175,13 @@ namespace hotel_management
 
         }
 
-        //đổi màu button
-        void DoiMauButton(Button btn1)
-        {
-            foreach (var i in jBR.getNumberRoom())
-            {
-                if (btn1.Text.Equals(i.sophong))
-                {
-                    btn1.BackColor = Color.Red;
-                }
-            }
-        }
-
         private void btnDatPhong_Click_1(object sender, EventArgs e)
         {
             foreach (BookRoom item in b.getListBookRoom())
             {
                 if (txtBookRoom.Text == item.id_BookRoom)
                 {
-                    MessageBox.Show("Trùng mã phòng", "Thông báo");
+                    MessageBox.Show("Trùng mã đặt phòng", "Thông báo");
                     return;
                 }
             }
@@ -204,6 +194,13 @@ namespace hotel_management
                 }
             }
             BookRoom br = createBookRoom();
+            Customer customer = CreateCustomer();
+            if(customer == null)
+            {
+                MessageBox.Show("Khách hàng này đã có trong danh sách đặt phòng", "Thông báo");
+                return;
+            }
+            c.Insert(customer);
             b.insertBookRoom(br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
@@ -211,7 +208,28 @@ namespace hotel_management
             flowLayoutPanel1.Controls.Clear();
             TaoDayGhe(n);
         }
-
+        //Tạo mới khách hàng
+        private Customer CreateCustomer()
+        {
+            foreach (var item in honLoan.GetKhachHangDatPhong())
+            {
+                if(item.cmnd == txtCMND.Text)
+                {
+                    return null;
+                }
+            }
+            Customer customer = new Customer()
+            {
+                id_Customer = txtCMND.Text,
+                name = txtHoTen.Text,
+                address = txtDiaChi.Text,
+                phone = txtSoDienThoai.Text,
+                birthday = dTimeNgaySinh.Value,
+                sex = cboGioiTinh.Text
+            };
+            return customer;
+        }
+        //Xóa phần tử sau click đặt phòng
         void RemoveElement()
         {
             txtBookRoom.Clear();
@@ -228,7 +246,7 @@ namespace hotel_management
             dTimeNgaySinh.Value = DateTime.Now;
             cboGioiTinh.SelectedIndex=0;
          }
-
+        //Tạo mới Đặt phòng
         private BookRoom createBookRoom()
         {
             string room_number = txtPhong.Text;
@@ -304,25 +322,6 @@ namespace hotel_management
         {
             this.Close();
         }
-        // click đổi màu button
-        private void btn101_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            if (btn.BackColor == Color.DarkGray)
-            {
-                btn.BackColor = Color.Yellow;
-                txtPhong.Text = btn.Text;
-            }
-            if (btn.BackColor == Color.Yellow)
-            {
-                btn.BackColor = Color.DarkGray;
-                txtPhong.Text = "";
-            } 
-            else if(btn.BackColor == Color.Red)
-            {
-                MessageBox.Show("Phòng đã có người đặt", "Thông báo");
-            }
-        }       
 
         void LoadButton(Button btn)
         {
@@ -339,14 +338,35 @@ namespace hotel_management
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            BookRoom fix_br = createBookRoom();
-
+            BookRoom fix_br = SuaDatPhong();
             b.FixBookRoom(fix_br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
             RemoveElement();
         }
 
+        private BookRoom SuaDatPhong()
+        {
+            string room_number = txtPhong.Text;
+            string id_room = r.GetRoomByNumberRoom(room_number).id_Room;
+            BookRoom br = b.GetBookRoomByIDRoom(id_room);
+
+            if (br != null)
+            {
+                br = new BookRoom()
+                {
+                    id_BookRoom = txtBookRoom.Text,
+                    peopleCount = Convert.ToInt32(txtCountKH.Text),
+                    dateBooking = dTimeDatPhong.Value,
+                    Checkin_Date = dTimeNgayNhan.Value,
+                    Checkout_Date = dTimeNgayTra.Value,
+                    id_Room = id_room,
+                    id_Customer = txtCMND.Text,
+                };
+
+            }
+            return br;
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult dlgHoiXoa;
