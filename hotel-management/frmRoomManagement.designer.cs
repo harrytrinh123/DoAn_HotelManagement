@@ -86,7 +86,7 @@ namespace hotel_management
             this.groupBox3.Controls.Add(this.lblLoaiPhongID);
             this.groupBox3.Controls.Add(this.lblLoaiPhongTen);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(863, 119);
+            this.groupBox3.Location = new System.Drawing.Point(869, 116);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(575, 320);
             this.groupBox3.TabIndex = 24;
@@ -100,6 +100,7 @@ namespace hotel_management
             this.txtLoaiPhongTen.Name = "txtLoaiPhongTen";
             this.txtLoaiPhongTen.Size = new System.Drawing.Size(297, 30);
             this.txtLoaiPhongTen.TabIndex = 16;
+            this.txtLoaiPhongTen.Leave += new System.EventHandler(this.txtNameStyleRoom);
             // 
             // txtLoaiPhongID
             // 
@@ -108,6 +109,7 @@ namespace hotel_management
             this.txtLoaiPhongID.Name = "txtLoaiPhongID";
             this.txtLoaiPhongID.Size = new System.Drawing.Size(297, 30);
             this.txtLoaiPhongID.TabIndex = 15;
+            this.txtLoaiPhongID.Leave += new System.EventHandler(this.txtStyleRoomID);
             // 
             // txtLoaiPhongGia
             // 
@@ -116,6 +118,7 @@ namespace hotel_management
             this.txtLoaiPhongGia.Name = "txtLoaiPhongGia";
             this.txtLoaiPhongGia.Size = new System.Drawing.Size(299, 30);
             this.txtLoaiPhongGia.TabIndex = 17;
+            this.txtLoaiPhongGia.Leave += new System.EventHandler(this.txtPriceStyleRoom);
             // 
             // lblLoaiPhongGia
             // 
@@ -159,7 +162,7 @@ namespace hotel_management
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(677, 445);
+            this.btnThoat.Location = new System.Drawing.Point(690, 449);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(120, 35);
             this.btnThoat.TabIndex = 12;
@@ -181,7 +184,7 @@ namespace hotel_management
             // btnXoaThongTinPhong
             // 
             this.btnXoaThongTinPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaThongTinPhong.Location = new System.Drawing.Point(479, 445);
+            this.btnXoaThongTinPhong.Location = new System.Drawing.Point(491, 449);
             this.btnXoaThongTinPhong.Name = "btnXoaThongTinPhong";
             this.btnXoaThongTinPhong.Size = new System.Drawing.Size(120, 35);
             this.btnXoaThongTinPhong.TabIndex = 11;
@@ -192,7 +195,7 @@ namespace hotel_management
             // btnSuaThongTinPhong
             // 
             this.btnSuaThongTinPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaThongTinPhong.Location = new System.Drawing.Point(245, 445);
+            this.btnSuaThongTinPhong.Location = new System.Drawing.Point(257, 449);
             this.btnSuaThongTinPhong.Name = "btnSuaThongTinPhong";
             this.btnSuaThongTinPhong.Size = new System.Drawing.Size(120, 35);
             this.btnSuaThongTinPhong.TabIndex = 10;
@@ -204,7 +207,7 @@ namespace hotel_management
             // 
             this.groupBox2.Controls.Add(this.lvwDanhSachPhong);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 503);
+            this.groupBox2.Location = new System.Drawing.Point(24, 508);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(765, 392);
             this.groupBox2.TabIndex = 16;
@@ -238,7 +241,7 @@ namespace hotel_management
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblThongTinPhongTang);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 119);
+            this.groupBox1.Location = new System.Drawing.Point(24, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(587, 320);
             this.groupBox1.TabIndex = 15;
@@ -252,6 +255,7 @@ namespace hotel_management
             this.txtThongTinPhongLuuY.Name = "txtThongTinPhongLuuY";
             this.txtThongTinPhongLuuY.Size = new System.Drawing.Size(301, 30);
             this.txtThongTinPhongLuuY.TabIndex = 7;
+            this.txtThongTinPhongLuuY.Leave += new System.EventHandler(this.txtNoteRoom);
             // 
             // txtThongTinPhongTrangThai
             // 
@@ -260,6 +264,7 @@ namespace hotel_management
             this.txtThongTinPhongTrangThai.Name = "txtThongTinPhongTrangThai";
             this.txtThongTinPhongTrangThai.Size = new System.Drawing.Size(301, 30);
             this.txtThongTinPhongTrangThai.TabIndex = 6;
+            this.txtThongTinPhongTrangThai.Leave += new System.EventHandler(this.txtStatusRoom);
             // 
             // cboThongTinPhongTang
             // 
@@ -269,6 +274,7 @@ namespace hotel_management
             this.cboThongTinPhongTang.Name = "cboThongTinPhongTang";
             this.cboThongTinPhongTang.Size = new System.Drawing.Size(171, 30);
             this.cboThongTinPhongTang.TabIndex = 5;
+            this.cboThongTinPhongTang.Leave += new System.EventHandler(this.txtGradeRoom);
             // 
             // txtThongTinPhongID
             // 
@@ -277,6 +283,7 @@ namespace hotel_management
             this.txtThongTinPhongID.Name = "txtThongTinPhongID";
             this.txtThongTinPhongID.Size = new System.Drawing.Size(301, 30);
             this.txtThongTinPhongID.TabIndex = 1;
+            this.txtThongTinPhongID.Leave += new System.EventHandler(this.txtRoomID);
             // 
             // txtThongTinIDLoaiPhong
             // 
@@ -285,6 +292,7 @@ namespace hotel_management
             this.txtThongTinIDLoaiPhong.Name = "txtThongTinIDLoaiPhong";
             this.txtThongTinIDLoaiPhong.Size = new System.Drawing.Size(302, 30);
             this.txtThongTinIDLoaiPhong.TabIndex = 8;
+            this.txtThongTinIDLoaiPhong.Leave += new System.EventHandler(this.txtIDStyleRoomLst);
             // 
             // txtThongTinPhongSoPhong
             // 
@@ -293,6 +301,7 @@ namespace hotel_management
             this.txtThongTinPhongSoPhong.Name = "txtThongTinPhongSoPhong";
             this.txtThongTinPhongSoPhong.Size = new System.Drawing.Size(301, 30);
             this.txtThongTinPhongSoPhong.TabIndex = 4;
+            this.txtThongTinPhongSoPhong.Leave += new System.EventHandler(this.txtNumbersRoom);
             // 
             // label2
             // 
@@ -403,7 +412,7 @@ namespace hotel_management
             // 
             this.groupBox4.Controls.Add(this.lvwDanhSachLoaiPhong);
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(863, 503);
+            this.groupBox4.Location = new System.Drawing.Point(863, 508);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(575, 381);
             this.groupBox4.TabIndex = 16;
@@ -452,7 +461,7 @@ namespace hotel_management
             // btnThemLoaiPhong
             // 
             this.btnThemLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnThemLoaiPhong.Location = new System.Drawing.Point(863, 445);
+            this.btnThemLoaiPhong.Location = new System.Drawing.Point(869, 447);
             this.btnThemLoaiPhong.Name = "btnThemLoaiPhong";
             this.btnThemLoaiPhong.Size = new System.Drawing.Size(116, 35);
             this.btnThemLoaiPhong.TabIndex = 18;
@@ -463,7 +472,7 @@ namespace hotel_management
             // btnSuaLoaiPhong
             // 
             this.btnSuaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSuaLoaiPhong.Location = new System.Drawing.Point(1087, 445);
+            this.btnSuaLoaiPhong.Location = new System.Drawing.Point(1093, 447);
             this.btnSuaLoaiPhong.Name = "btnSuaLoaiPhong";
             this.btnSuaLoaiPhong.Size = new System.Drawing.Size(120, 35);
             this.btnSuaLoaiPhong.TabIndex = 19;
@@ -474,7 +483,7 @@ namespace hotel_management
             // btnXoaLoaiPhong
             // 
             this.btnXoaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnXoaLoaiPhong.Location = new System.Drawing.Point(1318, 445);
+            this.btnXoaLoaiPhong.Location = new System.Drawing.Point(1324, 447);
             this.btnXoaLoaiPhong.Name = "btnXoaLoaiPhong";
             this.btnXoaLoaiPhong.Size = new System.Drawing.Size(120, 35);
             this.btnXoaLoaiPhong.TabIndex = 20;
@@ -485,7 +494,7 @@ namespace hotel_management
             // btnThemPhong
             // 
             this.btnThemPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnThemPhong.Location = new System.Drawing.Point(12, 445);
+            this.btnThemPhong.Location = new System.Drawing.Point(24, 449);
             this.btnThemPhong.Name = "btnThemPhong";
             this.btnThemPhong.Size = new System.Drawing.Size(110, 35);
             this.btnThemPhong.TabIndex = 9;

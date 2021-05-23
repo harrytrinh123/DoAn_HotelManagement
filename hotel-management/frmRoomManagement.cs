@@ -19,7 +19,7 @@ namespace hotel_management
 
         clsRoom room;
         clsStyleRoom roomstyle;
-       // clsChaotic chaotic; //hỗn loạn
+
       
         private void frmRoomManagement_Load(object sender, EventArgs e)
         {
@@ -50,9 +50,8 @@ namespace hotel_management
             LoadRoomStyleLenLvw(lvwDanhSachLoaiPhong, lstRoomStyle);
 
             //autocomlet
-           //txtTimKiemThongTinPhong.AutoCompleteMode = AutoCompleteMode.Suggest;
-           //txtTimKiemThongTinPhong.AutoCompleteSource = AutoCompleteSource.CustomSource;
-         
+           // txtTimKiemThongTinPhong.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtTimKiemThongTinPhong.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         //tạo tiêu đề cột cho Danh Sách Phòng
@@ -175,8 +174,23 @@ namespace hotel_management
         {
             IEnumerable<Room> lstRoom = room.getALLRoom();
             Room r = createRoom();
+            foreach (Room item in room.getALLRoom())
+            {
+                if(txtThongTinPhongID.Text == item.id_Room)
+                {
+                    MessageBox.Show("Trùng ID phòng!. Nhập lại", "Thông báo");
+                    return;
+                }
+            }
+
             room.insertRoom(r);
             LoadRoomLenLvw(lvwDanhSachPhong, lstRoom);
+            txtThongTinPhongID.Clear();
+            txtThongTinPhongSoPhong.Clear();
+            cboThongTinPhongTang.Text = "";
+            txtThongTinPhongTrangThai.Clear();
+            txtThongTinPhongLuuY.Clear();
+            txtThongTinIDLoaiPhong.Clear();
         }
         Room createRoom()
         {
@@ -196,8 +210,20 @@ namespace hotel_management
         {
             IEnumerable<RoomStyle> lstRoomStyle = roomstyle.getALLRoomStyle();
             RoomStyle rs = createRoomStyle();
+            foreach (RoomStyle item in roomstyle.getALLRoomStyle())
+            {
+                if(txtLoaiPhongID.Text == item.id_RoomStyle)
+                {
+                    MessageBox.Show("Trùng ID loại phòng!. Nhập lại", "Thông báo");
+                    return;
+                }
+            }
+
             roomstyle.insertRoomStyle(rs);
             LoadRoomStyleLenLvw(lvwDanhSachLoaiPhong, lstRoomStyle);
+            txtLoaiPhongID.Clear();
+            txtLoaiPhongTen.Clear();
+            txtLoaiPhongGia.Clear();
         }
         RoomStyle createRoomStyle()
         {
@@ -260,12 +286,9 @@ namespace hotel_management
                         roomstyle.deleteRoomStyle(rs);
                     }
                     LoadRoomStyleLenLvw(lvwDanhSachLoaiPhong, lstRoomStyle);
-                    txtThongTinPhongID.Clear();
-                    txtThongTinPhongSoPhong.Clear();
-                    cboThongTinPhongTang.Text = "";
-                    txtThongTinPhongTrangThai.Clear();
-                    txtThongTinPhongLuuY.Clear();
-                    txtThongTinIDLoaiPhong.Clear();
+                    txtLoaiPhongID.Clear();
+                    txtLoaiPhongTen.Clear();
+                    txtLoaiPhongGia.Clear();
                     btnXoaThongTinPhong.Enabled = false;
                 }
             }
@@ -365,9 +388,110 @@ namespace hotel_management
         //event Thoát
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult message = MessageBox.Show("Bạn có muốn thoát ứng dụng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            DialogResult message = MessageBox.Show("Bạn có muốn thoát chức năng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             if (message == DialogResult.Yes)
-                Application.Exit();
+                this.Close();
+        }
+
+        //event xử lý các methods
+        //id Room
+        private void txtRoomID(object sender, EventArgs e)
+        {
+            string strID = txtThongTinPhongID.Text;
+            if(strID.CheckID() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng ID: R-X, R-XX, R-XXX (X là số từ 0-9)", "Thông báo");
+                txtThongTinPhongID.SelectAll();
+                txtThongTinPhongID.Focus();
+            }
+        }
+        //id StyleRoom
+        private void txtStyleRoomID(object sender, EventArgs e)
+        {
+            string strID = txtLoaiPhongID.Text;
+            if (strID.CheckIDStyleRoom() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng ID loại phòng: R, RR, RRR (R là các chữ cái từ a-z)", "Thông báo");
+                txtLoaiPhongID.SelectAll();
+                txtLoaiPhongID.Focus();
+            }
+        }
+        //Số Room
+        private void txtNumbersRoom(object sender, EventArgs e)
+        {
+            string strNR = txtThongTinPhongSoPhong.Text;
+            if(strNR.CheckNumbersRoom() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng số phòng: X, XX, XXX (X là các số từ 1-9)", "Thông báo");
+                txtThongTinPhongSoPhong.SelectAll();
+                txtThongTinPhongSoPhong.Focus();
+            }
+        }
+        //chk Tầng
+        private void txtGradeRoom(object sender, EventArgs e)
+        {
+            string strGrs = cboThongTinPhongTang.Text;
+            if (strGrs.CheckGradeRoom() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng số tầng: X, XX (X là các số từ 0-9, 0 là tầng trệch)", "Thông báo");
+                cboThongTinPhongTang.SelectAll();
+                cboThongTinPhongTang.Focus();
+            }
+        }
+        //chk trạng thái phòng
+        private void txtStatusRoom(object sender, EventArgs e)
+        {
+            string strSt = txtThongTinPhongTrangThai.Text;
+            if (strSt.CheckStatusRoom() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng số tầng: True hoặc False", "Thông báo");
+                txtThongTinPhongTrangThai.SelectAll();
+                txtThongTinPhongTrangThai.Focus();
+            }
+        }
+        //chk id Loại Phòng
+        private void txtIDStyleRoomLst(object sender, EventArgs e)
+        {
+            string strID = txtThongTinIDLoaiPhong.Text;
+            if (strID.CheckIDStyleRoomLst() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng ID: R, RR, RRR (R là các chữ cái từ a-z)", "Thông báo");
+                txtThongTinIDLoaiPhong.SelectAll();
+                txtThongTinIDLoaiPhong.Focus();
+            }
+        }
+        //chk Tên Loại Phòng
+        private void txtNameStyleRoom(object sender, EventArgs e)
+        {
+            string strName = txtLoaiPhongTen.Text;
+            if (strName.CheckNameStyleRoom() == false)
+            {
+                MessageBox.Show("Nhập đúng định dạng tên lọai phòng: Vip, Thuong, Cao Cap", "Thông báo");
+                txtLoaiPhongTen.SelectAll();
+                txtLoaiPhongTen.Focus();
+            }
+        }
+        //chk giá
+        private void txtPriceStyleRoom(object sender, EventArgs e)
+        {
+            string strPr = txtLoaiPhongGia.Text;
+            if (strPr.CheckPriceStyleRoom() == false)
+            {
+                MessageBox.Show("Nhập giá phải lớn hơn 0", "Thông báo");
+                txtLoaiPhongGia.SelectAll();
+                txtLoaiPhongGia.Focus();
+            }
+        }
+        //Note
+        private void txtNoteRoom(object sender, EventArgs e)
+        {
+            string strNt = txtThongTinPhongLuuY.Text;
+            if (strNt.CheckNoteRoom() == false)
+            {
+                MessageBox.Show("Không nhập số và không nhập quá 22 ký tự", "Thông báo");
+                txtThongTinPhongLuuY.SelectAll();
+                txtThongTinPhongLuuY.Focus();
+            }
         }
     }
 }
