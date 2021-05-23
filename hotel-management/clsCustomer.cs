@@ -91,7 +91,7 @@ namespace hotel_management
                     IQueryable<Customer> tmp = from x in dt.Customers
                                                where x.id_Customer.Equals(cs.id_Customer)
                                                select x;
-
+                    tmp.First().id_Customer = cs.id_Customer;
                     tmp.First().name = cs.name;
                     tmp.First().phone = cs.phone;
                     tmp.First().sex = cs.sex;

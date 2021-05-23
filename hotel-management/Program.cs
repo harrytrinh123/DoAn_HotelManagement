@@ -15,7 +15,7 @@ namespace hotel_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMain());
+            //Application.Run(new frmBookRoom());
 
             frmLogin login = new frmLogin();
             if (login.ShowDialog() == DialogResult.Yes)

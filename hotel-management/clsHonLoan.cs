@@ -47,5 +47,14 @@ namespace hotel_management
             return q;
 
         }
+
+        public IEnumerable<dynamic> GetKhachHangDatPhong()
+        {
+            var q = from b in dt.BookRooms
+                    join c in dt.Customers 
+                    on b.id_Customer equals c.id_Customer
+                    select new { cmnd = c.id_Customer };
+            return q;
+        } 
     }
 }
