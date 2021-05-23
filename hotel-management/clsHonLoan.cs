@@ -55,6 +55,6 @@ namespace hotel_management
                     on b.id_Customer equals c.id_Customer
                     select new { cmnd = c.id_Customer };
             return q;
-        }
+        } 
     }
 }

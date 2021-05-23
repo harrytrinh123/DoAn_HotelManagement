@@ -339,22 +339,38 @@ namespace hotel_management
         private void btnSua_Click(object sender, EventArgs e)
         {
             BookRoom fix_br = SuaDatPhong();
+            Customer fix_customer = SuaKhachHang();
+            c.Update(fix_customer);
             b.FixBookRoom(fix_br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
             loadRoomListView(lvwDSDatPhong, getBR);
             RemoveElement();
+            flowLayoutPanel1.Controls.Clear();
+            TaoDayGhe(n);
         }
 
+        // sữa khách hàng
+        private Customer SuaKhachHang()
+        {
+            Customer customer = new Customer()
+            {
+                id_Customer = txtCMND.Text,
+                name = txtHoTen.Text,
+                address = txtDiaChi.Text,
+                phone = txtSoDienThoai.Text,
+                birthday = dTimeNgaySinh.Value,
+                sex = cboGioiTinh.Text
+            };
+            return customer;
+        }
+        // sữa đặt phòng
         private BookRoom SuaDatPhong()
         {
             string room_number = txtPhong.Text;
             string id_room = r.GetRoomByNumberRoom(room_number).id_Room;
-            BookRoom br = b.GetBookRoomByIDRoom(id_room);
-
-            if (br != null)
+            BookRoom br;
+            br = new BookRoom()
             {
-                br = new BookRoom()
-                {
                     id_BookRoom = txtBookRoom.Text,
                     peopleCount = Convert.ToInt32(txtCountKH.Text),
                     dateBooking = dTimeDatPhong.Value,
@@ -362,9 +378,7 @@ namespace hotel_management
                     Checkout_Date = dTimeNgayTra.Value,
                     id_Room = id_room,
                     id_Customer = txtCMND.Text,
-                };
-
-            }
+            };
             return br;
         }
         private void btnXoa_Click(object sender, EventArgs e)
