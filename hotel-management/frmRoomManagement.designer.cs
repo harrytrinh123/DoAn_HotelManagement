@@ -103,6 +103,7 @@ namespace hotel_management
             this.txtLoaiPhongTen.Name = "txtLoaiPhongTen";
             this.txtLoaiPhongTen.Size = new System.Drawing.Size(334, 35);
             this.txtLoaiPhongTen.TabIndex = 16;
+            this.txtLoaiPhongTen.Leave += new System.EventHandler(this.txtNameStyleRoom);
             // 
             // txtLoaiPhongID
             // 
@@ -112,6 +113,7 @@ namespace hotel_management
             this.txtLoaiPhongID.Name = "txtLoaiPhongID";
             this.txtLoaiPhongID.Size = new System.Drawing.Size(334, 35);
             this.txtLoaiPhongID.TabIndex = 15;
+            this.txtLoaiPhongID.Leave += new System.EventHandler(this.txtStyleRoomID);
             // 
             // txtLoaiPhongGia
             // 
@@ -121,6 +123,7 @@ namespace hotel_management
             this.txtLoaiPhongGia.Name = "txtLoaiPhongGia";
             this.txtLoaiPhongGia.Size = new System.Drawing.Size(336, 35);
             this.txtLoaiPhongGia.TabIndex = 17;
+            this.txtLoaiPhongGia.Leave += new System.EventHandler(this.txtPriceStyleRoom);
             // 
             // lblLoaiPhongGia
             // 
@@ -267,6 +270,7 @@ namespace hotel_management
             this.txtThongTinPhongLuuY.Name = "txtThongTinPhongLuuY";
             this.txtThongTinPhongLuuY.Size = new System.Drawing.Size(338, 35);
             this.txtThongTinPhongLuuY.TabIndex = 7;
+            this.txtThongTinPhongLuuY.Leave += new System.EventHandler(this.txtNoteRoom);
             // 
             // txtThongTinPhongTrangThai
             // 
@@ -276,6 +280,7 @@ namespace hotel_management
             this.txtThongTinPhongTrangThai.Name = "txtThongTinPhongTrangThai";
             this.txtThongTinPhongTrangThai.Size = new System.Drawing.Size(338, 35);
             this.txtThongTinPhongTrangThai.TabIndex = 6;
+            this.txtThongTinPhongTrangThai.Leave += new System.EventHandler(this.txtStatusRoom);
             // 
             // cboThongTinPhongTang
             // 
@@ -286,6 +291,7 @@ namespace hotel_management
             this.cboThongTinPhongTang.Name = "cboThongTinPhongTang";
             this.cboThongTinPhongTang.Size = new System.Drawing.Size(192, 35);
             this.cboThongTinPhongTang.TabIndex = 5;
+            this.cboThongTinPhongTang.Leave += new System.EventHandler(this.txtGradeRoom);
             // 
             // txtThongTinPhongID
             // 
@@ -295,6 +301,7 @@ namespace hotel_management
             this.txtThongTinPhongID.Name = "txtThongTinPhongID";
             this.txtThongTinPhongID.Size = new System.Drawing.Size(338, 35);
             this.txtThongTinPhongID.TabIndex = 1;
+            this.txtThongTinPhongID.Leave += new System.EventHandler(this.txtRoomID);
             // 
             // txtThongTinIDLoaiPhong
             // 
@@ -304,6 +311,7 @@ namespace hotel_management
             this.txtThongTinIDLoaiPhong.Name = "txtThongTinIDLoaiPhong";
             this.txtThongTinIDLoaiPhong.Size = new System.Drawing.Size(339, 35);
             this.txtThongTinIDLoaiPhong.TabIndex = 8;
+            this.txtThongTinIDLoaiPhong.Leave += new System.EventHandler(this.txtIDStyleRoomLst);
             // 
             // txtThongTinPhongSoPhong
             // 
@@ -313,6 +321,7 @@ namespace hotel_management
             this.txtThongTinPhongSoPhong.Name = "txtThongTinPhongSoPhong";
             this.txtThongTinPhongSoPhong.Size = new System.Drawing.Size(338, 35);
             this.txtThongTinPhongSoPhong.TabIndex = 4;
+            this.txtThongTinPhongSoPhong.Leave += new System.EventHandler(this.txtNumbersRoom);
             // 
             // label2
             // 
