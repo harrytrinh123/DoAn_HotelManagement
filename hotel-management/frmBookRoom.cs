@@ -195,11 +195,6 @@ namespace hotel_management
             }
             BookRoom br = createBookRoom();
             Customer customer = CreateCustomer();
-            if(customer == null)
-            {
-                MessageBox.Show("Khách hàng này đã có trong danh sách đặt phòng", "Thông báo");
-                return;
-            }
             c.Insert(customer);
             b.insertBookRoom(br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
@@ -211,13 +206,6 @@ namespace hotel_management
         //Tạo mới khách hàng
         private Customer CreateCustomer()
         {
-            foreach (var item in honLoan.GetKhachHangDatPhong())
-            {
-                if(item.cmnd == txtCMND.Text)
-                {
-                    return null;
-                }
-            }
             Customer customer = new Customer()
             {
                 id_Customer = txtCMND.Text,
@@ -338,8 +326,16 @@ namespace hotel_management
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
+            foreach (var item in jBR.getNumberRoom())
+            {
+                if (txtPhong.Text.Equals(item.sophong))
+                {
+                    MessageBox.Show("Phòng đã có người đặt", "Thông báo");
+                    return;
+                }
+            }
             BookRoom fix_br = SuaDatPhong();
-            Customer fix_customer = SuaKhachHang();
+            Customer fix_customer = CreateCustomer();
             c.Update(fix_customer);
             b.FixBookRoom(fix_br);
             IEnumerable<BookRoom> getBR = b.getListBookRoom();
@@ -349,20 +345,6 @@ namespace hotel_management
             TaoDayGhe(n);
         }
 
-        // sữa khách hàng
-        private Customer SuaKhachHang()
-        {
-            Customer customer = new Customer()
-            {
-                id_Customer = txtCMND.Text,
-                name = txtHoTen.Text,
-                address = txtDiaChi.Text,
-                phone = txtSoDienThoai.Text,
-                birthday = dTimeNgaySinh.Value,
-                sex = cboGioiTinh.Text
-            };
-            return customer;
-        }
         // sữa đặt phòng
         private BookRoom SuaDatPhong()
         {
