@@ -193,6 +193,15 @@ namespace hotel_management
                     return;
                 }
             }
+
+            foreach (var item in honLoan.GetKhachHangDatPhong())
+            {
+                if (txtCMND.Text.Equals(item.cmnd)){
+                    MessageBox.Show("Khách hàng này đã đặt phòng", "Thông Báo");
+                    return;
+                }
+            }
+            
             BookRoom br = createBookRoom();
             Customer customer = CreateCustomer();
             c.Insert(customer);
