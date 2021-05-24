@@ -349,6 +349,9 @@ namespace hotel_management
             LoadItemToView(lvwListAccount, ListAccount);
             btnViewList.Enabled = true;
             txtTimKiem.Clear();
+            //Tải lại danh sách để hỗ trợ autocomplete
+            ListAccount = Account.GetListAccount();
+            ListStaff = Staff.getListStaff();
         }
 
         private void btnViewList_Click(object sender, EventArgs e)
