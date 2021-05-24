@@ -345,6 +345,7 @@ namespace hotel_management
             {
                 ListService = Service.FindIndex(txtTimKiem.Text);
                 LoadListToView(lvwService, ListService);
+                ListService = Service.GetAllService();
             }
             if (radLoaiDichVu.Checked)
             {
