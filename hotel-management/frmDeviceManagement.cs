@@ -26,6 +26,8 @@ namespace hotel_management
 
             ListEquipment = Equipment.getListEquipment();
             LoadItemToView(lvwThietBi, ListEquipment);
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         //Tạo listview cho danh sách thiết bị
         private void createListView(ListView lvw)
