@@ -23,8 +23,11 @@ namespace hotel_management
             btnSua.Enabled = false;
             createListView(lvwThietBi);
             Equipment = new clsDevice();
+
             ListEquipment = Equipment.getListEquipment();
             LoadItemToView(lvwThietBi, ListEquipment);
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         //Tạo listview cho danh sách thiết bị
         private void createListView(ListView lvw)
@@ -143,6 +146,29 @@ namespace hotel_management
         {
             ListEquipment = Equipment.getListEquipment();
             LoadItemToView(lvwThietBi, ListEquipment);            
+        }
+        private void radMa_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radMa.Checked)
+            {
+                txtTimKiem.AutoCompleteCustomSource.Clear();
+                foreach(Equipment i in ListEquipment)
+                {
+                    txtTimKiem.AutoCompleteCustomSource.Add(i.id_Equipment);
+                }
+            }
+        }
+
+        private void radTen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radTen.Checked)
+            {
+                txtTimKiem.AutoCompleteCustomSource.Clear();
+                foreach (Equipment i in ListEquipment)
+                {
+                    txtTimKiem.AutoCompleteCustomSource.Add(i.name_Equipment);
+                }
+            }
         }
     }
 }

@@ -48,6 +48,9 @@ namespace hotel_management
             this.txtID = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.radMa = new System.Windows.Forms.RadioButton();
+            this.radTen = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.txtID.SuspendLayout();
@@ -57,7 +60,7 @@ namespace hotel_management
             // btnALL
             // 
             this.btnALL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnALL.Location = new System.Drawing.Point(403, 318);
+            this.btnALL.Location = new System.Drawing.Point(403, 370);
             this.btnALL.Name = "btnALL";
             this.btnALL.Size = new System.Drawing.Size(107, 35);
             this.btnALL.TabIndex = 17;
@@ -68,7 +71,7 @@ namespace hotel_management
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(275, 318);
+            this.btnXoa.Location = new System.Drawing.Point(275, 370);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(107, 35);
             this.btnXoa.TabIndex = 18;
@@ -79,7 +82,7 @@ namespace hotel_management
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(145, 318);
+            this.btnSua.Location = new System.Drawing.Point(145, 370);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(107, 35);
             this.btnSua.TabIndex = 19;
@@ -90,7 +93,7 @@ namespace hotel_management
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(17, 318);
+            this.btnThem.Location = new System.Drawing.Point(17, 370);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(107, 35);
             this.btnThem.TabIndex = 20;
@@ -134,7 +137,7 @@ namespace hotel_management
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 122);
+            this.groupBox2.Location = new System.Drawing.Point(17, 174);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(484, 182);
             this.groupBox2.TabIndex = 13;
@@ -255,11 +258,37 @@ namespace hotel_management
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // radMa
+            // 
+            this.radMa.AutoSize = true;
+            this.radMa.Location = new System.Drawing.Point(50, 115);
+            this.radMa.Name = "radMa";
+            this.radMa.Size = new System.Drawing.Size(107, 21);
+            this.radMa.TabIndex = 22;
+            this.radMa.TabStop = true;
+            this.radMa.Text = "Tìm theo Mã";
+            this.radMa.UseVisualStyleBackColor = true;
+            this.radMa.CheckedChanged += new System.EventHandler(this.radMa_CheckedChanged);
+            // 
+            // radTen
+            // 
+            this.radTen.AutoSize = true;
+            this.radTen.Location = new System.Drawing.Point(254, 115);
+            this.radTen.Name = "radTen";
+            this.radTen.Size = new System.Drawing.Size(113, 21);
+            this.radTen.TabIndex = 22;
+            this.radTen.TabStop = true;
+            this.radTen.Text = "Tìm theo Tên";
+            this.radTen.UseVisualStyleBackColor = true;
+            this.radTen.CheckedChanged += new System.EventHandler(this.radTen_CheckedChanged);
+            // 
             // frmDeviceManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 386);
+            this.ClientSize = new System.Drawing.Size(1234, 484);
+            this.Controls.Add(this.radTen);
+            this.Controls.Add(this.radMa);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnALL);
             this.Controls.Add(this.btnXoa);
@@ -305,5 +334,8 @@ namespace hotel_management
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton radMa;
+        private System.Windows.Forms.RadioButton radTen;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
