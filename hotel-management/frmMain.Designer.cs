@@ -98,7 +98,7 @@ namespace hotel_management
             this.btnQLKhachHang.IconColor = System.Drawing.Color.Gainsboro;
             this.btnQLKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQLKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 588);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 613);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
             this.btnQLKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnQLKhachHang.Size = new System.Drawing.Size(328, 60);
@@ -119,7 +119,7 @@ namespace hotel_management
             this.btnTraPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnTraPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTraPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraPhong.Location = new System.Drawing.Point(0, 528);
+            this.btnTraPhong.Location = new System.Drawing.Point(0, 553);
             this.btnTraPhong.Name = "btnTraPhong";
             this.btnTraPhong.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnTraPhong.Size = new System.Drawing.Size(328, 60);
@@ -140,7 +140,7 @@ namespace hotel_management
             this.btnNhanPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnNhanPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNhanPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanPhong.Location = new System.Drawing.Point(0, 468);
+            this.btnNhanPhong.Location = new System.Drawing.Point(0, 493);
             this.btnNhanPhong.Name = "btnNhanPhong";
             this.btnNhanPhong.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnNhanPhong.Size = new System.Drawing.Size(328, 60);
@@ -161,7 +161,7 @@ namespace hotel_management
             this.btnDatPhong.IconColor = System.Drawing.Color.Gainsboro;
             this.btnDatPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatPhong.Location = new System.Drawing.Point(0, 408);
+            this.btnDatPhong.Location = new System.Drawing.Point(0, 433);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDatPhong.Size = new System.Drawing.Size(328, 60);
@@ -185,7 +185,7 @@ namespace hotel_management
             this.btnHome.Location = new System.Drawing.Point(0, 348);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnHome.Size = new System.Drawing.Size(328, 60);
+            this.btnHome.Size = new System.Drawing.Size(328, 85);
             this.btnHome.TabIndex = 9;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
