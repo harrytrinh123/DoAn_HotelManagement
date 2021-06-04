@@ -22,6 +22,7 @@ namespace hotel_management
             return m;
         }
 
+        
         public Staff CheckIfExist(string id)
         {
             Staff temp = (from n in dt.Staffs

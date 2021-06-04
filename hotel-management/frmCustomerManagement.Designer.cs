@@ -43,14 +43,21 @@ namespace hotel_management
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dTimeNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSoDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.radMa = new System.Windows.Forms.RadioButton();
+            this.radTen = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,7 +75,7 @@ namespace hotel_management
             this.label12.Location = new System.Drawing.Point(1024, 7);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 32);
-            this.label12.TabIndex = 0;
+            this.label12.TabIndex = 1;
             this.label12.Text = "x";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label12.Click += new System.EventHandler(this.label12_Click_2);
@@ -84,7 +91,7 @@ namespace hotel_management
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 50);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 1;
             // 
             // iconPictureBox1
             // 
@@ -108,11 +115,16 @@ namespace hotel_management
             this.label11.Location = new System.Drawing.Point(49, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(272, 31);
-            this.label11.TabIndex = 3;
+            this.label11.TabIndex = 0;
             this.label11.Text = "Quản lý khách hàng";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.radTen);
+            this.panel2.Controls.Add(this.radMa);
+            this.panel2.Controls.Add(this.btnTimKiem);
+            this.panel2.Controls.Add(this.txtTimKiem);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnThem);
@@ -122,8 +134,8 @@ namespace hotel_management
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1067, 590);
-            this.panel2.TabIndex = 17;
+            this.panel2.Size = new System.Drawing.Size(1067, 751);
+            this.panel2.TabIndex = 0;
             // 
             // btnCapNhat
             // 
@@ -133,9 +145,10 @@ namespace hotel_management
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(128, 35);
-            this.btnCapNhat.TabIndex = 1;
+            this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "Cập nhât";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -145,13 +158,13 @@ namespace hotel_management
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(95, 35);
-            this.btnXoa.TabIndex = 1;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Enabled = false;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(14, 537);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -160,6 +173,7 @@ namespace hotel_management
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
@@ -168,12 +182,12 @@ namespace hotel_management
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lvwDSKhachHang);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(566, 13);
+            this.groupBox2.Location = new System.Drawing.Point(566, 118);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(490, 509);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.Size = new System.Drawing.Size(490, 565);
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách khách hàng";
             // 
@@ -186,7 +200,7 @@ namespace hotel_management
             this.lvwDSKhachHang.Location = new System.Drawing.Point(6, 28);
             this.lvwDSKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwDSKhachHang.Name = "lvwDSKhachHang";
-            this.lvwDSKhachHang.Size = new System.Drawing.Size(479, 477);
+            this.lvwDSKhachHang.Size = new System.Drawing.Size(479, 533);
             this.lvwDSKhachHang.TabIndex = 0;
             this.lvwDSKhachHang.UseCompatibleStateImageBehavior = false;
             this.lvwDSKhachHang.SelectedIndexChanged += new System.EventHandler(this.lvwDSKhachHang_SelectedIndexChanged);
@@ -196,11 +210,13 @@ namespace hotel_management
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupBox1.Controls.Add(this.dTimeNgaySinh);
             this.groupBox1.Controls.Add(this.cboGioiTinh);
+            this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtSoDT);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -218,10 +234,10 @@ namespace hotel_management
             // 
             this.dTimeNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dTimeNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTimeNgaySinh.Location = new System.Drawing.Point(156, 111);
+            this.dTimeNgaySinh.Location = new System.Drawing.Point(155, 177);
             this.dTimeNgaySinh.Name = "dTimeNgaySinh";
             this.dTimeNgaySinh.Size = new System.Drawing.Size(313, 30);
-            this.dTimeNgaySinh.TabIndex = 13;
+            this.dTimeNgaySinh.TabIndex = 2;
             this.dTimeNgaySinh.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // cboGioiTinh
@@ -229,38 +245,48 @@ namespace hotel_management
             this.cboGioiTinh.FormattingEnabled = true;
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
-            "Nữ"});
-            this.cboGioiTinh.Location = new System.Drawing.Point(156, 158);
+            "Nữ",
+            "Khác"});
+            this.cboGioiTinh.Location = new System.Drawing.Point(155, 223);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(121, 33);
-            this.cboGioiTinh.TabIndex = 12;
+            this.cboGioiTinh.TabIndex = 3;
+            this.cboGioiTinh.Text = "Khác";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(155, 83);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(313, 30);
+            this.txtID.TabIndex = 0;
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(156, 71);
+            this.txtTenKH.Location = new System.Drawing.Point(155, 130);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(313, 30);
-            this.txtTenKH.TabIndex = 9;
+            this.txtTenKH.TabIndex = 1;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(156, 205);
+            this.txtDiaChi.Location = new System.Drawing.Point(155, 271);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(313, 30);
-            this.txtDiaChi.TabIndex = 10;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // txtSoDT
             // 
-            this.txtSoDT.Location = new System.Drawing.Point(156, 254);
+            this.txtSoDT.Location = new System.Drawing.Point(155, 318);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(313, 30);
-            this.txtSoDT.TabIndex = 11;
+            this.txtSoDT.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(77, 259);
+            this.label6.Location = new System.Drawing.Point(62, 323);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 4;
@@ -270,17 +296,27 @@ namespace hotel_management
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 213);
+            this.label5.Location = new System.Drawing.Point(44, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Địa chỉ :";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ID:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(87, 76);
+            this.label2.Location = new System.Drawing.Point(73, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 6;
@@ -290,7 +326,7 @@ namespace hotel_management
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 162);
+            this.label4.Location = new System.Drawing.Point(34, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 7;
@@ -300,18 +336,73 @@ namespace hotel_management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 120);
+            this.label3.Location = new System.Drawing.Point(22, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ngày sinh :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(567, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Tìm kiếm:";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.AllowDrop = true;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(670, 21);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(281, 30);
+            this.txtTimKiem.TabIndex = 6;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(957, 19);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(94, 35);
+            this.btnTimKiem.TabIndex = 7;
+            this.btnTimKiem.Text = "Search";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // radMa
+            // 
+            this.radMa.AutoSize = true;
+            this.radMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMa.Location = new System.Drawing.Point(670, 57);
+            this.radMa.Name = "radMa";
+            this.radMa.Size = new System.Drawing.Size(111, 29);
+            this.radMa.TabIndex = 8;
+            this.radMa.TabStop = true;
+            this.radMa.Text = "Theo mã";
+            this.radMa.UseVisualStyleBackColor = true;
+            this.radMa.CheckedChanged += new System.EventHandler(this.RadCheck);
+            // 
+            // radTen
+            // 
+            this.radTen.AutoSize = true;
+            this.radTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTen.Location = new System.Drawing.Point(840, 57);
+            this.radTen.Name = "radTen";
+            this.radTen.Size = new System.Drawing.Size(111, 29);
+            this.radTen.TabIndex = 9;
+            this.radTen.TabStop = true;
+            this.radTen.Text = "Theo tên";
+            this.radTen.UseVisualStyleBackColor = true;
+            this.radTen.CheckedChanged += new System.EventHandler(this.RadCheck);
             // 
             // frmCustomerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1067, 640);
+            this.ClientSize = new System.Drawing.Size(1067, 801);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -323,6 +414,7 @@ namespace hotel_management
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -353,5 +445,12 @@ namespace hotel_management
         private System.Windows.Forms.Button btnThem;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radTen;
+        private System.Windows.Forms.RadioButton radMa;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label7;
     }
 }
