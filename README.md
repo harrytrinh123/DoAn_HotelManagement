@@ -1,13 +1,13 @@
 # hotel-management-sixboy-DoAndotNet
-# Đồ án môn: Lập trình hướng sự kiện\
-Đề tài: Quản lý khách sạn\
-# Thành viên:\
-Trịnh Quốc Hoàng\
-Nguyễn Hồng Đạt\
-Nguyễn Đức Huy\
-Lê Tuấn\
-Võ Minh Phương\
-Tăng bảo Trấn
+# Course project: event-driven programming with .NET
+Project: Hotel management
+# My team:
+- Trinh Quoc Hoang
+- Nguyen Hong Dat
+- Nguyen Duc Huy
+- Le Tuan
+- Vo Minh Phuong
+- Tang Bao Tran
 # Demo (Not contain all)
 <img width="487" alt="login" src="https://user-images.githubusercontent.com/40319325/128587722-72dbc691-8a58-47fa-a9dc-0df3fc6038db.png">
 <img width="960" alt="bookroom" src="https://user-images.githubusercontent.com/40319325/128587725-f1a751f3-3fbb-47bb-b703-c75c25049e5b.png">
